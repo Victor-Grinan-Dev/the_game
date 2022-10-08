@@ -14,27 +14,33 @@ code {
 }
 
 .App {
+  color:white;
   background-color: #282c34;
   text-align: center;
   min-height: 90vh;
   min-width: 100vw;
   margin-top: 5vh;
   border-radius: 10px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
+.topPanel{
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+}
+.gameScreen{
+  position: relative;
+  width: 90vw;
+  height: 90vw;
+  background-color: rgb(6, 6, 54);
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+  overflow: scroll;
+}
+.bottomPanel{
+
 }
 
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

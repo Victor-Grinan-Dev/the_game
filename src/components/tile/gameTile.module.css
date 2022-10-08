@@ -1,5 +1,5 @@
 .Tile{
-    background-image: url('../../assets/tile_images/blank.png');
+    background-image: url('/public/assets/blank.png');
     background-size: 100px 100px;
     
     background-repeat: no-repeat;

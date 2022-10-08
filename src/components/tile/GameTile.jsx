@@ -1,6 +1,6 @@
 import React from 'react';
-import css from './gameTile.module.css';
-import Token from './Token';
+import css from './gameTile.module.css'
+import Token from '../token/Token'
 
 const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formation=null }) => {
 

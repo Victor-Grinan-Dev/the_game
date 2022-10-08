@@ -1,5 +1,5 @@
 
-import GameTile from "../GameTile";
+import GameTile from "../components/tile/GameTile";
 const mapAreaStyle ={
     backgroundColor:"black",
     position:"relative"
