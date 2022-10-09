@@ -2,17 +2,15 @@ import React from 'react';
 import css from './gameTile.module.css'
 import Token from '../token/Token'
 
+import blank from     '../../../public/assets/assets';
+import plains from    '/assets/tile_images/plains.png';
+import forest from    '/assets/tile_images/forest.png';
+import hills from     '/assets/tile_images/hills.png';
+import swamp from     '/assets/tile_images/swamp.png';
+import mountains from '/assets/tile_images/mountains.png';
 
-/*
-import blank from '../../assets/tile_images/blank.png';
-import plains from '../../assets/tile_images/plains.png';
-import forest from '../../assets/tile_images/forest.png';
-import hills from '../../assets/tile_images/hills.png';
-import swamp from '../../assets/tile_images/swamp.png';
-import mountains from '../../assets/tile_images/mountains.png';
- */
 
-const allTilesImages = {
+const allTilesImagesUrls = {
   blank :   '/assets/tile_images/blank.png',
   plains :   '/assets/tile_images/plains.png',
   forest :   '/assets/tile_images/forest.png',
@@ -21,9 +19,18 @@ const allTilesImages = {
   mountains :   '/assets/tile_images/mountains.png'
 }
 
+const allTilesImagesImported = {
+  blank :   blank,
+  plains :  plains,
+  forest :  forest,
+  hills :   hills,
+  swamp :   swamp,
+  mountains: mountains
+}
+
 const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formation=null }) => {
 
-  const tileImage = image ? allTilesImages[image] : allTilesImages.blank;
+  const tileImage = image ? allTilesImagesUrls[image] : allTilesImagesUrls.blank;
   console.log(tileImage);
   return (
     <div
