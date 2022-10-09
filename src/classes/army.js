@@ -1,7 +1,7 @@
 
  export class ArmyList {// all the models in the map from the same player.
       point_cost = 0
-      color=null
+      color='grey'
       faction = null //this is an object with own properties, including faction color.
   
       constructor(name="", composition=""){

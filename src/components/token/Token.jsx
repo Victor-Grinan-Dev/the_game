@@ -19,8 +19,13 @@ function Token({formation}) {
       backgroundColor: `${color}`
     }}
     >
-      <p className={css.tokenName}>{name}</p>
-      <p className={css.tokenPoints}>{points}</p>
+      <div className={css.tokenContent}>
+      <div className={css.tokenIcon}>
+          icon
+        </div>
+        <p className={css.tokenName}>{name}</p>
+        <p className={css.tokenPoints}>{points} pts</p>
+      </div>
     </div>
   )
 }

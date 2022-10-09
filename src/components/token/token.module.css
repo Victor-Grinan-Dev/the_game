@@ -1,6 +1,30 @@
 .token{
-    width: 30px;
-    height: 30px;
+    color: black;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     z-index: 3;
+    font-size: 8px;
+    position: relative;
+}
+
+.tokenContent{
+    padding-top: 2px;
+    color: rgb(254, 254, 254);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.tokenName,
+.tokenIcon,
+.tokenPoints {
+    padding: 1px;
+    margin: 1px;
+    background-color: rgba(0, 0, 0, 0.685);
+    border-radius: 5px;
+    display: inline-block;
+    width: fit-content;
 }
