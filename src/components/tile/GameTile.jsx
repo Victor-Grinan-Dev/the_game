@@ -13,12 +13,12 @@ import mountains from '../../assets/tile_images/mountains.png';
  */
 
 const allTilesImages = {
-  blank :   '../../assets/tile_images/blank.png',
-  plains :   '../../assets/tile_images/plains.png',
-  forest :   '../../assets/tile_images/forest.png',
-  hills :   '../../assets/tile_images/hills.png',
-  swamp :   '../../assets/tile_images/swamp.png',
-  mountains :   '../../assets/tile_images/mountains.png'
+  blank :   '/assets/tile_images/blank.png',
+  plains :   '/assets/tile_images/plains.png',
+  forest :   '/assets/tile_images/forest.png',
+  hills :   '/assets/tile_images/hills.png',
+  swamp :   '/assets/tile_images/swamp.png',
+  mountains :   '/assets/tile_images/mountains.png'
 }
 
 const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formation=null }) => {
@@ -31,7 +31,7 @@ const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formatio
     className={css.Tile}
     onClick={func} 
     style={{
-      backgroundImage:`url(${tileImage})`, 
+      backgroundImage:`url(/assets/tile_images/blank.png')`, //${tileImage}
       left:`${posLeft}px`,
       top:`${posTop}px`,
     }}
