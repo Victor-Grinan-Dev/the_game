@@ -1,3 +1,5 @@
+import { ArmyList } from "./army";
+
 export class User {
   
   type = "user"

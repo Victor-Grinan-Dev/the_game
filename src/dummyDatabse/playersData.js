@@ -1,4 +1,8 @@
-import { Unit, skills_by_unit_type, Formation, ArmyList, User } from "../../functions/Objects";
+import { User } from "../classes/user";
+import { Unit } from "../classes/unit";
+import { skills_by_unit_type } from "./skillsByUnitType";
+import { Formation } from "../classes/formation";
+import { ArmyList } from "../classes/army";
 
 //wolf units:
 const wolf_priest = new Unit(0, "Wolf Priest", 1, 80, skills_by_unit_type['infantry']);

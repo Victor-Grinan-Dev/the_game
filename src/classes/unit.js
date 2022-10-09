@@ -1,3 +1,5 @@
+import { heroTypes } from "../dummyDatabse/heroTypes"
+
 export class Unit {
     image = ""
     hero = null

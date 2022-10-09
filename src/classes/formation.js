@@ -38,7 +38,20 @@ export class Formation {
       this.setFaction()
       //action points?
       }
-  
+
+      getValue = (skill) => {
+        let divider;
+        if(skill.includes('+')){
+          divider = '+';
+        }else if(skill.includes('-')){
+          divider = '-';
+        }else{
+          console.log("no divider found");
+          return;
+        }
+        return parseInt(skill.split(divider)[1], 10);
+      }
+
       setPointCost(){ // checked  
         this.composition.forEach(unit =>{
         this.point_const += unit.point_const
@@ -114,7 +127,7 @@ export class Formation {
         this.composition.forEach(unit => {//ok
           unit.skills.passive.forEach(skill => {//ok
             if (skill.includes('vision+')){ //ok
-              tempBonus = getValue(skill);
+              tempBonus = this.getValue(skill);
               if(tempBonus > bonusVision){//ok
                 bonusVision = tempBonus;
               };

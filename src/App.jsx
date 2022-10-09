@@ -1,5 +1,5 @@
 import GameTile from "./components/tile/GameTile";
-
+import { wolfPlayer } from "./dummyDatabse/playersData";
 
 function App() {
   return (
