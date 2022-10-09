@@ -23,15 +23,15 @@ const allTilesImages = {
 
 const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formation=null }) => {
 
-  const tileImage = image ? allTilesImages[image] : allTilesImages['blank'];
-  console.log(tileImage)
+  const tileImage = image ? allTilesImages[image] : allTilesImages.blank;
+  console.log(tileImage);
   return (
     <div
     id={id}
     className={css.Tile}
     onClick={func} 
     style={{
-      backgroundImage:`url(/assets/tile_images/blank.png')`, //${tileImage}
+      backgroundImage:`url(${tileImage})`, //not working
       left:`${posLeft}px`,
       top:`${posTop}px`,
     }}

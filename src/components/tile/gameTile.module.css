@@ -1,6 +1,5 @@
 .Tile{
-    background-size: 75px 75px;
-    
+    background-size: 75px 75px;   
     background-repeat: no-repeat;
     background-position: "center";
 
@@ -11,7 +10,7 @@
     justify-content:center;
     align-items:center;
     
-    position: absolute;
+    position: relative;
     
 }
 
