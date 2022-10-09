@@ -2,12 +2,12 @@
 import GameTile from "../components/tile/GameTile";
 const mapAreaStyle ={
     backgroundColor:"black",
-    position:"relative"
+    position:"absolute"
 }
 
 //hard coded variables:
-    const side = 100
-    const topStart = 100;
+    const side = 75
+    const topStart = 0;
     const leftStart = 0;
 
 //logic variables:
@@ -23,26 +23,27 @@ const handleLeft = (y, x) => {
     }
 }
 
-export const gameMapReader = (map, action=null, showTilesId=false) => {
+export const gameMapReader = (mapbject, action=null, showTilesId=false) => {
     //map is a nested array 
+    console.log(mapbject)
+    const terrainMap = mapbject.map;
     return (
-        <div className="mapArea" style={{mapAreaStyle}}>
-            
+        <div className="mapArea" style={{mapAreaStyle}}>  
             {
-                map.map((row, y) => (
-                    row.map((tile, x) => (  
-                        
+                terrainMap.map((row, y) => (
+                    row.map((tile, x) => (       
                         tile.image && <GameTile 
                             key={tile.id} 
                             id={tile.id}
                             showId={showTilesId}
-                            image={tile.image}  
+                            image={tile?.image}  
                             posTop={topStart + top * y} 
                             posLeft={handleLeft(y, x)} 
                             tileWidth={side} 
                             tileHeight={side + 5}
                             func={action} 
-                            startPlayer={tile.owned_by} 
+                            
+                            //varible items
                             objective={tile.objective} 
                             formation={tile.formation}
                         />
@@ -50,6 +51,6 @@ export const gameMapReader = (map, action=null, showTilesId=false) => {
                 ))
             }
         </div>
-        
     )
 }
+

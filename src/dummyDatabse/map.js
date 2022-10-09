@@ -1,68 +1,70 @@
+import { terrainTypes } from "./terrainTypes"
+
 export const hexTestMap = {
     name:"Devil's Arena",
     shape:"hx",
     dimensions: "4x4x4",
     map:[
             [
-                {id:100,image:null},
-                {id:110,image:null},
-                {id:"a01", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
-                {id:"b01", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
-                {id:"c01", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
-                {id:"d01", image:"planes", move_in:1,is_cover:false,is_starting_position:false}
+                {id:100,terrain:null},
+                {id:110,terrain:null},
+                {id:"a01", terrain: terrainTypes["plains"]},
+                {id:"b01", terrain: terrainTypes["plains"]},
+                {id:"c01", terrain: terrainTypes["plains"]},
+                {id:"d01", terrain: terrainTypes["plains"]}
             ],
             [
-                {id:140,image:null},
-                {id:"a02", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"b02", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"c02", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"d02", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"e02", image:"planes", move_in:1,is_cover:false,is_starting_position:false}
+                {id:140,terrain:null},
+                {id:"a02", terrain: terrainTypes["plains"]}, 
+                {id:"b02", terrain: terrainTypes["plains"]}, 
+                {id:"c02", terrain: terrainTypes["plains"]}, 
+                {id:"d02", terrain: terrainTypes["plains"]}, 
+                {id:"e02", terrain: terrainTypes["plains"]}
             ], 
             [
-                {id:200,image:null},
-                {id:"a03", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
-                {id:"b03", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
-                {id:"c03", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
-                {id:"d03", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
-                {id:"e03", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
-                {id:"f03", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
+                {id:200,terrain:null},
+                {id:"a03", terrain: terrainTypes["plains"]},
+                {id:"b03", terrain: terrainTypes["plains"]},
+                {id:"c03", terrain: terrainTypes["plains"]},
+                {id:"d03", terrain: terrainTypes["plains"]},
+                {id:"e03", terrain: terrainTypes["plains"]},
+                {id:"f03", terrain: terrainTypes["plains"]},
             ],
 
             [
-                {id:"a04", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"b04", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"c04", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"d04", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"e04", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"f04", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"g04", image:"planes", move_in:1,is_cover:false,is_starting_position:false}
+                {id:"a04", terrain: terrainTypes["plains"]}, 
+                {id:"b04", terrain: terrainTypes["plains"]}, 
+                {id:"c04", terrain: terrainTypes["plains"]}, 
+                {id:"d04", terrain: terrainTypes["plains"]}, 
+                {id:"e04", terrain: terrainTypes["plains"]}, 
+                {id:"f04", terrain: terrainTypes["plains"]}, 
+                {id:"g04", terrain: terrainTypes["plains"]}
             ],
             [
-                {id:230,image:null}, 
-                {id:"b05", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"c05", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"d05", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"e05", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"f05", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"g05", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
+                {id:230,terrain:null}, 
+                {id:"b05", terrain: terrainTypes["plains"]}, 
+                {id:"c05", terrain: terrainTypes["plains"]}, 
+                {id:"d05", terrain: terrainTypes["plains"]}, 
+                {id:"e05", terrain: terrainTypes["plains"]}, 
+                {id:"f05", terrain: terrainTypes["plains"]}, 
+                {id:"g05", terrain: terrainTypes["plains"]}, 
             ], 
             [
-                {id:240,image:null}, 
-                {id:"c06", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"d06", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"e06", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"f06", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"g06", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
+                {id:240,terrain:null}, 
+                {id:"c06", terrain: terrainTypes["plains"]}, 
+                {id:"d06", terrain: terrainTypes["plains"]}, 
+                {id:"e06", terrain: terrainTypes["plains"]}, 
+                {id:"f06", terrain: terrainTypes["plains"]}, 
+                {id:"g06", terrain: terrainTypes["plains"]}, 
 
             ],
             [
-                {id:280,image:null},
-                {id:290,image:null},
-                {id:"d07", image:"planes", move_in:1,is_cover:false,is_starting_position:false},
-                {id:"e07", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"f07", image:"planes", move_in:1,is_cover:false,is_starting_position:false}, 
-                {id:"g07", image:"planes", move_in:1,is_cover:false,is_starting_position:false}
+                {id:280,terrain:null},
+                {id:290,terrain:null},
+                {id:"d07", terrain: terrainTypes["plains"]},
+                {id:"e07", terrain: terrainTypes["plains"]}, 
+                {id:"f07", terrain: terrainTypes["plains"]}, 
+                {id:"g07", terrain: terrainTypes["plains"]}
             ] 
         ],
     maxPlayers: 2

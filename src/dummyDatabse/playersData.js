@@ -47,7 +47,7 @@ const riders = new Formation('Wolf Riders', [wolf_cavalry], "quick assault & tan
 const snoopy = new Formation('Snoopy', [snoop_dog], "scout");
 
 const lf_fire_support = new Formation("Long Fangs", [captain, long_fangs, lass_raz],'fire support & defend objectives');
-
+lf_fire_support.color="#818aa2";
 const fire_rain = new Formation("Fire Rain", [whirlwind, thunder_cannon], "long fire support & siege");
 
 //wolf Army:
@@ -75,7 +75,7 @@ const alfaSpeeder = new Unit(7, "Alfa Speeder", 1, 110, skills_by_unit_type['fas
 const bravoSpeeder = new Unit(8, "Bravo Speeder", 1, 110, skills_by_unit_type['fast_fover']);
 
 const dready = new Unit(9, "Dreadnought", 1, 145, skills_by_unit_type['walker_wehicle']);
-const termies = new Unit(9, "Termies", 1, 200, skills_by_unit_type['walker_wehicle']);
+const termies = new Unit(10, "Termies", 1, 200, skills_by_unit_type['walker_wehicle']);
 
 //lion formations
 const hq = new Formation("HQ", [chappy, alfaTacticals, bravoTacticals], "building army");
@@ -83,14 +83,15 @@ const hoverPatrol = new Formation("Hover Patrol", [IconOfCaliban, alfaSpeeder, b
 
 const ravenWing = new Formation("Raven Wing", [bikeApothecary, knigths, alfaBikers, bravoBikers]);
 
+const deathwing = new Formation("Deathwing", [termies, dready]);
+deathwing.color="#ece9b0";
 //lion user
 const lion_army = new ArmyList('Wolf Raiders', [hq, hoverPatrol, ravenWing]);
 
 const user2 = new User("Qwerty123", "Qwerty123");
 
 user2.army_lists = lion_army;
-user2.formations.push(dready);
-user2.formations.push(termies);
+user2.formations.push(deathwing);
 
 export const wolfPlayer = user1;
 export const lionPlayer = user2;

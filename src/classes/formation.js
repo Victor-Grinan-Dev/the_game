@@ -70,7 +70,7 @@ export class Formation {
           }
           unit.skills.passive.forEach(skill =>{
             if(skill.includes("work_force")){
-              apply_bonus = true
+              apply_bonus = true;
               bonus = (parseInt(skill.split('+')[1], 10)/100);
             }
           });

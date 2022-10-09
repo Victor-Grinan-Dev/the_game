@@ -16,7 +16,5 @@ export class Tile {
         }else{
             this.image = null
         }
-        
     }
-
 }
