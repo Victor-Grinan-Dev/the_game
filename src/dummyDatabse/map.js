@@ -8,10 +8,10 @@ export const hexTestMap = {
             [
                 {id:100,terrain:null},
                 {id:110,terrain:null},
-                {id:"a01", terrain: terrainTypes["plains"]},
+                {id:"a01", terrain: terrainTypes["hills"]},
                 {id:"b01", terrain: terrainTypes["plains"]},
                 {id:"c01", terrain: terrainTypes["plains"]},
-                {id:"d01", terrain: terrainTypes["plains"]}
+                {id:"d01", terrain: terrainTypes["hills"]}
             ],
             [
                 {id:140,terrain:null},
@@ -25,27 +25,27 @@ export const hexTestMap = {
                 {id:200,terrain:null},
                 {id:"a03", terrain: terrainTypes["plains"]},
                 {id:"b03", terrain: terrainTypes["plains"]},
-                {id:"c03", terrain: terrainTypes["plains"]},
-                {id:"d03", terrain: terrainTypes["plains"]},
+                {id:"c03", terrain: terrainTypes["forest"]},
+                {id:"d03", terrain: terrainTypes["forest"]},
                 {id:"e03", terrain: terrainTypes["plains"]},
                 {id:"f03", terrain: terrainTypes["plains"]},
             ],
 
             [
-                {id:"a04", terrain: terrainTypes["plains"]}, 
+                {id:"a04", terrain: terrainTypes["hills"]}, 
                 {id:"b04", terrain: terrainTypes["plains"]}, 
-                {id:"c04", terrain: terrainTypes["plains"]}, 
-                {id:"d04", terrain: terrainTypes["plains"]}, 
-                {id:"e04", terrain: terrainTypes["plains"]}, 
+                {id:"c04", terrain: terrainTypes["forest"]}, 
+                {id:"d04", terrain: terrainTypes["mountains"]}, 
+                {id:"e04", terrain: terrainTypes["forest"]}, 
                 {id:"f04", terrain: terrainTypes["plains"]}, 
-                {id:"g04", terrain: terrainTypes["plains"]}
+                {id:"g04", terrain: terrainTypes["hills"]}
             ],
             [
                 {id:230,terrain:null}, 
                 {id:"b05", terrain: terrainTypes["plains"]}, 
                 {id:"c05", terrain: terrainTypes["plains"]}, 
-                {id:"d05", terrain: terrainTypes["plains"]}, 
-                {id:"e05", terrain: terrainTypes["plains"]}, 
+                {id:"d05", terrain: terrainTypes["forest"]}, 
+                {id:"e05", terrain: terrainTypes["forest"]}, 
                 {id:"f05", terrain: terrainTypes["plains"]}, 
                 {id:"g05", terrain: terrainTypes["plains"]}, 
             ], 
@@ -61,10 +61,10 @@ export const hexTestMap = {
             [
                 {id:280,terrain:null},
                 {id:290,terrain:null},
-                {id:"d07", terrain: terrainTypes["plains"]},
+                {id:"d07", terrain: terrainTypes["hills"]},
                 {id:"e07", terrain: terrainTypes["plains"]}, 
                 {id:"f07", terrain: terrainTypes["plains"]}, 
-                {id:"g07", terrain: terrainTypes["plains"]}
+                {id:"g07", terrain: terrainTypes["hills"]}
             ] 
         ],
     maxPlayers: 2

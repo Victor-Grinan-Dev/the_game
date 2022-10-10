@@ -13,7 +13,7 @@ const allTilesImagesUrls = {
 
 const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formation=null }) => {
 
-  const tileImage = image ? allTilesImagesUrls[image] : allTilesImagesUrls.blank;
+  const tileImage = image ? allTilesImagesUrls[image] : null;
 
   return (
     <div

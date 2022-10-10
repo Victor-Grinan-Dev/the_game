@@ -25,18 +25,17 @@ const handleLeft = (y, x) => {
 
 export const gameMapReader = (mapbject, action=null, showTilesId=false) => {
     //map is a nested array 
-    console.log(mapbject)
     const terrainMap = mapbject.map;
     return (
         <div className="mapArea" style={{mapAreaStyle}}>  
             {
-                terrainMap.map((row, y) => (
-                    row.map((tile, x) => (       
-                        tile.image && <GameTile 
+                 terrainMap.map((row, y) => (
+                     row.map((tile, x) => (       
+                         tile.terrain && <GameTile 
                             key={tile.id} 
                             id={tile.id}
                             showId={showTilesId}
-                            image={tile?.image}  
+                            image={tile.terrain.image}  
                             posTop={topStart + top * y} 
                             posLeft={handleLeft(y, x)} 
                             tileWidth={side} 
@@ -54,3 +53,16 @@ export const gameMapReader = (mapbject, action=null, showTilesId=false) => {
     )
 }
 
+/*
+        gameMap.map.map((row, y) => (
+          row.map((tile, x) => (
+            console.log(tile),
+            <GameTile 
+            key={tile.id} 
+            posTop={topStart + top * y} 
+            posLeft={handleLeft(y, x)}
+            image={tile?.terrain?.image}
+            />
+          ))
+        ))
+*/
