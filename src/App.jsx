@@ -1,14 +1,16 @@
 //import GameTile from "./components/tile/GameTile";
 import React, { useEffect, useState } from "react";
 
-import { wolfPlayer } from "./dummyDatabse/playersData";
-import { lionPlayer } from "./dummyDatabse/playersData";
+//import { wolfPlayer } from "./dummyDatabse/playersData";
+//import { lionPlayer } from "./dummyDatabse/playersData";
 import { hexTestMap } from "./dummyDatabse/map";
 import { gameMapReader } from "./functions/gameMapReader";
 import GameTile from "./components/tile/GameTile";
 
-const wolfFormation1 = wolfPlayer.formations[0];
-const lionFormation1 = lionPlayer.formations[0];
+//const wolfFormation1 = wolfPlayer.formations[0];
+//const lionFormation1 = lionPlayer.formations[0];
+const wolfFormation1 = null;
+const lionFormation1 = null;
 
 function App() {
   const [objecMap, setObjectMap] = useState({})
@@ -47,14 +49,13 @@ useEffect(()=>{
 
         {/*TODO: make thia a map()*/}
 
-        <GameTile id={0}posLeft={handleLeft(y, x)}posTop={topStart}image={'hills'}func={null} showId={false} formation={wolfFormation1}/>
-        <GameTile id={1}posLeft={75}posTop={topStart}image={'plains'}func={null} showId={false} formation={null}/>
-        <GameTile id={2}posLeft={150}posTop={topStart}image={'forest'}func={null} showId={false} formation={null}/>
-        <GameTile id={3}posLeft={38}posTop={56}image={'plains'}func={null} showId={false} formation={null}/>
-        <GameTile id={4}posLeft={113}posTop={56}image={'plains'}func={null} showId={false} formation={null}/>
-        <GameTile id={5}posLeft={0}posTop={112}image={'plains'} func={null} showId={false} formation={null}/>
-        <GameTile id={6}posLeft={75} posTop={112}image={'forest'}func={null}showId={false} formation={null}/>
-        <GameTile id={7}posLeft={150}posTop={112}image={'hills'}func={null} showId={false} formation={lionFormation1}/>
+        {
+          gameMap.map((row, y) => {
+            row.map((tile, x) => {
+              <p key={tile.id}>{tile.id}</p>
+            })
+          })
+        }
         
            
         </div>
@@ -64,3 +65,15 @@ useEffect(()=>{
 }
 
 export default App;
+
+
+/*
+        <GameTile id={0}posLeft={handleLeft(y, x)}posTop={topStart}image={'hills'}func={null} showId={false} formation={wolfFormation1}/>
+        <GameTile id={1}posLeft={75}posTop={topStart}image={'plains'}func={null} showId={false} formation={null}/>
+        <GameTile id={2}posLeft={150}posTop={topStart}image={'forest'}func={null} showId={false} formation={null}/>
+        <GameTile id={3}posLeft={38}posTop={56}image={'plains'}func={null} showId={false} formation={null}/>
+        <GameTile id={4}posLeft={113}posTop={56}image={'plains'}func={null} showId={false} formation={null}/>
+        <GameTile id={5}posLeft={0}posTop={112}image={'plains'} func={null} showId={false} formation={null}/>
+        <GameTile id={6}posLeft={75} posTop={112}image={'forest'}func={null}showId={false} formation={null}/>
+        <GameTile id={7}posLeft={150}posTop={112}image={'hills'}func={null} showId={false} formation={lionFormation1}/>
+*/

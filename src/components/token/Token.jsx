@@ -8,18 +8,11 @@ import css from './token.module.css';
 function Token({formation}) {
   let color;
   let name;
-  let points;
-  const units = formation.composition;
+  let points;;
 
-  const getUnitImages = () => {
-    units.map((unit, i) =>{   
-      <img key={i} src={unit.skills.image} alt={unit.id}/>
-    })
-  }
-
-  formation ? color= formation.color : color = 'brown';
-  formation ? name = formation.name : name = 'unknown';
-  formation ? points = formation.point_const : points = 100;
+  color = formation.color;
+  name = formation.name;
+  points = formation.points;
   return (
     <div 
     className={css.token}
@@ -28,8 +21,9 @@ function Token({formation}) {
     }}
     >
       <div className={css.tokenContent}>
-      <div className={css.tokenIcon}>
-         {getUnitImages()}
+      <div className={css.tokenIcon}
+      >
+         
          unit icons
         </div>
         <p className={css.tokenName}>{name}</p>

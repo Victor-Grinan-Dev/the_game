@@ -86,17 +86,17 @@ export class Formation {
         let slowestMovement = 100;
   
         //check each unit in the formation.
-        this.composition.forEach(unit => {  
+        this?.composition?.forEach(unit => {  
           //checks the slowest movement value in the formation.
-          if (unit.skills.movement < slowestMovement) {
+          if (unit?.skills?.movement < slowestMovement) {
             slowestMovement = unit.skills.movement;
           }   
           //check how many infantry models.
-          if(unit.skills.type.includes('infantry')){
+          if(unit?.skills?.type?.includes('infantry')){
             this.infantry_count += unit.models;
           };
           //what is the minimun movement value of all not infantry models in the formation.
-          if(!unit.skills.type.includes('infantry')){
+          if(!unit?.skills?.type.includes('infantry')){
             if (unit.skills.movement < nonInfantryModelsMinMovement){
               nonInfantryModelsMinMovement = unit.skills.movement;
               }

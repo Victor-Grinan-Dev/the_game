@@ -5,6 +5,7 @@ import { Formation } from "../classes/formation";
 import { ArmyList } from "../classes/army";
 
 //wolf units:
+/*
 const wolf_priest = new Unit(0, "Wolf Priest", 1, 80, skills_by_unit_type['infantry']);
 
 const rune_priest = new Unit(1, "Rune Priest", 1, 115, skills_by_unit_type['jet_infantry']);
@@ -94,4 +95,4 @@ user2.army_lists = lion_army;
 user2.formations.push(deathwing);
 
 export const wolfPlayer = user1;
-export const lionPlayer = user2;
+export const lionPlayer = user2;*/
