@@ -5,7 +5,6 @@ import { Formation } from "../classes/formation";
 import { ArmyList } from "../classes/army";
 
 //wolf units:
-/*
 const wolf_priest = new Unit(0, "Wolf Priest", 1, 80, skills_by_unit_type['infantry']);
 
 const rune_priest = new Unit(1, "Rune Priest", 1, 115, skills_by_unit_type['jet_infantry']);
@@ -57,15 +56,16 @@ const wolf_army = new ArmyList('Wolf Raiders', [defenders, patrol, howlers, ride
 const user1 = new User("Victor", "Victor123");
 
 user1.army_lists = wolf_army;
+user1.army_lists.color = '#818aa2';
 user1.formations.push(lf_fire_support);
 user1.formations.push(fire_rain);
 
 //lion units:
 const chappy = new Unit(0, "Chaplain", 1, 85, skills_by_unit_type['infantry']);
 const bikeApothecary = new Unit(1, "Apothecary", 1, 100, skills_by_unit_type['rider']);
-const IconOfCaliban = new Unit(2, "The Icon Of Caliban", 1, 100, skills_by_unit_type['rider']);
+const IconOfCaliban = new Unit(2, "The Icon Of Caliban", 1, 100, skills_by_unit_type['fast_hover']);
 
-const alfaTacticals = new Unit(3, "aAlfa Tacticals", 5, 90, skills_by_unit_type['infantry']);
+const alfaTacticals = new Unit(3, "Alfa Tacticals", 5, 90, skills_by_unit_type['infantry']);
 const bravoTacticals = new Unit(4, "Bravo Tacticals", 5, 90, skills_by_unit_type['infantry']);
 
 const knigths = new Unit(5, "Knigths", 5, 175, skills_by_unit_type['rider']);
@@ -80,7 +80,7 @@ const termies = new Unit(10, "Termies", 1, 200, skills_by_unit_type['walker_wehi
 
 //lion formations
 const hq = new Formation("HQ", [chappy, alfaTacticals, bravoTacticals], "building army");
-const hoverPatrol = new Formation("Hover Patrol", [IconOfCaliban, alfaSpeeder, bravoSpeeder], "spot and harrass");
+const hoverPatrol = new Formation ("Hover Patrol", [IconOfCaliban, alfaSpeeder, bravoSpeeder], "spot and harrass");
 
 const ravenWing = new Formation("Raven Wing", [bikeApothecary, knigths, alfaBikers, bravoBikers]);
 
@@ -92,7 +92,8 @@ const lion_army = new ArmyList('Wolf Raiders', [hq, hoverPatrol, ravenWing]);
 const user2 = new User("Qwerty123", "Qwerty123");
 
 user2.army_lists = lion_army;
+user1.army_lists.color = '#23525b';
 user2.formations.push(deathwing);
 
 export const wolfPlayer = user1;
-export const lionPlayer = user2;*/
+export const lionPlayer = user2;

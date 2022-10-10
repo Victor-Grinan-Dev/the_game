@@ -1,4 +1,10 @@
 export const factions = {
+  human_kin:{
+    id:"hk",
+    name:"thr_human_kin",
+    color:"#d5d5d5",
+    benefit:["luck+20"]
+  },
     justice_aliance:{
       id:"ja",
       name:"The Justice Aliance",
@@ -36,3 +42,13 @@ export const factions = {
       benefit:["pasive: claim_tile"]
     }
   }
+
+export const allFactions = [
+  "hk",
+  "ja",
+  "df",
+  "ae",
+  "dm",
+  "bh",
+  "ib",
+]

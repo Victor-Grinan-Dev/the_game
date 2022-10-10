@@ -51,13 +51,7 @@ export const skills_by_unit_type = {//TODO?: smarter change all this to separate
     passive:["vision+1"]
   },
 
-
-
-
-
-
-
-    infantry:{
+  infantry:{
       type:"infantry",
       image: "/assets/unit/infantry.png",
       movement:2,
@@ -105,8 +99,6 @@ export const skills_by_unit_type = {//TODO?: smarter change all this to separate
       negative:["No_water", "no_Mountain", "hard_in_swamps" ],
       passive:["turbo_boost"]
     },
-
-  
     transport_tank:{
       type:"transport_tank",
       image: "/assets/unit/apc.png",

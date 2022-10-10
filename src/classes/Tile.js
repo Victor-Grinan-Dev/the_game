@@ -1,14 +1,24 @@
 export class Tile {
-    owned_by = undefined
-    formation = null
-    resources = []
-    buildings = []
-    objective = false
-    actions = []
-    is_starting_position = false
-
-    constructor(id, terrain=null){
-        this.id = id  
+    constructor(id, 
+        terrain=null,
+        
+        formation = null,
+        is_starting_position = false,
+        objective = false,
+        resources = [],
+        buildings = [],
+        actions = [],
+        owned_by = undefined,
+        ){
+        this.id = id 
         this.terrain = terrain
+        this.formation = formation
+        this.is_starting_position = is_starting_position
+        this.owned_by = owned_by
+        this.resources = resources
+        this.buildings = buildings
+        this.objective = objective
+        this.actions = actions
+        
     }
 }

@@ -19,9 +19,9 @@ export class Formation {
     point_const = 0  
     carry_capacity = 0 //from the units
     infantry_count = 0
+    allUnitImages = []
   
-  
-    constructor(name, composition = [], s_description="", l_description="", image="", faction="", subfaction=""){
+    constructor(name, composition, s_description="", l_description="", image="", faction="", subfaction=""){
       this.name = name
       this.composition = composition
       this.s_description = s_description
@@ -36,7 +36,13 @@ export class Formation {
       this.setModelCount()
       this.setMaxVision()
       this.setFaction()
+      this.setAllUnitsImages()
       //action points?
+      }
+      setAllUnitsImages(){
+        for(let unit of this.composition){
+          this.allUnitImages.push(unit?.skills?.image)
+        }
       }
 
       getValue = (skill) => {
@@ -51,13 +57,11 @@ export class Formation {
         }
         return parseInt(skill.split(divider)[1], 10);
       }
-
       setPointCost(){ // checked  
         this.composition.forEach(unit =>{
         this.point_const += unit.point_const
         });
       }
-  
       setDamage(){ //checked
           this.damage = Math.floor(this.point_const / 10)
       }
@@ -65,10 +69,10 @@ export class Formation {
         let apply_bonus = false;
         let bonus = 0;
         for (let unit of this.composition){
-          if(unit.skills.type.includes("infantry")){
+          if(unit?.skills?.type.includes("infantry")){
             this.work_force += unit.point_const;
           }
-          unit.skills.passive.forEach(skill =>{
+          unit?.skills?.passive.forEach(skill =>{
             if(skill.includes("work_force")){
               apply_bonus = true;
               bonus = (parseInt(skill.split('+')[1], 10)/100);
@@ -86,7 +90,7 @@ export class Formation {
         let slowestMovement = 100;
   
         //check each unit in the formation.
-        this?.composition?.forEach(unit => {  
+        this.composition?.forEach(unit => {  
           //checks the slowest movement value in the formation.
           if (unit?.skills?.movement < slowestMovement) {
             slowestMovement = unit.skills.movement;
@@ -97,12 +101,12 @@ export class Formation {
           };
           //what is the minimun movement value of all not infantry models in the formation.
           if(!unit?.skills?.type.includes('infantry')){
-            if (unit.skills.movement < nonInfantryModelsMinMovement){
+            if (unit?.skills?.movement < nonInfantryModelsMinMovement){
               nonInfantryModelsMinMovement = unit.skills.movement;
               }
           }
           //check if there is transport(s) and if true, whats the transport combine capacity.
-          unit.skills.passive.forEach(skill => {
+          unit?.skills?.passive.forEach(skill => {
             if(skill.includes('transport')){
               isTransport = true;
               transportCapacity += parseInt(skill.split('+')[1], 10);  
@@ -125,7 +129,7 @@ export class Formation {
         let bonusVision = 0;
         let tempBonus = 0;
         this.composition.forEach(unit => {//ok
-          unit.skills.passive.forEach(skill => {//ok
+          unit?.skills?.passive.forEach(skill => {//ok
             if (skill.includes('vision+')){ //ok
               tempBonus = this.getValue(skill);
               if(tempBonus > bonusVision){//ok

@@ -16,7 +16,7 @@ const mapAreaStyle ={
     const top = side * 0.75; //incrementor 
 
 const handleLeft = (y, x) => {
-    if(y % 2 === 0) {
+    if(y % 2 !== 0) {
         return leftStart + left * x
     } else {
         return evenLeftStart + left * x

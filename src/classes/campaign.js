@@ -4,21 +4,18 @@ export class Campaign {
     rules = null
     players = []
 
-    constructor(name, armySize, mapShape, mapSize, map = {}, playersAmount = 2, factions = [], rounds=4, duration=4, timeLapse="weeks", campaignCode = "") {
+    constructor(campaignId, name, armySize, map, availableFactions, rounds=4, timeLapse="weeks") {
+        this.campaignId = campaignId
         this.name = name
         this.armySize = armySize
-        this.mapShape = mapShape
-        this.mapSize = mapSize
         this.map = map
-        this.playersAmount = playersAmount
-        this.factions = factions
+        this.availableFactions = availableFactions
         if (rounds < 4){
             rounds = 4
         }else{
             this.rounds = rounds
         }
-        this.duration=duration
+
         this.timeLapse=timeLapse
-        this.campaignCode = campaignCode
     }
 }

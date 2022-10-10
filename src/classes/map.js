@@ -6,7 +6,6 @@ export class Map {
     this.shape = shape
     this.dimensions = dimensions
     this.map = map// array of MapLines/bidimentional array
-    this.setMaxPlayers();
     }
     getFormation(fromTileId){       
       this.map.map((row)=>{

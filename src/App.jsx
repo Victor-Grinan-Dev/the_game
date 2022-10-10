@@ -1,20 +1,21 @@
 //import GameTile from "./components/tile/GameTile";
 import React, { useState } from "react";
 
-//import { wolfPlayer } from "./dummyDatabse/playersData";
-//import { lionPlayer } from "./dummyDatabse/playersData";
-import { hexTestMap } from "./dummyDatabse/map";
+import { wolfPlayer } from "./dummyDatabse/playersData";
+import { lionPlayer } from "./dummyDatabse/playersData";
+
 import { gameMapReader } from "./functions/gameMapReader";
+import { theBattleForTheChorizo } from "./dummyDatabse/campaignData";
 
+theBattleForTheChorizo.players.push(wolfPlayer);
+theBattleForTheChorizo.players.push(lionPlayer);
 
-//const wolfFormation1 = wolfPlayer.formations[0];
-//const lionFormation1 = lionPlayer.formations[0];
-const wolfFormation1 = null;
-const lionFormation1 = null;
+console.log(theBattleForTheChorizo)
 
+//todo: set the players randomly in the map, all formatios will be in the starting tile? start moving the tokens.
 function App() {
-  const [gameMap, setGameMap] = useState(hexTestMap);
-
+  const [gameMap, setGameMap] = useState(theBattleForTheChorizo.map);
+  
   return (
     <div className="App">
       <div className="topPanel">top menu bar</div>
