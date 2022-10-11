@@ -19,7 +19,7 @@ export class Formation {
     point_const = 0  
     carry_capacity = 0 //from the units
     infantry_count = 0
-  
+
     constructor(name, composition, s_description="", l_description="", image="", faction="", subfaction=""){
       this.name = name
       this.composition = composition
@@ -170,7 +170,6 @@ export class Formation {
             break;
         }
       }
-  
       increaseXP(increase){
         this.Xp += increase * this.intelligence;
       }

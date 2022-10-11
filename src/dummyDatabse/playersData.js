@@ -76,14 +76,14 @@ const alfaTacticals = new Unit(3, "Alfa Tacticals", 5, 90, skills_by_unit_type['
 const bravoTacticals = new Unit(4, "Bravo Tacticals", 5, 90, skills_by_unit_type['infantry']);
 
 const knigths = new Unit(5, "Knigths", 5, 175, skills_by_unit_type['rider']);
-const alfaBikers = new Unit(5, "Alfa Bikers", 3, 120, skills_by_unit_type['rider']);
-const bravoBikers = new Unit(6, "Bravo Bikers", 3, 120, skills_by_unit_type['rider']);
+const alfaBikers = new Unit(6, "Alfa Bikers", 3, 120, skills_by_unit_type['rider']);
+const bravoBikers = new Unit(7, "Bravo Bikers", 3, 120, skills_by_unit_type['rider']);
 
-const alfaSpeeder = new Unit(7, "Alfa Speeder", 1, 110, skills_by_unit_type['fast_fover']);
-const bravoSpeeder = new Unit(8, "Bravo Speeder", 1, 110, skills_by_unit_type['fast_fover']);
+const alfaSpeeder = new Unit(8, "Alfa Speeder", 1, 110, skills_by_unit_type['fast_hover']);
+const bravoSpeeder = new Unit(9, "Bravo Speeder", 1, 110, skills_by_unit_type['fast_hover']);
 
-const dready = new Unit(9, "Dreadnought", 1, 145, skills_by_unit_type['walker_wehicle']);
-const termies = new Unit(10, "Termies", 1, 200, skills_by_unit_type['walker_wehicle']);
+const dready = new Unit(10, "Dreadnought", 1, 145, skills_by_unit_type['walker_wehicle']);
+const termies = new Unit(11, "Termies", 1, 200, skills_by_unit_type['walker_wehicle']);
 
 //lion formations
 const hq = new Formation("HQ", [chappy, alfaTacticals, bravoTacticals], "building army");
