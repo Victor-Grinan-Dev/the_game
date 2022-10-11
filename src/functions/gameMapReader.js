@@ -2,7 +2,7 @@
 import GameTile from "../components/tile/GameTile";
 const mapAreaStyle ={
     backgroundColor:"black",
-    position:"absolute"
+    position:"relative"
 }
 
 //hard coded variables:
@@ -12,8 +12,8 @@ const mapAreaStyle ={
 
 //logic variables:
     const evenLeftStart = leftStart + side * 0.5;
-    const left = side; //incrementor 
-    const top = side * 0.75; //incrementor 
+    const left = side - 0.9; //incrementor 
+    const top = side * 0.73; //incrementor 
 
 const handleLeft = (y, x) => {
     if(y % 2 !== 0) {

@@ -37,18 +37,25 @@ const thunder_cannon = new Unit(12, "Thunder Fire Cannon", 2, 120, skills_by_uni
 
 //formations:
 const defenders = new Formation('defender', [alfa_hunters, bravo_hunters, rhino], "build & hold");
+defenders.color = "#818aa2";
 
 const patrol = new Formation('Blood Patrol', [wolf_priest, blood_claws, razor], "patrol & support");
+patrol.color = "#818aa2";
 
 const howlers = new Formation('Howlers', [rune_priest, sky_claws], "quick assault & tank hunt");
+howlers.color = "#818aa2";
 
 const riders = new Formation('Wolf Riders', [wolf_cavalry], "quick assault & tank hunt");
+riders.color = "#818aa2";
 
 const snoopy = new Formation('Snoopy', [snoop_dog], "scout");
 
+snoopy.color = "#818aa2";
 const lf_fire_support = new Formation("Long Fangs", [captain, long_fangs, lass_raz],'fire support & defend objectives');
+
 lf_fire_support.color="#818aa2";
 const fire_rain = new Formation("Fire Rain", [whirlwind, thunder_cannon], "long fire support & siege");
+fire_rain.color = "#818aa2";
 
 //wolf Army:
 const wolf_army = new ArmyList('Wolf Raiders', [defenders, patrol, howlers, riders, snoopy])

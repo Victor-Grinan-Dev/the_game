@@ -13,6 +13,9 @@ theBattleForTheChorizo.players.push(lionPlayer);
 console.log(theBattleForTheChorizo)
 
 //todo: set the players randomly in the map, all formatios will be in the starting tile? start moving the tokens.
+
+theBattleForTheChorizo.map.placeFormation(wolfPlayer.army_lists.composition[0], 'a04')
+
 function App() {
   const [gameMap, setGameMap] = useState(theBattleForTheChorizo.map);
   
@@ -20,7 +23,9 @@ function App() {
     <div className="App">
       <div className="topPanel">top menu bar</div>
         <div className="gameScreen">
-        {gameMapReader(gameMap)} 
+          
+            {gameMapReader(gameMap)}
+          
         </div>
       <div className="bottomPanel">bottom menu bar</div>
     </div>

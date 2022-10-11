@@ -19,7 +19,6 @@ export class Formation {
     point_const = 0  
     carry_capacity = 0 //from the units
     infantry_count = 0
-    allUnitImages = []
   
     constructor(name, composition, s_description="", l_description="", image="", faction="", subfaction=""){
       this.name = name
@@ -36,13 +35,8 @@ export class Formation {
       this.setModelCount()
       this.setMaxVision()
       this.setFaction()
-      this.setAllUnitsImages()
+
       //action points?
-      }
-      setAllUnitsImages(){
-        for(let unit of this.composition){
-          this.allUnitImages.push(unit?.skills?.image)
-        }
       }
 
       getValue = (skill) => {

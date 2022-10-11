@@ -6,6 +6,7 @@
     z-index: 3;
     font-size: 8px;
     position: relative;
+  ;
 }
 
 .tokenContent{
@@ -18,13 +19,23 @@
     flex-direction: column;
 }
 
-.tokenName,
+
 .tokenIcon,
 .tokenPoints {
     padding: 1px;
     margin: 1px;
-    background-color: rgba(0, 0, 0, 0.685);
-    border-radius: 5px;
     display: inline-block;
     width: fit-content;
+}
+
+.tokenPoints {
+    background-color: rgba(0, 0, 0, 0.685);
+    border-radius: 5px;
+}
+
+.tokenIcon{
+    width: 35px;
+    height: 35px;
+    background-size: 35px;
+    background-repeat: no-repeat ;
 }

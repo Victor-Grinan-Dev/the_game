@@ -1,7 +1,7 @@
 export class Campaign {
     isStarted = false
     isEnded = false
-    rules = null
+    rules = []
     players = []
 
     constructor(campaignId, name, armySize, map, availableFactions, rounds=4, timeLapse="weeks") {
