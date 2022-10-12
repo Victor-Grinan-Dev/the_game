@@ -34,18 +34,18 @@ function Token({formation}) {
     }}
     onClick={activateToken}
     >
-      <div className={css.tokenContent}>
-        {
-        <div className={css.tokenIcons}>
+      
+        
+        
           {
           units.map((unit) => {
               return <div name={name} className={css.tokenIcon} key={unit.id} style={{backgroundImage:`url(${unitsImages[unit.skills.type]})`}} /> 
             })
           }
-        </div>
-        }
+       
+       
     
-      </div>
+      
     </div>
   )
 }

@@ -1,25 +1,55 @@
+import anti_air from '../assets/units/anti_air.png';
+import artillery_battery from '../assets/units/artillery_battery.gif';
+import artillery_tank from '../assets/units/artillery_tank.png';
+import artillery_truck from '../assets/units/artillery_truck.png';
+import beast_rider from '../assets/units/beast_rider.gif';
+import beast from '../assets/units/beast.png';
+import bomb from '../assets/units/bomb.png';
+import fast_vehicle from '../assets/units/fast_vehicle.png';
+import heavy_armoured_infantry from '../assets/units/heavy_armoured_infantry.webp';
+import heavy_hover_tank from '../assets/units/heavy_hover_tank.png';
+import heavy_tank from '../assets/units/heavy_tank.png';
+import heavy_weapon_infantry from '../assets/units/heavy_weapon_infantry.png';
+import hover_copter from '../assets/units/hover_copter.png';
+import infantry from '../assets/units/infantry.png';
+import jet_infantry from '../assets/units/jet_infantry.webp';
+import light_infantry from '../assets/units/light_infantry.webp';
+import light_tank from '../assets/units/light_tank.png';
+import mid_tank from '../assets/units/mid_tank.png';
+import mortar_infantry from '../assets/units/mortar_infantry.webp';
+import rider from '../assets/units/rider.webp';
+import tower from '../assets/units/tower.png';
+import transport_hover from '../assets/units/transport_hover.png';
+import transport_tank from '../assets/units/transport_tank.png';
+import truck from '../assets/units/truck.png';
+import walker_vehicle from '../assets/units/walker_vehicle.png';
+import war_suit from '../assets/units/war_suit.gif';
+
 export const unitsImages = {
-    anti_air:"/assets/units/anti_air.png",
-    artillery_battery:"/assets/units/artillery_battery.gif",
-    artillery_tank:"/assets/units/artillery_tank.png",
-    artillery_truck:"/assets/units/artillery_truck.png",
-    beast_rider:"/assets/units/beast_rider.gif",
-    beast:"/assets/units/beast.png",
-    fast_hover:"/assets/units/hover_copter.png",
-    flying_beast:"",
-    heavy_armoured_infantry:"/assets/units/heavy_armoured_infantry.webp",
-    heavy_tank:"/assets/units/heavy_tank.png",
-    heavy_weapons_infantry:"/assets/units/heavy_weapon_infantry.png",
-    hover_transport:"/assets/units/transport_hover.png",
-    infantry : '/assets/units/infantry.png',
-    jet_infantry:"/assets/units/jet_infantry.webp",
-    light_tank:"/assets/units/light_tank.png",
-    light_infantry:"/assets/units/light_infantry.webp",
-    monster:"",
-    mid_tank:"/assets/units/mid_tank.png",
-    rider:"/assets/units/rider.webp",
-    transport_tank:"/assets/units/transport_tank.png",
-    transport_armoured_tank:"/assets/units/light_tank.png",
-    walker_wehicle:"/assets/units/walker_vehicle.png",
-    warsuit:"/assets/units/war_suit.gif",
+  anti_air:anti_air,
+  artillery_battery:artillery_battery,
+  artillery_tank:artillery_tank,
+  artillery_truck:artillery_truck,
+  beast_rider:beast_rider,
+  beast:beast,
+  bomb:bomb,
+  fast_vehicle:fast_vehicle,
+  heavy_armoured_infantry:heavy_armoured_infantry,
+  heavy_hover_tank:heavy_hover_tank,
+  heavy_tank:heavy_tank,
+  heavy_weapon_infantry:heavy_weapon_infantry,
+  hover_copter:hover_copter,
+  infantry:infantry,
+  jet_infantry:jet_infantry,
+  light_infantry:light_infantry,
+  light_tank:light_tank,
+  mid_tank:mid_tank,
+  mortar_infantry:mortar_infantry,
+  rider:rider,
+  tower:tower,
+  transport_hover:transport_hover,
+  transport_tank:transport_tank,
+  truck:truck,
+  walker_vehicle:walker_vehicle,
+  war_suit:war_suit,
   }
