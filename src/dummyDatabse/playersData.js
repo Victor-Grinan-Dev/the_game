@@ -87,12 +87,16 @@ const termies = new Unit(11, "Termies", 1, 200, skills_by_unit_type['walker_wehi
 
 //lion formations
 const hq = new Formation("HQ", [chappy, alfaTacticals, bravoTacticals], "building army");
-const hoverPatrol = new Formation ("Hover Patrol", [IconOfCaliban, alfaSpeeder, bravoSpeeder], "spot and harrass");
-
-const ravenWing = new Formation("Raven Wing", [bikeApothecary, knigths, alfaBikers, bravoBikers]);
-
+hq.color= "#ece9b0"
+const hoverPatrol = new Formation ("Hover Patrol", [IconOfCaliban, alfaSpeeder, bravoSpeeder], 
+"spot and harrass");
+hoverPatrol.color="#ece9b0"
+const ravenWing = new Formation("Raven Wing", [bikeApothecary, knigths, alfaBikers, 
+    bravoBikers]);
+ravenWing.color="#ece9b0"
 const deathwing = new Formation("Deathwing", [termies, dready]);
-deathwing.color="#ece9b0";
+deathwing.color="#ece9b0"
+
 //lion user
 const lion_army = new ArmyList('Wolf Raiders', [hq, hoverPatrol, ravenWing]);
 

@@ -103,8 +103,7 @@ export const skills_by_unit_type = {//TODO?: smarter change all this to separate
     },
   
     transport_armoured_tank:{
-      type:"transport_heavy_weapon_tank",
-
+      type:"transport_armoured_tank",
       movement:4,
       active:null,
       negative:["No_water", "no_Mountain" ],
