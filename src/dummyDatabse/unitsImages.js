@@ -10,7 +10,7 @@ import heavy_armoured_infantry from '../assets/units/heavy_armoured_infantry.web
 import heavy_hover_tank from '../assets/units/heavy_hover_tank.png';
 import heavy_tank from '../assets/units/heavy_tank.png';
 import heavy_weapon_infantry from '../assets/units/heavy_weapon_infantry.png';
-import hover_copter from '../assets/units/hover_copter.png';
+import fast_hover from '../assets/units/fast_hover.png';
 import infantry from '../assets/units/infantry.png';
 import jet_infantry from '../assets/units/jet_infantry.webp';
 import light_infantry from '../assets/units/light_infantry.webp';
@@ -38,7 +38,7 @@ export const unitsImages = {
   heavy_hover_tank:heavy_hover_tank,
   heavy_tank:heavy_tank,
   heavy_weapon_infantry:heavy_weapon_infantry,
-  hover_copter:hover_copter,
+  fast_hover:fast_hover,
   infantry:infantry,
   jet_infantry:jet_infantry,
   light_infantry:light_infantry,
