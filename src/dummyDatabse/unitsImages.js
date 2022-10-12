@@ -42,7 +42,7 @@ export const unitsImages = {
   infantry:infantry,
   jet_infantry:jet_infantry,
   light_infantry:light_infantry,
-  light_tank:light_tank,
+  transport_armoured_tank:light_tank,
   mid_tank:mid_tank,
   mortar_infantry:mortar_infantry,
   rider:rider,

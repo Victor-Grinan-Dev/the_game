@@ -14,38 +14,38 @@ function Token({formation}) {
   const [name, setName]= useState(formation.name);
   const [points, setPoints]= useState(formation.points);
   const [units, setUnits] = useState(formation.composition);
+  const [unitCount, setUnitCount] = useState(formation.composition.length);
 
-  const deleteToken = (parentElement) => {
+  const deleteToken = (parentElement) => { 
     parentElement.innerHTML = ""
   }
 
   const activateToken = (e) => {
-    console.log(e.target.offsetParent);
-    console.log(e.target);
-    console.log(formation);
-    deleteToken(e.target.offsetParent)
+    console.log();
+    if (e.target.attributes.name.value === "token"){
+      deleteToken(e.target.offsetParent)
+    }
   }
 
   return (
     <div 
     className={css.token}
+    name="token"
     style={{
       backgroundColor: `${color}`
     }}
     onClick={activateToken}
     >
-      
-        
-        
-          {
-          units.map((unit) => {
-              return <div name={name} className={css.tokenIcon} key={unit.id} style={{backgroundImage:`url(${unitsImages[unit.skills.type]})`}} /> 
-            })
-          }
-       
-       
-    
-      
+      {
+        units.map((unit) => {
+          return <div name={name} className={css.tokenIcon} key={unit.id} style={{
+            backgroundImage:`url(${unitsImages[unit.skills.type]})`,
+            backgroundSize: unitCount===1 ? "50px 50px" : "30px 30px",
+            width:unitCount===1 ? "50px" : "30px",
+            height: unitCount===1 ? "50px" : "30px",
+        }} /> 
+        })
+      }
     </div>
   )
 }
