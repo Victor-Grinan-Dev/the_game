@@ -1,14 +1,25 @@
 {
   "files": {
-    "main.css": "/the_game/static/css/main.8db08b12.css",
-    "main.js": "/the_game/static/js/main.45b8f489.js",
+    "main.css": "/the_game/static/css/main.30981de9.css",
+    "main.js": "/the_game/static/js/main.28a3776e.js",
+    "static/media/artillery_battery.gif": "/the_game/static/media/artillery_battery.3dbc2c577f61aaa87a40.gif",
+    "static/media/war_suit.gif": "/the_game/static/media/war_suit.903b5ef99cfd0807a604.gif",
     "static/media/sea_sprite.jpg": "/the_game/static/media/sea_sprite.034a9df3d7cd349e7af3.jpg",
+    "static/media/beast_rider.gif": "/the_game/static/media/beast_rider.f5a2956c04b16c052105.gif",
+    "static/media/mortar_infantry.webp": "/the_game/static/media/mortar_infantry.6b0a84ceab8e12007838.webp",
+    "static/media/swamp.png": "/the_game/static/media/swamp.dd821c016d0bdbd2910f.png",
+    "static/media/mountains.png": "/the_game/static/media/mountains.f5fc3e7140bcd6c1d577.png",
+    "static/media/forest.png": "/the_game/static/media/forest.e26aec94cce0bc30b355.png",
+    "static/media/heavy_armoured_infantry.webp": "/the_game/static/media/heavy_armoured_infantry.cd0bca455bc8b3e5effd.webp",
+    "static/media/rider.webp": "/the_game/static/media/rider.a8a7709305f2dc728f63.webp",
+    "static/media/jet_infantry.webp": "/the_game/static/media/jet_infantry.34afd3e499f47a8a4123.webp",
+    "static/media/light_infantry.webp": "/the_game/static/media/light_infantry.1d83d78906de44c56f98.webp",
     "index.html": "/the_game/index.html",
-    "main.8db08b12.css.map": "/the_game/static/css/main.8db08b12.css.map",
-    "main.45b8f489.js.map": "/the_game/static/js/main.45b8f489.js.map"
+    "main.30981de9.css.map": "/the_game/static/css/main.30981de9.css.map",
+    "main.28a3776e.js.map": "/the_game/static/js/main.28a3776e.js.map"
   },
   "entrypoints": [
-    "static/css/main.8db08b12.css",
-    "static/js/main.45b8f489.js"
+    "static/css/main.30981de9.css",
+    "static/js/main.28a3776e.js"
   ]
 }
