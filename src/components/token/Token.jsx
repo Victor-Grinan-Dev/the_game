@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import css from './token.module.css';
 import { unitsImages } from '../../dummyDatabse/unitsImages';
+ 
 //hooks:
 //redux:
 //components:
@@ -38,6 +39,8 @@ function Token({formation}) {
       {
         units.map((unit) => {
           return <div name={name} className={css.tokenIcon} key={unit.id} style={{
+            width: `${60}px`,
+            height: `${60}px`,
             backgroundImage:`url(${unitsImages[unit.skills.type]})`,
             backgroundSize: unitCount===1 ? "50px 50px" : unitCount===2 ? "30px 40px" : "30px 30px",
             width:unitCount===1 ? "50px" : unitCount===2 ? "30px" : "30px",

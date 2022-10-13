@@ -1,25 +1,15 @@
-
+import { side, topStart, leftStart, evenLeftStart, leftIncrementor, topIncrementor } from '../dummyDatabse/configureGame'
 import GameTile from "../components/tile/GameTile";
-const mapAreaStyle ={
-    backgroundColor:"black",
+
+const mapAreaStyle = {
     position:"relative"
 }
 
-//hard coded variables:
-    const side = 75
-    const topStart = 0;
-    const leftStart = 0;
-
-//logic variables:
-    const evenLeftStart = leftStart + side * 0.5;
-    const left = side - 0.9; //incrementor 
-    const top = side * 0.73; //incrementor 
-
 const handleLeft = (y, x) => {
     if(y % 2 !== 0) {
-        return leftStart + left * x
+        return leftStart + leftIncrementor * x
     } else {
-        return evenLeftStart + left * x
+        return evenLeftStart + leftIncrementor * x
     }
 }
 
@@ -36,12 +26,11 @@ export const gameMapReader = (mapbject, action=null, showTilesId=false) => {
                             id={tile.id}
                             showId={showTilesId}
                             image={tile.terrain.image}  
-                            posTop={topStart + top * y} 
+                            posTop={topStart + topIncrementor * y} 
                             posLeft={handleLeft(y, x)} 
                             tileWidth={side} 
                             tileHeight={side + 5}
-                            func={action} 
-                            
+                            func={action}     
                             //varible items
                             objective={tile.objective} 
                             formation={tile.formation}
@@ -54,15 +43,15 @@ export const gameMapReader = (mapbject, action=null, showTilesId=false) => {
 }
 
 /*
-        gameMap.map.map((row, y) => (
-          row.map((tile, x) => (
-            console.log(tile),
-            <GameTile 
-            key={tile.id} 
-            posTop={topStart + top * y} 
-            posLeft={handleLeft(y, x)}
-            image={tile?.terrain?.image}
-            />
-          ))
-        ))
+    gameMap.map.map((row, y) => (
+      row.map((tile, x) => (
+        console.log(tile),
+        <GameTile 
+        key={tile.id} 
+        posTop={topStart + top * y} 
+        posLeft={handleLeft(y, x)}
+        image={tile?.terrain?.image}
+        />
+      ))
+    ))
 */

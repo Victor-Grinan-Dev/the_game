@@ -40,6 +40,8 @@ code {
   position: relative;
   width: 90vw;
   height: 90vw;
+  max-height: 600px;
+  max-width: 600px;
   background-color: rgb(6, 6, 54);
   border-radius: 10px;
   box-shadow: 0 0 10px black;
