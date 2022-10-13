@@ -15,7 +15,7 @@ const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formatio
       console.log(id, "tile clicked");
       console.log("left:", e.target.offsetLeft)
       console.log("top:", e.target.offsetTop)
-  
+      console.log("top:", e.target.classList.add("selected"))
     }else if(e.target.offsetParent.attributes.name.value === "tile"){
       
       console.log(id, "child clicked");

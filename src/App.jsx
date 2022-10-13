@@ -10,12 +10,15 @@ import { useDispatch, useSelector } from "react-redux";
 
 function App() {
   const dispatch = useDispatch();
+
+  const campaign = useSelector(campaignSelector);
   const [gameMap, setGameMap] = useState(theGame.campaign.map);
 
   useEffect(() => {
     dispatch(setCampaign(theGame.campaign))
-  }, []);
-;
+  }, [gameMap]);
+
+  //console.log(campaign)
   //const testVar = useSelector(campaignSelector.map.map);
   
   return (
