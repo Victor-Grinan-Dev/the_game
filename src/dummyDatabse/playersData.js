@@ -17,9 +17,9 @@ const blood_claws = new Unit(4, "Blood Claws", 5, 90, skills_by_unit_type['infan
 
 const sky_claws = new Unit(5, "Sky Claws", 10, 190, skills_by_unit_type['jet_infantry']);
 
-const snoop_dog = new Unit(6, "Snoopy", 1, 15, skills_by_unit_type['beast']);
+//const snoop_dog = new Unit(6, "Snoopy", 1, 15, skills_by_unit_type['beast']);
 
-const wolf_cavalry = new Unit(7, "Wolf Cavalry", 3, 150, skills_by_unit_type['beast_rider']);
+const wolf_cavalry = new Unit(7, "Wolf Cavalry", 3, 165, skills_by_unit_type['beast_rider']);
 
 const rhino = new Unit(8, "Rhino", 1, 80, skills_by_unit_type['transport_tank']);
 
@@ -48,9 +48,9 @@ howlers.color = "#818aa2";
 const riders = new Formation('Wolf Riders', [wolf_cavalry], "quick assault & tank hunt");
 riders.color = "#818aa2";
 
-const snoopy = new Formation('Snoopy', [snoop_dog], "scout");
+//const snoopy = new Formation('Snoopy', [snoop_dog], "scout");
 
-snoopy.color = "#818aa2";
+//snoopy.color = "#818aa2";
 const lf_fire_support = new Formation("Long Fangs", [captain, long_fangs, lass_raz],'fire support & defend objectives');
 
 lf_fire_support.color="#818aa2";
@@ -58,7 +58,7 @@ const fire_rain = new Formation("Fire Rain", [whirlwind, thunder_cannon], "long 
 fire_rain.color = "#818aa2";
 
 //wolf Army:
-const wolf_army = new ArmyList('Wolf Raiders', [defenders, patrol, howlers, riders, snoopy])
+const wolf_army = new ArmyList('Wolf Raiders', [defenders, patrol, howlers, riders])
 
 const user1 = new User("Victor", "Victor123");
 
