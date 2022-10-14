@@ -21,6 +21,8 @@ function App() {
   //console.log(campaign)
   //const testVar = useSelector(campaignSelector.map.map);
   
+  theGame.render()
+
   return (
     <div className="App">
       <div className="topPanel">top menu bar</div>

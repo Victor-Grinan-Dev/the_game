@@ -23,6 +23,7 @@ export const gameMapReader = (mapbject, action=null, showTilesId=false) => {
                          tile.terrain && <GameTile 
                             key={tile.id} 
                             id={tile.id}
+
                             showId={showTilesId}
                             image={tile.terrain.image}  
                             posTop={topStart + topIncrementor * y} 

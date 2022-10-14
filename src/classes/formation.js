@@ -4,10 +4,10 @@ export class Formation {
     damage = null
     defense = 0
     model_count = 0
-    vision = 2
-    Xp=0
-    intelligence=1
-    level= 0
+    vision = 1
+    Xp = 0
+    intelligence = 1
+    level = 0
     benefits=[]//this benefits come from the formation type if there is one 
     badges=[]//this are archievements as formation
     movement = 4
