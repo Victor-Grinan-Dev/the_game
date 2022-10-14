@@ -14,7 +14,6 @@ const handleLeft = (y, x) => {
 }
 
 export const gameMapReader = (mapbject, action=null, showTilesId=false) => {
-    //map is a nested array 
     const terrainMap = mapbject.map;
     return (
         <div className="mapArea" style={{mapAreaStyle}}>  
@@ -30,10 +29,12 @@ export const gameMapReader = (mapbject, action=null, showTilesId=false) => {
                             posLeft={handleLeft(y, x)} 
                             tileWidth={side} 
                             tileHeight={side + 5}
-                            func={action}     
-                            //varible items
+                            func={action}  
+
+                            //game varible items
                             objective={tile.objective} 
                             formation={tile.formation}
+                            status={tile.status}
                         />
                     ))
                 ))

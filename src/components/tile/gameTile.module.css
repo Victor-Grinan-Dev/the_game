@@ -1,3 +1,4 @@
+
 .Tile{
     background-size: 75px 75px;   
     background-repeat: no-repeat;
@@ -8,6 +9,7 @@
     justify-content:center;
     align-items:center;
     position: absolute; 
+    z-index: 1;
 }
 
 .selected{
@@ -25,8 +27,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
-    grid-auto-rows: minmax(15px, 15px);
-    background-color: aqua;
+    grid-auto-rows: minmax(15px, 15px);  
     font-size: 10px;
 }
 
@@ -40,4 +41,27 @@
     -ms-user-select: none;
     user-select: none;
     text-shadow: 0 0 5px black;
+}
+
+.tileFilter{
+    position:absolute;
+    width: 75px;
+    height: 75px;
+    background-size: 75px 75px;
+}
+
+.disabled{
+    z-index: 5;
+}
+
+.outSight{
+    z-index: 5;
+}
+
+.selected{
+    z-index: 2;
+}
+
+.unexplored{
+    z-index: 5;
 }

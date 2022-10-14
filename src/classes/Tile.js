@@ -1,12 +1,14 @@
 export class Tile {
-    constructor(id, 
+    status = "unexplored"//disabled outSight     selected unexplored  onSight
+
+    constructor(
+        id, 
         terrain=null,
-        
         formation = null,
         is_starting_position = false,
         objective = false,
         resources = [],
-        buildings = [],
+        building = [],
         actions = [],
         owned_by = undefined,
         ){
@@ -16,9 +18,8 @@ export class Tile {
         this.is_starting_position = is_starting_position
         this.owned_by = owned_by
         this.resources = resources
-        this.buildings = buildings
+        this.building = building
         this.objective = objective
         this.actions = actions
-        
     }
 }

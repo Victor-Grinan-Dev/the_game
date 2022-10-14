@@ -2,11 +2,12 @@ import React from 'react';
 import css from './gameTile.module.css';
 import Token from '../token/Token';
 import { importedTileImages } from '../../dummyDatabse/tileImages';
+import { applyFilter } from '../../dummyDatabse/tilesFilters';
 
-const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formation=null }) => {
+const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formation=null, status=null}) => {
   
   const tileImage = image ? importedTileImages[image] : null;
-
+  const filterImage = status ? applyFilter[status] : null;
   const tileclickedHandler = (e) => {
     //console.log("x",e.clientX,"y", e.clientY, "posLeft", posLeft, "posTop", posTop);
     
@@ -48,7 +49,11 @@ const GameTile = ({id, posLeft, posTop, image, func=null, showId=false, formatio
         {showId && <p>{id}</p>}
         {formation && <Token formation={formation} />}
       </div>
-      
+      <div name='filter' className={css.tileFilter}
+      style={{
+        backgroundImage:`url(${filterImage})`,
+        zIndex:'4',
+      }} />
     </div>
   )
 }

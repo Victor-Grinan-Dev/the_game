@@ -19,6 +19,7 @@ export class Formation {
     point_const = 0  
     carry_capacity = 0 //from the units
     infantry_count = 0
+    isBeen = false
 
     constructor(name, composition, s_description="", l_description="", image="", faction="", subfaction=""){
       this.name = name

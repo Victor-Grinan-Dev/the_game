@@ -48,6 +48,7 @@ function Token({formation}) {
         }} /> 
         })
       }
+      {formation.isBeen && <div className="filter" ></div>} 
     </div>
   )
 }
