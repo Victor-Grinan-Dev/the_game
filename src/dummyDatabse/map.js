@@ -17,59 +17,59 @@ import { terrainTypes } from "./terrainTypes";
     const map = [
         [
             new Tile(100, 0, 0,),
-            new Tile("a01", 0, 1,  terrainTypes["hills"]),
-            new Tile("b01", 0, 2,  terrainTypes["plains"]),
-            new Tile("c01", 0, 3,  terrainTypes["plains"]),
-            new Tile("d01", 0, 4, terrainTypes["hills"])
+            new Tile("a00", 0, 1,  terrainTypes["hills"]),
+            new Tile("b00", 0, 2,  terrainTypes["plains"]),
+            new Tile("c00", 0, 3,  terrainTypes["plains"]),
+            new Tile("d00", 0, 4, terrainTypes["hills"])
         ],
         [
             new Tile(200, 1,0),
-            new Tile("a02", 1, 1, terrainTypes["plains"]),
-            new Tile("b02", 1, 2, terrainTypes["plains"]),
-            new Tile("c02", 1, 3, terrainTypes["plains"]),
-            new Tile("d02", 1, 4, terrainTypes["plains"]),
-            new Tile("e02", 1, 5, terrainTypes["plains"])
+            new Tile("a01", 1, 1, terrainTypes["plains"]),
+            new Tile("b01", 1, 2, terrainTypes["plains"]),
+            new Tile("c01", 1, 3, terrainTypes["plains"]),
+            new Tile("d01", 1, 4, terrainTypes["plains"]),
+            new Tile("e01", 1, 5, terrainTypes["plains"])
         ], 
         [ 
-            new Tile("a03", 2, 0, terrainTypes["plains"]),
-            new Tile("b03", 2, 1, terrainTypes["plains"]),
-            new Tile("c03", 2, 2, terrainTypes["forest"]),
-            new Tile("d03", 2, 3, terrainTypes["forest"]),
-            new Tile("e03", 2, 4, terrainTypes["plains"]),
-            new Tile("f03", 2, 5, terrainTypes["plains"]),
+            new Tile("a02", 2, 0, terrainTypes["plains"]),
+            new Tile("b02", 2, 1, terrainTypes["plains"]),
+            new Tile("c02", 2, 2, terrainTypes["forest"]),
+            new Tile("d02", 2, 3, terrainTypes["forest"]),
+            new Tile("e02", 2, 4, terrainTypes["plains"]),
+            new Tile("f02", 2, 5, terrainTypes["plains"]),
         ],
 
         [
-            new Tile("a04", 3, 0, terrainTypes["hills"]), 
-            new Tile("b04", 3, 1, terrainTypes["plains"]), 
-            new Tile("c04", 3, 2, terrainTypes["forest"]), 
-            new Tile("d04", 3, 3, terrainTypes["mountains"]), 
-            new Tile("e04", 3, 4, terrainTypes["forest"]), 
-            new Tile("f04", 3, 5, terrainTypes["plains"]), 
-            new Tile("g04", 3, 6, terrainTypes["hills"])
+            new Tile("a03", 3, 0, terrainTypes["hills"]), 
+            new Tile("b03", 3, 1, terrainTypes["plains"]), 
+            new Tile("c03", 3, 2, terrainTypes["forest"]), 
+            new Tile("d03", 3, 3, terrainTypes["mountains"]), 
+            new Tile("e03", 3, 4, terrainTypes["forest"]), 
+            new Tile("f03", 3, 5, terrainTypes["plains"]), 
+            new Tile("g03", 3, 6, terrainTypes["hills"])
         ],
         [  
-            new Tile("b05", 4, 0, terrainTypes["plains"]), 
-            new Tile("c05", 4, 1, terrainTypes["plains"]), 
-            new Tile("d05", 4, 2, terrainTypes["forest"]), 
-            new Tile("e05", 4, 3, terrainTypes["forest"]), 
-            new Tile("f05", 4, 4, terrainTypes["plains"]), 
-            new Tile("g05", 4, 5, terrainTypes["plains"]), 
+            new Tile("b04", 4, 0, terrainTypes["plains"]), 
+            new Tile("c04", 4, 1, terrainTypes["plains"]), 
+            new Tile("d04", 4, 2, terrainTypes["forest"]), 
+            new Tile("e04", 4, 3, terrainTypes["forest"]), 
+            new Tile("f04", 4, 4, terrainTypes["plains"]), 
+            new Tile("g04", 4, 5, terrainTypes["plains"]), 
         ], 
         [ 
             new Tile(600, 5, 0),
-            new Tile("c06", 5, 1, terrainTypes["plains"]), 
-            new Tile("d06", 5, 2, terrainTypes["plains"]), 
-            new Tile("e06", 5, 3, terrainTypes["plains"]), 
-            new Tile("f06", 5, 4, terrainTypes["plains"]), 
-            new Tile("g06", 5, 5, terrainTypes["plains"]), 
+            new Tile("c05", 5, 1, terrainTypes["plains"]), 
+            new Tile("d05", 5, 2, terrainTypes["plains"]), 
+            new Tile("e05", 5, 3, terrainTypes["plains"]), 
+            new Tile("f05", 5, 4, terrainTypes["plains"]), 
+            new Tile("g05", 5, 5, terrainTypes["plains"]), 
         ],
         [
             new Tile(700, 6, 0),
-            new Tile("d07", 6, 1, terrainTypes["hills"]),
-            new Tile("e07", 6, 2, terrainTypes["plains"]), 
-            new Tile("f07", 6, 3, terrainTypes["plains"]), 
-            new Tile("g07", 6, 4, terrainTypes["hills"])
+            new Tile("d06", 6, 1, terrainTypes["hills"]),
+            new Tile("e06", 6, 2, terrainTypes["plains"]), 
+            new Tile("f06", 6, 3, terrainTypes["plains"]), 
+            new Tile("g06", 6, 4, terrainTypes["hills"])
         ] 
     ]
     export const hexTestMap = new Map("Devil's Arena", "hx", "4x4x4", map)

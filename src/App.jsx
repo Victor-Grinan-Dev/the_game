@@ -15,13 +15,10 @@ function App() {
   const [gameMap, setGameMap] = useState(theGame.campaign.map);
 
   useEffect(() => {
+    //read the game from the database
     dispatch(setCampaign(theGame.campaign))
-  }, [gameMap]);
-
-  //console.log(campaign)
-  //const testVar = useSelector(campaignSelector.map.map);
-  
-  theGame.render()
+    //theGame.render()
+  }, []);
 
   return (
     <div className="App">

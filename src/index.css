@@ -60,3 +60,6 @@ code {
   display: block;
 }
 
+.invisible{
+  display: none;
+}

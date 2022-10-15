@@ -1,12 +1,12 @@
 export class Tile {
-    status = "unexplored";//disabled outSight     selected unexplored  onSight
+    status = "onSight";//disabled outSight     selected unexplored  onSight
     isExplored = false;
     constructor(
         id,
-        
-        posX,
-        posY,
 
+        posY,
+        posX,
+        
         terrain=null,
         formation = null,
         is_starting_position = false,
@@ -18,8 +18,8 @@ export class Tile {
         ){
         this.id = id 
 
-        this.posX = posX
         this.posY = posY
+        this.posX = posX
 
         this.terrain = terrain
         this.formation = formation
