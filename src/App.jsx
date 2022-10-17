@@ -23,10 +23,8 @@ function App() {
   return (
     <div className="App">
       <div className="topPanel">top menu bar</div>
-        <div className="gameScreen">
-          
+        <div className="gameScreen"> 
             {gameMapReader(gameMap)}
-          
         </div>
       <div className="bottomPanel">bottom menu bar</div>
     </div>

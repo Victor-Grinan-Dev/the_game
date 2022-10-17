@@ -3,6 +3,7 @@ import outSight from '../assets/tile_filters/outSight.png';
 import selected from '../assets/tile_filters/selected.png';
 import unexplored from '../assets/tile_filters/unexplored.png';
 import black from '../assets/tile_filters/black.png';
+import hostile from '../assets/tile_filters/hostile.png'
 
 export const applyFilter = {
     disabled: disabled,
@@ -10,5 +11,6 @@ export const applyFilter = {
     selected: selected,
     unexplored: black,
     onSight: null,
-    black: unexplored //switched
+    black: unexplored, //switched
+    hostile:hostile
 }

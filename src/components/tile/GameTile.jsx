@@ -11,43 +11,44 @@ import { changeTile } from '../../functions/changeTile';
 const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formation=null, status=null}) => {
   const dispatch = useDispatch();
   const campaign = useSelector(campaignSelector);
+
   let map = campaign.map;
+
   const [isClicked, setIsClicked] = useState(false);  
   const tileImage = image ? importedTileImages[image] : null;
   const filterImage = status ? applyFilter[status] : null;
+  const [isSelectedMoveTiles, setIsSelectedMoveTiles] = useState(false)
+
+
+
+  const showSelectedTiles = () => {
+    const adjacents = listAdjacents(tileObject, map.map);
+    adjacents.forEach(tile => {
+      tile.status = 'selected';
+      map.map = changeTile(tile, map.map);
+    })
+    campaign.map.map = map.map;
+    dispatch(setCampaign(campaign.map.map))
+    setIsSelectedMoveTiles(true);
+  }
 
   const tileclickedHandler = (e) => {
  
     let tileElement;
-    if(e.target.offsetParent.attributes.name.value === "actionMenu"){
-      
-      
-      const adjacents = listAdjacents(tileObject, map.map);
-      adjacents.forEach(tile => {
-        tile.status = 'selected';
-        map.map = changeTile(tile, map.map);
-      })
-      campaign.map.map = map.map;
-      dispatch(setCampaign(campaign.map.map))
-      
+    if(e.target.attributes.name.value === "move" && !isSelectedMoveTiles){
+      showSelectedTiles();
+
+
 
     }else if (e.target.attributes.name.value === "tile"){
       tileElement = e.target;
-      //console.log(id, "tile clicked");
-      //console.log("left:", e.target.offsetLeft)
-      //console.log("top:", e.target.offsetTop)
-      //console.log("top:", e.target.classList.add("selected"))
+
     }else if(e.target.offsetParent.attributes.name.value === "tile"){
       tileElement = e.target.offsetParent;
-      //console.log(id, "child clicked");
-      //console.log("left:", e.target.offsetParent.offsetLeft)
-      //console.log("top:", e.target.offsetParent.offsetTop)
+
   
     }else if(e.target.offsetParent.offsetParent.attributes.name.value === "tile"){
       tileElement = e.target.offsetParent.offsetParent;
-      //console.log(id, "grandchild clicked");
-      //console.log("left:", e.target.offsetParent.offsetParent.offsetLeft)
-      //console.log("top:", e.target.offsetParent.offsetParent.offsetTop)
     } 
 
     setIsClicked(!isClicked)
