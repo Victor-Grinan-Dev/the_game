@@ -14,31 +14,33 @@ export class Map {
                   return tile.formation
               }
           })
-      });
+      })
     }
     placeFormation(formation, tileId){
         this.map.map((row)=>{
             row.map((tile)=>{
                 if (tile.id === tileId){
                     tile.formation = formation
-                    return
                 } 
             })
         })
+        return 0;
     }
     deleteFormation(tileId){
         this.map.map((row)=>{
             row.map((tile)=>{
                 if (tile.id === tileId){
                     tile.formation = null
-                    return
                 }
             })
         })
+        return 0;
     }
     moveFormation(fromTileId, toTileId){
         const formation = this.getFormation(fromTileId);
         this.placeFormation(formation, toTileId);
         this.deleteFormation(fromTileId);
+        return 0;
     }
+    
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import css from './token.module.css';
 import { unitsImages } from '../../dummyDatabse/unitsImages';
  
@@ -16,6 +16,17 @@ function Token({formation}) {
   const [points, setPoints]= useState(formation.points);
   const [units, setUnits] = useState(formation.composition);
   const [unitCount, setUnitCount] = useState(formation.composition.length);
+
+
+  const showStats = false;
+  useEffect(() => {
+    setColor(formation.color);
+    setName(formation.name);
+    setPoints(formation.points);
+    setUnits(formation.composition);
+    setUnitCount(formation.composition.length);
+    
+  }, []);
 
   const deleteToken = (parentElement) => { 
     parentElement.innerHTML = ""
@@ -39,8 +50,6 @@ function Token({formation}) {
       {
         units.map((unit) => {
           return <div name={name} className={css.tokenIcon} key={unit.id} style={{
-            width: `${60}px`,
-            height: `${60}px`,
             backgroundImage:`url(${unitsImages[unit.skills.type]})`,
             backgroundSize: unitCount===1 ? "50px 50px" : unitCount===2 ? "30px 40px" : "30px 30px",
             width:unitCount===1 ? "50px" : unitCount===2 ? "30px" : "30px",
@@ -49,6 +58,7 @@ function Token({formation}) {
         })
       }
       {formation.isBeen && <div className="filter" ></div>} 
+      {showStats && <p>{points}</p>}
     </div>
   )
 }

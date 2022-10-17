@@ -1,3 +1,4 @@
+import axios from "axios";
 //game
 import { Game } from "../classes/game";
 //campaign
@@ -11,11 +12,11 @@ theBattleForTheChorizo.players.push(lionPlayer);
 theBattleForTheChorizo.players.push(wolfPlayer);
 
 //deploy units in map
-//theBattleForTheChorizo.map.placeFormation(wolfPlayer.army_lists.composition[0], 'a04')
+//theBattleForTheChorizo.map.placeFormation(wolfPlayer.army_lists.composition[0], 'a02')
 theBattleForTheChorizo.map.placeFormation(wolfPlayer.army_lists.composition[1], 'b03')
 //theBattleForTheChorizo.map.placeFormation(wolfPlayer.army_lists.composition[2], 'a03')
-//theBattleForTheChorizo.map.placeFormation(wolfPlayer.army_lists.composition[3], 'b05')
-//theBattleForTheChorizo.map.placeFormation(wolfPlayer.army_lists.composition[4], 'b03')
+//theBattleForTheChorizo.map.placeFormation(wolfPlayer.army_lists.composition[3], 'b04')
+//theBattleForTheChorizo.map.placeFormation(wolfPlayer.army_lists.composition[4], 'c03')
 
 //theBattleForTheChorizo.map.placeFormation(lionPlayer.army_lists.composition[0], 'g04')
 theBattleForTheChorizo.map.placeFormation(lionPlayer.army_lists.composition[1], 'e02')
@@ -23,3 +24,7 @@ theBattleForTheChorizo.map.placeFormation(lionPlayer.army_lists.composition[1], 
 
 //initialize game
 export const theGame = new Game(theBattleForTheChorizo);
+
+
+
+//axios.post("http://localhost:8010/campaign", theGame)

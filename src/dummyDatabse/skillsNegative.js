@@ -1,5 +1,5 @@
 export const negative = [
-    "no-waters", "no-swamps"
+    "no-water", "no-swamp"
   ]
 
 

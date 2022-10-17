@@ -1,0 +1,3344 @@
+{
+  "campaign": [
+    {
+      "campaign": {
+        "isStarted": false,
+        "isEnded": false,
+        "rules": [],
+        "players": [
+          {
+            "type": "user",
+            "level": 0,
+            "rank": "Conscript",
+            "badges": [],
+            "battles": 0,
+            "winRate": 0,
+            "formations": [
+              {
+                "action_points": 1,
+                "work_force": 0,
+                "damage": 34,
+                "defense": 0,
+                "model_count": 2,
+                "vision": 1,
+                "Xp": 0,
+                "intelligence": 1,
+                "level": 0,
+                "benefits": [],
+                "badges": [],
+                "movement": 2,
+                "dedication": [],
+                "color": "#ece9b0",
+                "subColor": "white",
+                "is_listed": false,
+                "point_const": 345,
+                "carry_capacity": 0,
+                "infantry_count": 0,
+                "isBeen": false,
+                "name": "Deathwing",
+                "composition": [
+                  {
+                    "image": "",
+                    "hero": null,
+                    "equipment": [],
+                    "id": 11,
+                    "name": "Termies",
+                    "models": 1,
+                    "point_const": 200,
+                    "skills": {
+                      "type": "walker_wehicle",
+                      "movement": 2,
+                      "active": null,
+                      "negative": [
+                        "no_water",
+                        "no_swamp"
+                      ],
+                      "passive": []
+                    }
+                  },
+                  {
+                    "image": "",
+                    "hero": null,
+                    "equipment": [],
+                    "id": 10,
+                    "name": "Dreadnought",
+                    "models": 1,
+                    "point_const": 145,
+                    "skills": {
+                      "type": "walker_wehicle",
+                      "movement": 2,
+                      "active": null,
+                      "negative": [
+                        "no_water",
+                        "no_swamp"
+                      ],
+                      "passive": []
+                    }
+                  }
+                ],
+                "s_description": "",
+                "l_description": "",
+                "image": "",
+                "faction": "",
+                "subfaction": ""
+              }
+            ],
+            "army_lists": {
+              "point_cost": 1100,
+              "color": null,
+              "faction": null,
+              "name": "Wolf Raiders",
+              "composition": [
+                {
+                  "action_points": 1,
+                  "work_force": 318,
+                  "damage": 26,
+                  "defense": 0,
+                  "model_count": 11,
+                  "vision": 1,
+                  "Xp": 0,
+                  "intelligence": 1,
+                  "level": 0,
+                  "benefits": [],
+                  "badges": [],
+                  "movement": 2,
+                  "dedication": [],
+                  "color": "#ece9b0",
+                  "subColor": "white",
+                  "is_listed": false,
+                  "point_const": 265,
+                  "carry_capacity": 0,
+                  "infantry_count": 11,
+                  "isBeen": false,
+                  "name": "HQ",
+                  "composition": [
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 0,
+                      "name": "Chaplain",
+                      "models": 1,
+                      "point_const": 85,
+                      "skills": {
+                        "type": "infantry",
+                        "movement": 2,
+                        "active": [
+                          "build",
+                          "set_defence",
+                          "get_ready"
+                        ],
+                        "negative": [],
+                        "passive": [
+                          "claim_tile",
+                          "all_terrain",
+                          "work_force%+20"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 3,
+                      "name": "Alfa Tacticals",
+                      "models": 5,
+                      "point_const": 90,
+                      "skills": {
+                        "type": "infantry",
+                        "movement": 2,
+                        "active": [
+                          "build",
+                          "set_defence",
+                          "get_ready"
+                        ],
+                        "negative": [],
+                        "passive": [
+                          "claim_tile",
+                          "all_terrain",
+                          "work_force%+20"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 4,
+                      "name": "Bravo Tacticals",
+                      "models": 5,
+                      "point_const": 90,
+                      "skills": {
+                        "type": "infantry",
+                        "movement": 2,
+                        "active": [
+                          "build",
+                          "set_defence",
+                          "get_ready"
+                        ],
+                        "negative": [],
+                        "passive": [
+                          "claim_tile",
+                          "all_terrain",
+                          "work_force%+20"
+                        ]
+                      }
+                    }
+                  ],
+                  "s_description": "building army",
+                  "l_description": "",
+                  "image": "",
+                  "faction": "",
+                  "subfaction": ""
+                },
+                {
+                  "action_points": 1,
+                  "work_force": 0,
+                  "damage": 32,
+                  "defense": 0,
+                  "model_count": 3,
+                  "vision": 1,
+                  "Xp": 0,
+                  "intelligence": 1,
+                  "level": 0,
+                  "benefits": [],
+                  "badges": [],
+                  "movement": 6,
+                  "dedication": [],
+                  "color": "#ece9b0",
+                  "subColor": "white",
+                  "is_listed": false,
+                  "point_const": 320,
+                  "carry_capacity": 0,
+                  "infantry_count": 0,
+                  "isBeen": false,
+                  "name": "Hover Patrol",
+                  "composition": [
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 2,
+                      "name": "The Icon Of Caliban",
+                      "models": 1,
+                      "point_const": 100,
+                      "skills": {
+                        "type": "fast_hover",
+                        "movement": 6,
+                        "active": null,
+                        "negative": [
+                          "low_defence"
+                        ],
+                        "passive": [
+                          "fly"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 8,
+                      "name": "Alfa Speeder",
+                      "models": 1,
+                      "point_const": 110,
+                      "skills": {
+                        "type": "fast_hover",
+                        "movement": 6,
+                        "active": null,
+                        "negative": [
+                          "low_defence"
+                        ],
+                        "passive": [
+                          "fly"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 9,
+                      "name": "Bravo Speeder",
+                      "models": 1,
+                      "point_const": 110,
+                      "skills": {
+                        "type": "fast_hover",
+                        "movement": 6,
+                        "active": null,
+                        "negative": [
+                          "low_defence"
+                        ],
+                        "passive": [
+                          "fly"
+                        ]
+                      }
+                    }
+                  ],
+                  "s_description": "spot and harrass",
+                  "l_description": "",
+                  "image": "",
+                  "faction": "",
+                  "subfaction": ""
+                },
+                {
+                  "action_points": 1,
+                  "work_force": 0,
+                  "damage": 51,
+                  "defense": 0,
+                  "model_count": 12,
+                  "vision": 1,
+                  "Xp": 0,
+                  "intelligence": 1,
+                  "level": 0,
+                  "benefits": [],
+                  "badges": [],
+                  "movement": 5,
+                  "dedication": [],
+                  "color": "#ece9b0",
+                  "subColor": "white",
+                  "is_listed": false,
+                  "point_const": 515,
+                  "carry_capacity": 0,
+                  "infantry_count": 0,
+                  "isBeen": false,
+                  "name": "Raven Wing",
+                  "composition": [
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 1,
+                      "name": "Apothecary",
+                      "models": 1,
+                      "point_const": 100,
+                      "skills": {
+                        "type": "rider",
+                        "movement": 5,
+                        "active": [
+                          "hit&run"
+                        ],
+                        "negative": [
+                          "No_water",
+                          "no_Mountain",
+                          "hard_in_swamps"
+                        ],
+                        "passive": [
+                          "turbo_boost"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 5,
+                      "name": "Knigths",
+                      "models": 5,
+                      "point_const": 175,
+                      "skills": {
+                        "type": "rider",
+                        "movement": 5,
+                        "active": [
+                          "hit&run"
+                        ],
+                        "negative": [
+                          "No_water",
+                          "no_Mountain",
+                          "hard_in_swamps"
+                        ],
+                        "passive": [
+                          "turbo_boost"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 6,
+                      "name": "Alfa Bikers",
+                      "models": 3,
+                      "point_const": 120,
+                      "skills": {
+                        "type": "rider",
+                        "movement": 5,
+                        "active": [
+                          "hit&run"
+                        ],
+                        "negative": [
+                          "No_water",
+                          "no_Mountain",
+                          "hard_in_swamps"
+                        ],
+                        "passive": [
+                          "turbo_boost"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 7,
+                      "name": "Bravo Bikers",
+                      "models": 3,
+                      "point_const": 120,
+                      "skills": {
+                        "type": "rider",
+                        "movement": 5,
+                        "active": [
+                          "hit&run"
+                        ],
+                        "negative": [
+                          "No_water",
+                          "no_Mountain",
+                          "hard_in_swamps"
+                        ],
+                        "passive": [
+                          "turbo_boost"
+                        ]
+                      }
+                    }
+                  ],
+                  "s_description": "",
+                  "l_description": "",
+                  "image": "",
+                  "faction": "",
+                  "subfaction": ""
+                }
+              ]
+            },
+            "email": "",
+            "image": "conscript_red.png",
+            "images": [
+              "conscript_red.png",
+              "conscript_blue.png",
+              "conscript_green.png",
+              "conscript_yellow.png"
+            ],
+            "username": "Qwerty123",
+            "password": "Qwerty123"
+          },
+          {
+            "type": "user",
+            "level": 0,
+            "rank": "Conscript",
+            "badges": [],
+            "battles": 0,
+            "winRate": 0,
+            "formations": [
+              {
+                "action_points": 1,
+                "work_force": 270,
+                "damage": 33,
+                "defense": 0,
+                "model_count": 7,
+                "vision": 1,
+                "Xp": 0,
+                "intelligence": 1,
+                "level": 0,
+                "benefits": [],
+                "badges": [],
+                "movement": 4,
+                "dedication": [],
+                "color": "#818aa2",
+                "subColor": "white",
+                "is_listed": false,
+                "point_const": 335,
+                "carry_capacity": 0,
+                "infantry_count": 6,
+                "isBeen": false,
+                "name": "Long Fangs",
+                "composition": [
+                  {
+                    "image": "",
+                    "hero": null,
+                    "equipment": [],
+                    "id": 11,
+                    "name": "Captain",
+                    "models": 1,
+                    "point_const": 85,
+                    "skills": {
+                      "type": "infantry",
+                      "movement": 2,
+                      "active": [
+                        "build",
+                        "set_defence",
+                        "get_ready"
+                      ],
+                      "negative": [],
+                      "passive": [
+                        "claim_tile",
+                        "all_terrain",
+                        "work_force%+20"
+                      ]
+                    }
+                  },
+                  {
+                    "image": "",
+                    "hero": null,
+                    "equipment": [],
+                    "id": 9,
+                    "name": "Long Fangs",
+                    "models": 5,
+                    "point_const": 140,
+                    "skills": {
+                      "type": "heavy_weapons_infantry",
+                      "movement": 1,
+                      "active": [
+                        "set_defence",
+                        "get_ready",
+                        "claim_tile"
+                      ],
+                      "negative": [],
+                      "passive": [
+                        "hold_position",
+                        "all_terrain",
+                        "damage+5"
+                      ]
+                    }
+                  },
+                  {
+                    "image": "",
+                    "hero": null,
+                    "equipment": [],
+                    "id": 10,
+                    "name": "Las-Raz",
+                    "models": 1,
+                    "point_const": 110,
+                    "skills": {
+                      "type": "transport_armoured_tank",
+                      "movement": 4,
+                      "active": null,
+                      "negative": [
+                        "No_water",
+                        "no_Mountain"
+                      ],
+                      "passive": [
+                        "transport+6"
+                      ]
+                    }
+                  }
+                ],
+                "s_description": "fire support & defend objectives",
+                "l_description": "",
+                "image": "",
+                "faction": "",
+                "subfaction": ""
+              },
+              {
+                "action_points": 1,
+                "work_force": 0,
+                "damage": 25,
+                "defense": 0,
+                "model_count": 3,
+                "vision": 1,
+                "Xp": 0,
+                "intelligence": 1,
+                "level": 0,
+                "benefits": [],
+                "badges": [],
+                "movement": 1,
+                "dedication": [],
+                "color": "#818aa2",
+                "subColor": "white",
+                "is_listed": false,
+                "point_const": 255,
+                "carry_capacity": 0,
+                "infantry_count": 0,
+                "isBeen": false,
+                "name": "Fire Rain",
+                "composition": [
+                  {
+                    "image": "",
+                    "hero": null,
+                    "equipment": [],
+                    "id": 12,
+                    "name": "Whirlwind vengance",
+                    "models": 1,
+                    "point_const": 135,
+                    "skills": {
+                      "type": "artillery_tank",
+                      "movement": 4,
+                      "active": [
+                        "deploy",
+                        "barage"
+                      ],
+                      "negative": [
+                        "no_water"
+                      ],
+                      "passive": []
+                    }
+                  },
+                  {
+                    "image": "",
+                    "hero": null,
+                    "equipment": [],
+                    "id": 12,
+                    "name": "Thunder Fire Cannon",
+                    "models": 2,
+                    "point_const": 120,
+                    "skills": {
+                      "type": "artillery_battery",
+                      "movement": 1,
+                      "active": [
+                        "deploy",
+                        "barage"
+                      ],
+                      "negative": [
+                        "no_water"
+                      ],
+                      "passive": []
+                    }
+                  }
+                ],
+                "s_description": "long fire support & siege",
+                "l_description": "",
+                "image": "",
+                "faction": "",
+                "subfaction": ""
+              }
+            ],
+            "army_lists": {
+              "point_cost": 1000,
+              "color": "#23525b",
+              "faction": null,
+              "name": "Wolf Raiders",
+              "composition": [
+                {
+                  "action_points": 1,
+                  "work_force": 216,
+                  "damage": 26,
+                  "defense": 0,
+                  "model_count": 11,
+                  "vision": 1,
+                  "Xp": 0,
+                  "intelligence": 1,
+                  "level": 0,
+                  "benefits": [],
+                  "badges": [],
+                  "movement": 4,
+                  "dedication": [],
+                  "color": "#818aa2",
+                  "subColor": "white",
+                  "is_listed": false,
+                  "point_const": 260,
+                  "carry_capacity": 0,
+                  "infantry_count": 10,
+                  "isBeen": false,
+                  "name": "defender",
+                  "composition": [
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 2,
+                      "name": "Alfa Hunters",
+                      "models": 5,
+                      "point_const": 90,
+                      "skills": {
+                        "type": "infantry",
+                        "movement": 2,
+                        "active": [
+                          "build",
+                          "set_defence",
+                          "get_ready"
+                        ],
+                        "negative": [],
+                        "passive": [
+                          "claim_tile",
+                          "all_terrain",
+                          "work_force%+20"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 3,
+                      "name": "Bravo Hunters",
+                      "models": 5,
+                      "point_const": 90,
+                      "skills": {
+                        "type": "infantry",
+                        "movement": 2,
+                        "active": [
+                          "build",
+                          "set_defence",
+                          "get_ready"
+                        ],
+                        "negative": [],
+                        "passive": [
+                          "claim_tile",
+                          "all_terrain",
+                          "work_force%+20"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 8,
+                      "name": "Rhino",
+                      "models": 1,
+                      "point_const": 80,
+                      "skills": {
+                        "type": "transport_tank",
+                        "movement": 4,
+                        "active": null,
+                        "negative": [
+                          "No_water",
+                          "no_Mountain"
+                        ],
+                        "passive": [
+                          "transport+10"
+                        ]
+                      }
+                    }
+                  ],
+                  "s_description": "build & hold",
+                  "l_description": "",
+                  "image": "",
+                  "faction": "",
+                  "subfaction": ""
+                },
+                {
+                  "action_points": 1,
+                  "work_force": 204,
+                  "damage": 27,
+                  "defense": 0,
+                  "model_count": 7,
+                  "vision": 1,
+                  "Xp": 0,
+                  "intelligence": 1,
+                  "level": 0,
+                  "benefits": [],
+                  "badges": [],
+                  "movement": 4,
+                  "dedication": [],
+                  "color": "#818aa2",
+                  "subColor": "white",
+                  "is_listed": false,
+                  "point_const": 270,
+                  "carry_capacity": 0,
+                  "infantry_count": 6,
+                  "isBeen": false,
+                  "name": "Blood Patrol",
+                  "composition": [
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 0,
+                      "name": "Wolf Priest",
+                      "models": 1,
+                      "point_const": 80,
+                      "skills": {
+                        "type": "infantry",
+                        "movement": 2,
+                        "active": [
+                          "build",
+                          "set_defence",
+                          "get_ready"
+                        ],
+                        "negative": [],
+                        "passive": [
+                          "claim_tile",
+                          "all_terrain",
+                          "work_force%+20"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 4,
+                      "name": "Blood Claws",
+                      "models": 5,
+                      "point_const": 90,
+                      "skills": {
+                        "type": "infantry",
+                        "movement": 2,
+                        "active": [
+                          "build",
+                          "set_defence",
+                          "get_ready"
+                        ],
+                        "negative": [],
+                        "passive": [
+                          "claim_tile",
+                          "all_terrain",
+                          "work_force%+20"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 8,
+                      "name": "Razorback",
+                      "models": 1,
+                      "point_const": 100,
+                      "skills": {
+                        "type": "transport_armoured_tank",
+                        "movement": 4,
+                        "active": null,
+                        "negative": [
+                          "No_water",
+                          "no_Mountain"
+                        ],
+                        "passive": [
+                          "transport+6"
+                        ]
+                      }
+                    }
+                  ],
+                  "s_description": "patrol & support",
+                  "l_description": "",
+                  "image": "",
+                  "faction": "",
+                  "subfaction": ""
+                },
+                {
+                  "action_points": 1,
+                  "work_force": 305,
+                  "damage": 30,
+                  "defense": 0,
+                  "model_count": 11,
+                  "vision": 1,
+                  "Xp": 0,
+                  "intelligence": 1,
+                  "level": 0,
+                  "benefits": [],
+                  "badges": [],
+                  "movement": 4,
+                  "dedication": [],
+                  "color": "#818aa2",
+                  "subColor": "white",
+                  "is_listed": false,
+                  "point_const": 305,
+                  "carry_capacity": 0,
+                  "infantry_count": 11,
+                  "isBeen": false,
+                  "name": "Howlers",
+                  "composition": [
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 1,
+                      "name": "Rune Priest",
+                      "models": 1,
+                      "point_const": 115,
+                      "skills": {
+                        "type": "jet_infantry",
+                        "movement": 4,
+                        "active": [
+                          "deep_assault",
+                          "jump"
+                        ],
+                        "negative": [
+                          "No_water",
+                          "recharge_jets"
+                        ],
+                        "passive": [
+                          "fly"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 5,
+                      "name": "Sky Claws",
+                      "models": 10,
+                      "point_const": 190,
+                      "skills": {
+                        "type": "jet_infantry",
+                        "movement": 4,
+                        "active": [
+                          "deep_assault",
+                          "jump"
+                        ],
+                        "negative": [
+                          "No_water",
+                          "recharge_jets"
+                        ],
+                        "passive": [
+                          "fly"
+                        ]
+                      }
+                    }
+                  ],
+                  "s_description": "quick assault & tank hunt",
+                  "l_description": "",
+                  "image": "",
+                  "faction": "",
+                  "subfaction": ""
+                },
+                {
+                  "action_points": 1,
+                  "work_force": 0,
+                  "damage": 16,
+                  "defense": 0,
+                  "model_count": 3,
+                  "vision": 2,
+                  "Xp": 0,
+                  "intelligence": 1,
+                  "level": 0,
+                  "benefits": [],
+                  "badges": [],
+                  "movement": 3,
+                  "dedication": [],
+                  "color": "#818aa2",
+                  "subColor": "white",
+                  "is_listed": false,
+                  "point_const": 165,
+                  "carry_capacity": 0,
+                  "infantry_count": 0,
+                  "isBeen": false,
+                  "name": "Wolf Riders",
+                  "composition": [
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 7,
+                      "name": "Wolf Cavalry",
+                      "models": 3,
+                      "point_const": 165,
+                      "skills": {
+                        "type": "beast_rider",
+                        "movement": 3,
+                        "active": [
+                          "hit&run",
+                          "turbo_boost"
+                        ],
+                        "negative": [
+                          "No_water"
+                        ],
+                        "passive": [
+                          "vision+1"
+                        ]
+                      }
+                    }
+                  ],
+                  "s_description": "quick assault & tank hunt",
+                  "l_description": "",
+                  "image": "",
+                  "faction": "",
+                  "subfaction": ""
+                }
+              ]
+            },
+            "email": "",
+            "image": "conscript_red.png",
+            "images": [
+              "conscript_red.png",
+              "conscript_blue.png",
+              "conscript_green.png",
+              "conscript_yellow.png"
+            ],
+            "username": "Victor",
+            "password": "Victor123"
+          }
+        ],
+        "campaignId": "test_campaign",
+        "name": "The Batlle for the chorizo",
+        "armySize": 1000,
+        "map": {
+          "maxPlayers": 2,
+          "name": "Devil's Arena",
+          "shape": "hx",
+          "dimensions": "4x4x4",
+          "map": [
+            [
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": 100,
+                "posY": 0,
+                "posX": 0,
+                "terrain": null,
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "a00",
+                "posY": 0,
+                "posX": 1,
+                "terrain": {
+                  "image": "hills",
+                  "name": "hills",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 1,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": "vision+1"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "b00",
+                "posY": 0,
+                "posX": 2,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "c00",
+                "posY": 0,
+                "posX": 3,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "d00",
+                "posY": 0,
+                "posX": 4,
+                "terrain": {
+                  "image": "hills",
+                  "name": "hills",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 1,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": "vision+1"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              }
+            ],
+            [
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": 200,
+                "posY": 1,
+                "posX": 0,
+                "terrain": null,
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "a01",
+                "posY": 1,
+                "posX": 1,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "b01",
+                "posY": 1,
+                "posX": 2,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "c01",
+                "posY": 1,
+                "posX": 3,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "d01",
+                "posY": 1,
+                "posX": 4,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "e01",
+                "posY": 1,
+                "posX": 5,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              }
+            ],
+            [
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "a02",
+                "posY": 2,
+                "posX": 0,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "b02",
+                "posY": 2,
+                "posX": 1,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "c02",
+                "posY": 2,
+                "posX": 2,
+                "terrain": {
+                  "image": "forest",
+                  "name": "forest",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 2,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": false,
+                  "actions": [],
+                  "benefits": "luck+4"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "d02",
+                "posY": 2,
+                "posX": 3,
+                "terrain": {
+                  "image": "forest",
+                  "name": "forest",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 2,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": false,
+                  "actions": [],
+                  "benefits": "luck+4"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "e02",
+                "posY": 2,
+                "posX": 4,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": {
+                  "action_points": 1,
+                  "work_force": 0,
+                  "damage": 32,
+                  "defense": 0,
+                  "model_count": 3,
+                  "vision": 1,
+                  "Xp": 0,
+                  "intelligence": 1,
+                  "level": 0,
+                  "benefits": [],
+                  "badges": [],
+                  "movement": 6,
+                  "dedication": [],
+                  "color": "#ece9b0",
+                  "subColor": "white",
+                  "is_listed": false,
+                  "point_const": 320,
+                  "carry_capacity": 0,
+                  "infantry_count": 0,
+                  "isBeen": false,
+                  "name": "Hover Patrol",
+                  "composition": [
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 2,
+                      "name": "The Icon Of Caliban",
+                      "models": 1,
+                      "point_const": 100,
+                      "skills": {
+                        "type": "fast_hover",
+                        "movement": 6,
+                        "active": null,
+                        "negative": [
+                          "low_defence"
+                        ],
+                        "passive": [
+                          "fly"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 8,
+                      "name": "Alfa Speeder",
+                      "models": 1,
+                      "point_const": 110,
+                      "skills": {
+                        "type": "fast_hover",
+                        "movement": 6,
+                        "active": null,
+                        "negative": [
+                          "low_defence"
+                        ],
+                        "passive": [
+                          "fly"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 9,
+                      "name": "Bravo Speeder",
+                      "models": 1,
+                      "point_const": 110,
+                      "skills": {
+                        "type": "fast_hover",
+                        "movement": 6,
+                        "active": null,
+                        "negative": [
+                          "low_defence"
+                        ],
+                        "passive": [
+                          "fly"
+                        ]
+                      }
+                    }
+                  ],
+                  "s_description": "spot and harrass",
+                  "l_description": "",
+                  "image": "",
+                  "faction": "",
+                  "subfaction": ""
+                },
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "f02",
+                "posY": 2,
+                "posX": 5,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              }
+            ],
+            [
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "a03",
+                "posY": 3,
+                "posX": 0,
+                "terrain": {
+                  "image": "hills",
+                  "name": "hills",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 1,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": "vision+1"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "b03",
+                "posY": 3,
+                "posX": 1,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": {
+                  "action_points": 1,
+                  "work_force": 204,
+                  "damage": 27,
+                  "defense": 0,
+                  "model_count": 7,
+                  "vision": 1,
+                  "Xp": 0,
+                  "intelligence": 1,
+                  "level": 0,
+                  "benefits": [],
+                  "badges": [],
+                  "movement": 4,
+                  "dedication": [],
+                  "color": "#818aa2",
+                  "subColor": "white",
+                  "is_listed": false,
+                  "point_const": 270,
+                  "carry_capacity": 0,
+                  "infantry_count": 6,
+                  "isBeen": false,
+                  "name": "Blood Patrol",
+                  "composition": [
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 0,
+                      "name": "Wolf Priest",
+                      "models": 1,
+                      "point_const": 80,
+                      "skills": {
+                        "type": "infantry",
+                        "movement": 2,
+                        "active": [
+                          "build",
+                          "set_defence",
+                          "get_ready"
+                        ],
+                        "negative": [],
+                        "passive": [
+                          "claim_tile",
+                          "all_terrain",
+                          "work_force%+20"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 4,
+                      "name": "Blood Claws",
+                      "models": 5,
+                      "point_const": 90,
+                      "skills": {
+                        "type": "infantry",
+                        "movement": 2,
+                        "active": [
+                          "build",
+                          "set_defence",
+                          "get_ready"
+                        ],
+                        "negative": [],
+                        "passive": [
+                          "claim_tile",
+                          "all_terrain",
+                          "work_force%+20"
+                        ]
+                      }
+                    },
+                    {
+                      "image": "",
+                      "hero": null,
+                      "equipment": [],
+                      "id": 8,
+                      "name": "Razorback",
+                      "models": 1,
+                      "point_const": 100,
+                      "skills": {
+                        "type": "transport_armoured_tank",
+                        "movement": 4,
+                        "active": null,
+                        "negative": [
+                          "No_water",
+                          "no_Mountain"
+                        ],
+                        "passive": [
+                          "transport+6"
+                        ]
+                      }
+                    }
+                  ],
+                  "s_description": "patrol & support",
+                  "l_description": "",
+                  "image": "",
+                  "faction": "",
+                  "subfaction": ""
+                },
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "c03",
+                "posY": 3,
+                "posX": 2,
+                "terrain": {
+                  "image": "forest",
+                  "name": "forest",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 2,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": false,
+                  "actions": [],
+                  "benefits": "luck+4"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "d03",
+                "posY": 3,
+                "posX": 3,
+                "terrain": {
+                  "image": "mountains",
+                  "name": "mountains",
+                  "move_in_action": 5,
+                  "get_out_action": 5,
+                  "grants_cover": 3,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": false,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "e03",
+                "posY": 3,
+                "posX": 4,
+                "terrain": {
+                  "image": "forest",
+                  "name": "forest",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 2,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": false,
+                  "actions": [],
+                  "benefits": "luck+4"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "f03",
+                "posY": 3,
+                "posX": 5,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "g03",
+                "posY": 3,
+                "posX": 6,
+                "terrain": {
+                  "image": "hills",
+                  "name": "hills",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 1,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": "vision+1"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              }
+            ],
+            [
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "b04",
+                "posY": 4,
+                "posX": 0,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "c04",
+                "posY": 4,
+                "posX": 1,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "d04",
+                "posY": 4,
+                "posX": 2,
+                "terrain": {
+                  "image": "forest",
+                  "name": "forest",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 2,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": false,
+                  "actions": [],
+                  "benefits": "luck+4"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "e04",
+                "posY": 4,
+                "posX": 3,
+                "terrain": {
+                  "image": "forest",
+                  "name": "forest",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 2,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": false,
+                  "actions": [],
+                  "benefits": "luck+4"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "f04",
+                "posY": 4,
+                "posX": 4,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "g04",
+                "posY": 4,
+                "posX": 5,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              }
+            ],
+            [
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": 600,
+                "posY": 5,
+                "posX": 0,
+                "terrain": null,
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "c05",
+                "posY": 5,
+                "posX": 1,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "d05",
+                "posY": 5,
+                "posX": 2,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "e05",
+                "posY": 5,
+                "posX": 3,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "f05",
+                "posY": 5,
+                "posX": 4,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "g05",
+                "posY": 5,
+                "posX": 5,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              }
+            ],
+            [
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": 700,
+                "posY": 6,
+                "posX": 0,
+                "terrain": null,
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "d06",
+                "posY": 6,
+                "posX": 1,
+                "terrain": {
+                  "image": "hills",
+                  "name": "hills",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 1,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": "vision+1"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "e06",
+                "posY": 6,
+                "posX": 2,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "f06",
+                "posY": 6,
+                "posX": 3,
+                "terrain": {
+                  "image": "plains",
+                  "name": "plains",
+                  "move_in_action": 1,
+                  "get_out_action": 0,
+                  "grants_cover": 0,
+                  "can_hIde_in": false,
+                  "is_blocks_sight": false,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": null
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              },
+              {
+                "status": "onSight",
+                "isExplored": false,
+                "id": "g06",
+                "posY": 6,
+                "posX": 4,
+                "terrain": {
+                  "image": "hills",
+                  "name": "hills",
+                  "move_in_action": 2,
+                  "get_out_action": 1,
+                  "grants_cover": 1,
+                  "can_hIde_in": true,
+                  "is_blocks_sight": true,
+                  "can_build": true,
+                  "actions": [],
+                  "benefits": "vision+1"
+                },
+                "formation": null,
+                "is_starting_position": false,
+                "resources": [],
+                "building": [],
+                "objective": false,
+                "actions": []
+              }
+            ]
+          ]
+        },
+        "availableFactions": [
+          "hk",
+          "ja",
+          "df",
+          "ae",
+          "dm",
+          "bh",
+          "ib"
+        ],
+        "rounds": 4,
+        "timeLapse": "weeks"
+      },
+      "map": [
+        [
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": 100,
+            "posY": 0,
+            "posX": 0,
+            "terrain": null,
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "a00",
+            "posY": 0,
+            "posX": 1,
+            "terrain": {
+              "image": "hills",
+              "name": "hills",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 1,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": true,
+              "actions": [],
+              "benefits": "vision+1"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "b00",
+            "posY": 0,
+            "posX": 2,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "c00",
+            "posY": 0,
+            "posX": 3,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "d00",
+            "posY": 0,
+            "posX": 4,
+            "terrain": {
+              "image": "hills",
+              "name": "hills",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 1,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": true,
+              "actions": [],
+              "benefits": "vision+1"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          }
+        ],
+        [
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": 200,
+            "posY": 1,
+            "posX": 0,
+            "terrain": null,
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "a01",
+            "posY": 1,
+            "posX": 1,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "b01",
+            "posY": 1,
+            "posX": 2,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "c01",
+            "posY": 1,
+            "posX": 3,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "d01",
+            "posY": 1,
+            "posX": 4,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "e01",
+            "posY": 1,
+            "posX": 5,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          }
+        ],
+        [
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "a02",
+            "posY": 2,
+            "posX": 0,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "b02",
+            "posY": 2,
+            "posX": 1,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "c02",
+            "posY": 2,
+            "posX": 2,
+            "terrain": {
+              "image": "forest",
+              "name": "forest",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 2,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": false,
+              "actions": [],
+              "benefits": "luck+4"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "d02",
+            "posY": 2,
+            "posX": 3,
+            "terrain": {
+              "image": "forest",
+              "name": "forest",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 2,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": false,
+              "actions": [],
+              "benefits": "luck+4"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "e02",
+            "posY": 2,
+            "posX": 4,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": {
+              "action_points": 1,
+              "work_force": 0,
+              "damage": 32,
+              "defense": 0,
+              "model_count": 3,
+              "vision": 1,
+              "Xp": 0,
+              "intelligence": 1,
+              "level": 0,
+              "benefits": [],
+              "badges": [],
+              "movement": 6,
+              "dedication": [],
+              "color": "#ece9b0",
+              "subColor": "white",
+              "is_listed": false,
+              "point_const": 320,
+              "carry_capacity": 0,
+              "infantry_count": 0,
+              "isBeen": false,
+              "name": "Hover Patrol",
+              "composition": [
+                {
+                  "image": "",
+                  "hero": null,
+                  "equipment": [],
+                  "id": 2,
+                  "name": "The Icon Of Caliban",
+                  "models": 1,
+                  "point_const": 100,
+                  "skills": {
+                    "type": "fast_hover",
+                    "movement": 6,
+                    "active": null,
+                    "negative": [
+                      "low_defence"
+                    ],
+                    "passive": [
+                      "fly"
+                    ]
+                  }
+                },
+                {
+                  "image": "",
+                  "hero": null,
+                  "equipment": [],
+                  "id": 8,
+                  "name": "Alfa Speeder",
+                  "models": 1,
+                  "point_const": 110,
+                  "skills": {
+                    "type": "fast_hover",
+                    "movement": 6,
+                    "active": null,
+                    "negative": [
+                      "low_defence"
+                    ],
+                    "passive": [
+                      "fly"
+                    ]
+                  }
+                },
+                {
+                  "image": "",
+                  "hero": null,
+                  "equipment": [],
+                  "id": 9,
+                  "name": "Bravo Speeder",
+                  "models": 1,
+                  "point_const": 110,
+                  "skills": {
+                    "type": "fast_hover",
+                    "movement": 6,
+                    "active": null,
+                    "negative": [
+                      "low_defence"
+                    ],
+                    "passive": [
+                      "fly"
+                    ]
+                  }
+                }
+              ],
+              "s_description": "spot and harrass",
+              "l_description": "",
+              "image": "",
+              "faction": "",
+              "subfaction": ""
+            },
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "f02",
+            "posY": 2,
+            "posX": 5,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          }
+        ],
+        [
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "a03",
+            "posY": 3,
+            "posX": 0,
+            "terrain": {
+              "image": "hills",
+              "name": "hills",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 1,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": true,
+              "actions": [],
+              "benefits": "vision+1"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "b03",
+            "posY": 3,
+            "posX": 1,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": {
+              "action_points": 1,
+              "work_force": 204,
+              "damage": 27,
+              "defense": 0,
+              "model_count": 7,
+              "vision": 1,
+              "Xp": 0,
+              "intelligence": 1,
+              "level": 0,
+              "benefits": [],
+              "badges": [],
+              "movement": 4,
+              "dedication": [],
+              "color": "#818aa2",
+              "subColor": "white",
+              "is_listed": false,
+              "point_const": 270,
+              "carry_capacity": 0,
+              "infantry_count": 6,
+              "isBeen": false,
+              "name": "Blood Patrol",
+              "composition": [
+                {
+                  "image": "",
+                  "hero": null,
+                  "equipment": [],
+                  "id": 0,
+                  "name": "Wolf Priest",
+                  "models": 1,
+                  "point_const": 80,
+                  "skills": {
+                    "type": "infantry",
+                    "movement": 2,
+                    "active": [
+                      "build",
+                      "set_defence",
+                      "get_ready"
+                    ],
+                    "negative": [],
+                    "passive": [
+                      "claim_tile",
+                      "all_terrain",
+                      "work_force%+20"
+                    ]
+                  }
+                },
+                {
+                  "image": "",
+                  "hero": null,
+                  "equipment": [],
+                  "id": 4,
+                  "name": "Blood Claws",
+                  "models": 5,
+                  "point_const": 90,
+                  "skills": {
+                    "type": "infantry",
+                    "movement": 2,
+                    "active": [
+                      "build",
+                      "set_defence",
+                      "get_ready"
+                    ],
+                    "negative": [],
+                    "passive": [
+                      "claim_tile",
+                      "all_terrain",
+                      "work_force%+20"
+                    ]
+                  }
+                },
+                {
+                  "image": "",
+                  "hero": null,
+                  "equipment": [],
+                  "id": 8,
+                  "name": "Razorback",
+                  "models": 1,
+                  "point_const": 100,
+                  "skills": {
+                    "type": "transport_armoured_tank",
+                    "movement": 4,
+                    "active": null,
+                    "negative": [
+                      "No_water",
+                      "no_Mountain"
+                    ],
+                    "passive": [
+                      "transport+6"
+                    ]
+                  }
+                }
+              ],
+              "s_description": "patrol & support",
+              "l_description": "",
+              "image": "",
+              "faction": "",
+              "subfaction": ""
+            },
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "c03",
+            "posY": 3,
+            "posX": 2,
+            "terrain": {
+              "image": "forest",
+              "name": "forest",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 2,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": false,
+              "actions": [],
+              "benefits": "luck+4"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "d03",
+            "posY": 3,
+            "posX": 3,
+            "terrain": {
+              "image": "mountains",
+              "name": "mountains",
+              "move_in_action": 5,
+              "get_out_action": 5,
+              "grants_cover": 3,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": false,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "e03",
+            "posY": 3,
+            "posX": 4,
+            "terrain": {
+              "image": "forest",
+              "name": "forest",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 2,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": false,
+              "actions": [],
+              "benefits": "luck+4"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "f03",
+            "posY": 3,
+            "posX": 5,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "g03",
+            "posY": 3,
+            "posX": 6,
+            "terrain": {
+              "image": "hills",
+              "name": "hills",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 1,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": true,
+              "actions": [],
+              "benefits": "vision+1"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          }
+        ],
+        [
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "b04",
+            "posY": 4,
+            "posX": 0,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "c04",
+            "posY": 4,
+            "posX": 1,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "d04",
+            "posY": 4,
+            "posX": 2,
+            "terrain": {
+              "image": "forest",
+              "name": "forest",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 2,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": false,
+              "actions": [],
+              "benefits": "luck+4"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "e04",
+            "posY": 4,
+            "posX": 3,
+            "terrain": {
+              "image": "forest",
+              "name": "forest",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 2,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": false,
+              "actions": [],
+              "benefits": "luck+4"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "f04",
+            "posY": 4,
+            "posX": 4,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "g04",
+            "posY": 4,
+            "posX": 5,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          }
+        ],
+        [
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": 600,
+            "posY": 5,
+            "posX": 0,
+            "terrain": null,
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "c05",
+            "posY": 5,
+            "posX": 1,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "d05",
+            "posY": 5,
+            "posX": 2,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "e05",
+            "posY": 5,
+            "posX": 3,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "f05",
+            "posY": 5,
+            "posX": 4,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "g05",
+            "posY": 5,
+            "posX": 5,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          }
+        ],
+        [
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": 700,
+            "posY": 6,
+            "posX": 0,
+            "terrain": null,
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "d06",
+            "posY": 6,
+            "posX": 1,
+            "terrain": {
+              "image": "hills",
+              "name": "hills",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 1,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": true,
+              "actions": [],
+              "benefits": "vision+1"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "e06",
+            "posY": 6,
+            "posX": 2,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "f06",
+            "posY": 6,
+            "posX": 3,
+            "terrain": {
+              "image": "plains",
+              "name": "plains",
+              "move_in_action": 1,
+              "get_out_action": 0,
+              "grants_cover": 0,
+              "can_hIde_in": false,
+              "is_blocks_sight": false,
+              "can_build": true,
+              "actions": [],
+              "benefits": null
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          },
+          {
+            "status": "onSight",
+            "isExplored": false,
+            "id": "g06",
+            "posY": 6,
+            "posX": 4,
+            "terrain": {
+              "image": "hills",
+              "name": "hills",
+              "move_in_action": 2,
+              "get_out_action": 1,
+              "grants_cover": 1,
+              "can_hIde_in": true,
+              "is_blocks_sight": true,
+              "can_build": true,
+              "actions": [],
+              "benefits": "vision+1"
+            },
+            "formation": null,
+            "is_starting_position": false,
+            "resources": [],
+            "building": [],
+            "objective": false,
+            "actions": []
+          }
+        ]
+      ],
+      "id": 1
+    }
+  ]
+}
