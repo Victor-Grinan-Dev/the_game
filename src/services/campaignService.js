@@ -1,7 +1,11 @@
-import { axios } from "axios";
+import axios  from "axios";
 
+const baseUrl = "http://localhost:8010/campaign";
 
-export const getCampaign = async () => {
-    const response = await axios.get("http://localhost:8010/campaign");
-    return response.data;
-  };
+const getCampaign = async () => {
+  const response = await axios.get(baseUrl);
+  //console.log(response.data)
+  return response.data;
+};
+
+export default { getCampaign };

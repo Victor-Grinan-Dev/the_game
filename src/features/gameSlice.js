@@ -1,46 +1,32 @@
-import { getCampaign } from "../services/campaignService";
-
+//import { getCampaign } from "../services/campaignService";
+import campaignService from "../services/campaignService"
 import { createSlice } from "@reduxjs/toolkit";
 import { theGame } from "../dummyDatabse/gameDatabase";
-export const gameState = createSlice({
+export const gameSlice = createSlice({
     name:"game",
     initialState:{
-        campaign:{},
-        user:{},
-
-        gameMap:{},
-        isSelectedTiles: false,
-        unitToMove:{}
+        campaign:{}
     },
     reducers:{
-        setCampaign:(state, action)=>{
-            state.campaign = action.payload
-        },
-        setGameMap:(state, action)=>{
-            state.gameMap = action.payload
-        },
-        setUnitToMove:(state, action)=>{
-            state.unitToMove = action.payload;
-        },
-        unSetUnitToMove:(state)=>{
-            state.unitToMove = {};
-        },
-        setIsSelectedTiles:(state, action)=>{
-            state.unitToMove = action.payload;
+        setCampaign(state, action){
+            state.campaign = action.payload;
         }
     }
 })
 
 export const initializeGame = () => {
+   
    return async (dispatch) => {
-     const game = await getCampaign();
-     dispatch(setCampaign(theGame.campaign));
+     const game = await campaignService.getCampaign(); 
+
+     console.log()
+     dispatch(setCampaign(game[0]));
    };
  };
 
-export const { setCampaign, setGameMap, setIsSelectedTiles } = gameState.actions;
+export const { setCampaign } = gameSlice.actions;
 
-export const campaignSelector = (state) => state.game.campaign;
-export const isSelectedTilesSelector = (state) => state.game.isSelectedTiles;
 export const gameMapSDelector = (state) => state.game.gameMap;
-export default gameState.reducer;
+
+
+export default gameSlice.reducer;

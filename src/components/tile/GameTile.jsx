@@ -20,7 +20,7 @@ import { applyFilter } from '../../dummyDatabse/tilesFilters';
 
 const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formation=null, status=null}) => {
   const dispatch = useDispatch();
-  const campaign = useSelector(campaignSelector);
+  const campaign = useSelector((state)=> state.campaign);
 
   const tileImage = image ? importedTileImages[image] : null;
   const filterImage = status ? applyFilter[status] : null;
