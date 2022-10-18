@@ -1,6 +1,25 @@
+export const changeTile = (newTile, map) => {
+    //console.log("just got:", newTile.id, newTile.status)
+    let newMap = [];
+    for (let row of map){
+        const newRow = [];
+        for (let tile of row){
+            if(tile.id === newTile.id){
+                //console.log(tile.id, "to", newTile.status)
+                newRow.push(newTile);
+                //console.log("added newTile", newTile.id, newTile.status)
+            }else{
+                newRow.push(tile);
+            }
+        }
+        console.log("added row", newRow)
+        newMap.push(newRow);
+        //console.log(newRow)
+    }
+    return newMap;
+} 
 
 //tiles are adjacent if return is true:
-
 export const isAdjacent = (currentTile, checkTile, range=1) => { //takes twoo tiles objects
     const currentTileY = currentTile.posY;
     const currentTileX = currentTile.posX;
@@ -42,4 +61,51 @@ export const listAdjacents = (fromTile, map) => {
         }
     }
     return adjacents;
+}
+
+export const highLightAdjacents = (fromTile, map) => {
+
+    let newMap;
+    const higlighted = [];
+    const adjacents = listAdjacents(fromTile, map);
+
+    adjacents.forEach( tile => {
+        if( !tile.formacion ){
+            higlighted.push({ ...tile, "status":"selected" })
+        };
+        //if tile belongs to player set onsight (null no filter)
+        //if player belong to enemy set hodtile (red filter)
+    })
+
+    return higlighted;
+}
+
+
+export function higlightedMap(fromTile, oldMap){
+    const newMap = [];
+    const adjacents = listAdjacents(fromTile, oldMap);
+
+    for (let y = 0; y < oldMap.length; y++){
+
+        const newRow = [];
+        for(let newTile of adjacents){
+            if (newTile.posY === y){
+                newRow.push({ ...newTile, "status":"slected"} );
+            }
+        }
+        for (let oldTile of oldMap[y]){
+            let toPush = oldTile
+            let isUnique = true
+            for (let newTile of newRow){
+                if(oldTile.id == newTile.id){
+                    isUnique = false;
+                }
+            }
+            if(isUnique){
+                newRow.push(toPush)
+            }
+        }
+        newMap.push(newRow);
+    }
+    return newMap;
 }

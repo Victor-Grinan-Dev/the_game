@@ -3,6 +3,7 @@ import { Tile } from "../classes/Tile";
 import { terrainTypes } from "./terrainTypes";
 
 
+/*
     const mapNestedArray = [
         [[100],["a01", "hills"],["b01", "plains"],["c01", "plains"],["d01", "hills"],],
         [[200],["a02", "plains"],["b02", "plains"],["c02", "plains"],["d02", "plains"],["e02", "plains"],],
@@ -13,6 +14,40 @@ import { terrainTypes } from "./terrainTypes";
         [[700],["d07", "hills"],["e07", "plains"],["f07", "plains"],["g07", "hills"],],
 
     ];
+*/
+export const shitty = [
+    [
+        new Tile(100, 0, 0,),
+        new Tile("a00", 0, 1,  terrainTypes["hills"]),
+    ],
+
+    [
+        new Tile(200, 1,0),
+        new Tile("a01", 1, 1, terrainTypes["plains"]),
+        new Tile("b01", 1, 2, terrainTypes["plains"])
+    ], 
+    
+    [ 
+        new Tile("a02", 2, 0, terrainTypes["plains"]),
+        new Tile("b02", 2, 1, terrainTypes["plains"]),
+        new Tile("c02", 2, 2, terrainTypes["forest"]),
+    ],
+
+    [
+        new Tile("a03", 3, 0, terrainTypes["hills"]), 
+        new Tile("b03", 3, 1, terrainTypes["plains"]), 
+        new Tile("c03", 3, 2, terrainTypes["forest"]), 
+    ],
+    [  
+        new Tile("b04", 4, 0, terrainTypes["plains"]), 
+        new Tile("c04", 4, 1, terrainTypes["plains"]), 
+    ], 
+    [ 
+        new Tile(600, 5, 0),
+        new Tile("c05", 5, 1, terrainTypes["plains"]), 
+ 
+    ],
+]
 
     const map = [
         [
@@ -73,4 +108,5 @@ import { terrainTypes } from "./terrainTypes";
         ] 
     ]
     export const hexTestMap = new Map("Devil's Arena", "hx", "4x4x4", map)
+
 
