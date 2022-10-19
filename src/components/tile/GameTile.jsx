@@ -42,24 +42,30 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   });
 
   const showSelectedTiles = () => {
-    const mapWithSHiglights = higlightedMap(tileObject, gameMap);
-    const tempMap = { ...objextMap, "map": mapWithSHiglights}
-    //console.log(mapWithSHiglights)
+    const mapWithHiglights = higlightedMap(tileObject, gameMap, "selected");
+    const tempMap = { ...objextMap, "map": mapWithHiglights}
+    dispatch(setCampaign({ ...campaign, "map":tempMap}))
+    return 0
+  }
+
+  const hideSelectedTiles = () => {//not working
+    const mapNoHiglights = higlightedMap(tileObject, gameMap);
+    const tempMap = { ...objextMap, "map": mapNoHiglights}
     dispatch(setCampaign({ ...campaign, "map":tempMap}))
     return 0
   }
 
 
   const tileclickedHandler = (e) => {
-
+    
     if(e.target.attributes.name.value === "filter_selected"){
       
     }
 
     let tileElement;
     if(e.target.attributes.name.value === "move" && !isSelectedMoveTiles){
-      //console.log("move")
-
+      console.log("move!")
+      setIsClicked(true)
       showSelectedTiles();
 
     //}else if(e.target.attributes.name.value !== "filter" && isSelectedMoveTiles){
@@ -67,23 +73,39 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     
     }else if (e.target.attributes.name.value === "tile"){
       tileElement = e.target;
+      //console.log(e.target.childNodes[0].attributes.name.nodeValue === "token");
+      setIsClicked(!isClicked);
+
+      if(e.target.attributes.name.nodeValue !== "filter_selected"){
+        //close filters
+        console.log("clicked out, close filters and actionMenu")
+      }
 
     }else if(e.target.offsetParent.attributes.name.value === "tile"){
+      if(e.target.offsetParent.attributes.name.value === "tile" && e.target.attributes.name.nodeValue !== "filter_selected"){
+        //close filters
+        console.log("clicked out, close filters and actionMenu")
+      }else if(e.target.attributes.name.nodeValue === "filter_selected"){
+        console.log("move to:", e.target.offsetParent.attributes.name.value)
+      }
       tileElement = e.target.offsetParent;
-
-  
+      console.log(e.target.attributes.name.nodeValue );
+      setIsClicked(true)
     }else if(e.target.offsetParent.offsetParent.attributes.name.value === "tile"){
       tileElement = e.target.offsetParent.offsetParent;
+      if(e.target.attributes.name.nodeValue !== "filter_selected" && e.target.attributes.name.nodeValue !== "move" && isClicked){
+        //close filters
+        console.log("clicked out, close filters")
+      }
     } 
-
-    setIsClicked(!isClicked)
-    console.log("tile:", tileElement?.id, tileElement?.childNodes)
+    setIsClicked(true)
+    //console.log("tile:", tileElement, tileElement?.childNodes)
+    //console.log("tile:", tileElement?.id, tileElement?.childNodes)
   }
 
   useEffect(() => {
-   console.log(status, filterImage);
-   
-  }, [status]);
+    //console.log("isclicked", isClicked)
+  }, [isClicked]);
 
   return (
     <div

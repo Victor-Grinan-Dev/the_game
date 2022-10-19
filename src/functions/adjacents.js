@@ -63,7 +63,7 @@ export const listAdjacents = (fromTile, map) => {
     return adjacents;
 }
 
-export const highLightAdjacents = (fromTile, map) => {
+export const highLightAdjacents = (fromTile, map, status=null) => {
 
     let newMap;
     const higlighted = [];
@@ -71,7 +71,7 @@ export const highLightAdjacents = (fromTile, map) => {
 
     adjacents.forEach( tile => {
         if( !tile.formacion ){
-            higlighted.push({ ...tile, "status":"selected" })
+            higlighted.push({ ...tile, "status":status })
         };
         //if tile belongs to player set onsight (null no filter)
         //if player belong to enemy set hodtile (red filter)

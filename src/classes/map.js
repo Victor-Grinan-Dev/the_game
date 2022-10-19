@@ -41,6 +41,5 @@ export class Map {
         this.placeFormation(formation, toTileId);
         this.deleteFormation(fromTileId);
         return 0;
-    }
-    
+    }  
 }
