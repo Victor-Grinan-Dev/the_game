@@ -73,7 +73,7 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   const deselectTiles = () => {//not working
     const mapNoHiglights = deselectAllTiles( gameMap );
     const tempMap = { ...objextMap, "map": mapNoHiglights}
-    console.log(tempMap);
+    //console.log(tempMap);
     dispatch(setCampaign({ ...campaign, "map":tempMap}))
     return 0
   }
