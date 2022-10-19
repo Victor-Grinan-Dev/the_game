@@ -86,14 +86,20 @@ const detectClick = (e) => {
   let tileElement;
   let tokenElement;
   
+  //4 - detect if canceled the last action/deselect tiles.
   if(isFilterUp){
     deselectTiles();
   }
 
+  //2 - detect if clicked an action.
   if ( e.target.attributes.name.value === 'move'){
 
     showSelectedTiles()
     console.log('moving options')
+  
+  }else if(e.target.attributes.name.value === "filter_selected"){
+
+    console.log(currentFormation.name, 'from', centerTile.id, 'moving to', e.target.offsetParent.attributes.id.value)
 
   }else if(e.target.attributes.name.value === "tile"){//this element is a tile 
    //e.target;
@@ -129,9 +135,9 @@ const detectClick = (e) => {
  
 }
 
-//2 - detect if clicked an action.
+
 //3 - detect if confirm a action.
-//4 - detect if canceled the last action/deselect tiles.
+
 
 
 
