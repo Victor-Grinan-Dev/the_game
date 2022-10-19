@@ -81,7 +81,7 @@ export const highLightAdjacents = (fromTile, map, status=null) => {
 }
 
 
-export function higlightedMap(fromTile, oldMap){
+export function higlightedMap(fromTile, oldMap, status="selected"){
     const newMap = [];
     const adjacents = listAdjacents(fromTile, oldMap);
 
@@ -90,7 +90,7 @@ export function higlightedMap(fromTile, oldMap){
         const newRow = [];
         for(let newTile of adjacents){
             if (newTile.posY === y){
-                newRow.push({ ...newTile, "status":"selected"} );
+                newRow.push({ ...newTile, "status":status} );
             }
         }
         for (let oldTile of oldMap[y]){
