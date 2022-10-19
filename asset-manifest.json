@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/the_game/static/css/main.b46f71a6.css",
-    "main.js": "/the_game/static/js/main.a613cb9e.js",
+    "main.js": "/the_game/static/js/main.9ad9a788.js",
     "static/media/artillery_battery.gif": "/the_game/static/media/artillery_battery.3dbc2c577f61aaa87a40.gif",
     "static/media/war_suit.gif": "/the_game/static/media/war_suit.903b5ef99cfd0807a604.gif",
     "static/media/sea_sprite.jpg": "/the_game/static/media/sea_sprite.034a9df3d7cd349e7af3.jpg",
@@ -17,10 +17,10 @@
     "static/media/light_infantry.webp": "/the_game/static/media/light_infantry.1d83d78906de44c56f98.webp",
     "index.html": "/the_game/index.html",
     "main.b46f71a6.css.map": "/the_game/static/css/main.b46f71a6.css.map",
-    "main.a613cb9e.js.map": "/the_game/static/js/main.a613cb9e.js.map"
+    "main.9ad9a788.js.map": "/the_game/static/js/main.9ad9a788.js.map"
   },
   "entrypoints": [
     "static/css/main.b46f71a6.css",
-    "static/js/main.a613cb9e.js"
+    "static/js/main.9ad9a788.js"
   ]
 }
