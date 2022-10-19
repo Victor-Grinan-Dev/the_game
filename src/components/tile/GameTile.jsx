@@ -32,7 +32,7 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     return state.campaign;
   });
 
-  const objextMap = useSelector(state => {
+  const objectMap = useSelector(state => {
     //console.log('game map state:', state.game.campaign.map);
     return state.game.campaign.map;
   })
@@ -64,7 +64,7 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   const showSelectedTiles = () => {
     dispatch(setIsFilterUp(true));
     const mapWithHiglights = higlightedMap(tileObject, gameMap, "selected");
-    const tempMap = { ...objextMap, "map": mapWithHiglights}
+    const tempMap = { ...objectMap, "map": mapWithHiglights}
     dispatch(setCampaign({ ...campaign, "map":tempMap}))
     
     return 0
@@ -72,12 +72,20 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
 
   const deselectTiles = () => {//not working
     const mapNoHiglights = deselectAllTiles( gameMap );
-    const tempMap = { ...objextMap, "map": mapNoHiglights}
+    const tempMap = { ...objectMap, "map": mapNoHiglights}
     //console.log(tempMap);
     dispatch(setCampaign({ ...campaign, "map":tempMap}))
     return 0
   }
 
+  const moveToken = (toTile) => {
+    console.log('moving', currentFormation.name, 'from', centerTile.id, 'to', toTile.attributes.id.value);
+
+    console.log(gameMap)
+
+    //let tempMap = objetMap.moveFormation(centerTile.id, toTile.attributes.id.value);
+
+  }
 
 
 const detectClick = (e) => {
@@ -99,8 +107,10 @@ const detectClick = (e) => {
   
   }else if(e.target.attributes.name.value === "filter_selected"){
 
-    console.log(currentFormation.name, 'from', centerTile.id, 'moving to', e.target.offsetParent.attributes.id.value)
-
+    //console.log(currentFormation.name, 'from', centerTile.id, 'moving to', e.target.offsetParent.attributes.id.value)
+    moveToken(e.target.offsetParent);
+    dispatch(setIsToken(false))
+    
   }else if(e.target.attributes.name.value === "tile"){//this element is a tile 
    //e.target;
     dispatch(setIsToken(false))
