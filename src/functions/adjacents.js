@@ -109,3 +109,19 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
     }
     return newMap;
 }
+
+export const deselectAllTiles = (map) => {
+    const newMap = [];
+    for (let row of map){
+        const newRow = [];
+        for (let tile of row){
+            if (tile.status === "selected"){
+                newRow.push({ ...tile, 'status':'onSight'});
+            }else{
+                newRow.push(tile);
+            }
+        }
+        newMap.push(newRow);
+    }
+    return newMap;
+}

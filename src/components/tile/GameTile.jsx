@@ -10,10 +10,10 @@ import Token from '../token/Token';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCampaign, setMap } from '../../features/gameSlice';
 
-import { setCenterTile, setFormation, setIsToken } from '../../features/tempSlice';
+import { setCenterTile, setFormation, setIsToken, setIsFilterUp } from '../../features/tempSlice';
 
 //functions
-import { higlightedMap } from '../../functions/adjacents';
+import { higlightedMap, deselectAllTiles } from '../../functions/adjacents';
 
 //app data
 import { importedTileImages } from '../../dummyDatabse/tileImages';
@@ -25,8 +25,7 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   const tileImage = image ? importedTileImages[image] : null;
   const filterImage = status ? applyFilter[status] : null;
 
-  const [isSelectedMoveTiles, setIsSelectedMoveTiles] = useState(false)
-  const [isFiltersUp, setFiltersUp] = useState(false); 
+  const [isSelectedMoveTiles, setIsSelectedMoveTiles] = useState(false) 
 
   const campaign = useSelector(state => {
     //console.log('state:', state.game.campaign.map);
@@ -55,20 +54,27 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     //console.log(state.temp.isToken);
     return state.temp.isToken;
   })
+
+
+  const isFilterUp = useSelector((state) => {
+    //console.log(state.temp.isFilterUp);
+    return state.temp.isFilterUp;
+  })
   
   const showSelectedTiles = () => {
+    dispatch(setIsFilterUp(true));
     const mapWithHiglights = higlightedMap(tileObject, gameMap, "selected");
     const tempMap = { ...objextMap, "map": mapWithHiglights}
     dispatch(setCampaign({ ...campaign, "map":tempMap}))
-    setFiltersUp(true)
+    
     return 0
   }
 
-  const hideSelectedTiles = () => {//not working
-    const mapNoHiglights = higlightedMap(tileObject, gameMap, null);
+  const deselectTiles = () => {//not working
+    const mapNoHiglights = deselectAllTiles( gameMap );
     const tempMap = { ...objextMap, "map": mapNoHiglights}
+    console.log(tempMap);
     dispatch(setCampaign({ ...campaign, "map":tempMap}))
-    setFiltersUp(false)
     return 0
   }
 
@@ -79,7 +85,17 @@ const detectClick = (e) => {
   //0 - detect what tile is clicked:
   let tileElement;
   let tokenElement;
-  if (e.target.attributes.name.value === "tile"){//this element is a tile 
+  
+  if(isFilterUp){
+    deselectTiles();
+  }
+
+  if ( e.target.attributes.name.value === 'move'){
+
+    showSelectedTiles()
+    console.log('moving options')
+
+  }else if(e.target.attributes.name.value === "tile"){//this element is a tile 
    //e.target;
     dispatch(setIsToken(false))
 
@@ -103,28 +119,19 @@ const detectClick = (e) => {
     //1 - detect clicked a token for a command.
     console.log("clicked", e.target.attributes.name.value, "at", e.target.offsetParent.offsetParent.attributes.id.value)
     
+    //2 - detect if clicked an action.
     if(e.target.offsetParent.attributes.name.value === 'token'){
       tokenElement = e.target.offsetParent;
-      
       dispatch(setFormation(tileObject.formation));
+
     }  
   }
-
-  //console.log(tileElement)
-  if (tokenElement)
-  {
-    console.log(tokenElement)
-  }
+ 
 }
-//1 - detect clicked a token for a command.
+
 //2 - detect if clicked an action.
 //3 - detect if confirm a action.
-//4 - detect if canceled the last action.
-
-
-
-
-
+//4 - detect if canceled the last action/deselect tiles.
 
 
 
@@ -152,7 +159,6 @@ const detectClick = (e) => {
 
       if(e.target.attributes.name.nodeValue !== "filter_selected"){
         //close filters
-        hideSelectedTiles()
         console.log("clicked out, close filters and actionMenu")
       }
 
@@ -161,7 +167,6 @@ const detectClick = (e) => {
       if(e.target.offsetParent.attributes.name.value === "tile" && e.target.attributes.name.nodeValue !== "filter_selected"){
         //close filters
         
-        hideSelectedTiles()
         console.log("clicked out, close filters and Keep actionMenu")
       }else if(e.target.attributes.name.nodeValue === "filter_selected"){
         console.log("move to:", e.target.offsetParent.attributes.id.value, 2)
@@ -176,7 +181,6 @@ const detectClick = (e) => {
 
       if(e.target.attributes.name.nodeValue !== "filter_selected" && e.target.attributes.name.nodeValue !== "move" ){
         //close filters
-        hideSelectedTiles()
         
       }
     }
@@ -214,6 +218,7 @@ const detectClick = (e) => {
     }
 
     {
+      //1 - detect clicked a token for a command.
       isToken && formation && id === centerTile?.id ? <div name="actionMenu" className={css.actionMenu}>
         <button name="move">Move</button> 
       </div> : null

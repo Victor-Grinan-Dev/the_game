@@ -6,6 +6,7 @@ export const tempSlice = createSlice({
         centerTile:null,
         formation:{},
         isToken:false,
+        isFilterUp:false,
 
     },
 
@@ -19,9 +20,12 @@ export const tempSlice = createSlice({
         setIsToken(state, action){
             state.isToken=action.payload;
         },
+        setIsFilterUp(state, action){
+            state.isFilterUp=action.payload;
+        },
     }
 });
 
-export const { setCenterTile, setFormation, setIsToken } = tempSlice.actions;
+export const { setCenterTile, setFormation, setIsToken, setIsFilterUp } = tempSlice.actions;
 
 export default tempSlice.reducer;
