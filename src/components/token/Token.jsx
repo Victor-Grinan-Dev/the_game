@@ -15,7 +15,7 @@ function Token({formation}) {
   const [name, setName]= useState(formation.name);
   const [points, setPoints]= useState(formation.points);
   const [units, setUnits] = useState(formation.composition);
-  const [unitCount, setUnitCount] = useState(formation.composition.length);
+  const [unitCount, setUnitCount] = useState(formation.composition?.length);
 
 
   const showStats = false;
@@ -24,19 +24,9 @@ function Token({formation}) {
     setName(formation.name);
     setPoints(formation.points);
     setUnits(formation.composition);
-    setUnitCount(formation.composition.length);
+    setUnitCount(formation.composition?.length);
     
   }, []);
-
-  const deleteToken = (parentElement) => { 
-    parentElement.innerHTML = ""
-  }
-
-  const activateToken = (e) => {
-    console.log(e);
-    //console.log(e.target.attributes.name.value === "token")
-      
-  }
 
   return (
     <div 
@@ -48,7 +38,7 @@ function Token({formation}) {
     //onClick={activateToken}
     >
       {
-        units.map((unit) => {
+        units?.map((unit) => {
           return <div name={name} className={css.tokenIcon} key={unit.id} style={{
             backgroundImage:`url(${unitsImages[unit.skills.type]})`,
             backgroundSize: unitCount===1 ? "50px 50px" : unitCount===2 ? "30px 40px" : "30px 30px",
