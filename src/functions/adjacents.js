@@ -90,7 +90,7 @@ export function higlightedMap(fromTile, oldMap){
         const newRow = [];
         for(let newTile of adjacents){
             if (newTile.posY === y){
-                newRow.push({ ...newTile, "status":"slected"} );
+                newRow.push({ ...newTile, "status":"selected"} );
             }
         }
         for (let oldTile of oldMap[y]){
@@ -105,7 +105,7 @@ export function higlightedMap(fromTile, oldMap){
                 newRow.push(toPush)
             }
         }
-        newMap.push(newRow);
+        newMap.push(newRow.sort((a, b) => a.posX -b.posX));
     }
     return newMap;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 //style
 import css from './gameTile.module.css';
@@ -8,10 +8,10 @@ import Token from '../token/Token';
 
 //redux
 import { useDispatch, useSelector } from 'react-redux';
-import { setMap } from '../../features/gameSlice';
+import { setCampaign, setMap } from '../../features/gameSlice';
 
 //functions
-import { highLightAdjacents, higlightedMap } from '../../functions/adjacents';
+import { higlightedMap } from '../../functions/adjacents';
 
 //app data
 import { importedTileImages } from '../../dummyDatabse/tileImages';
@@ -31,6 +31,11 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     return state.campaign;
   });
 
+  let objextMap = useSelector(state => {
+    //console.log('game map state:', state.game.campaign.map);
+    return state.game.campaign.map;
+  })
+
   let gameMap = useSelector(state => {
     //console.log('game map state:', state.game.campaign.map.map);
     return state.game.campaign.map.map;
@@ -38,9 +43,9 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
 
   const showSelectedTiles = () => {
     const mapWithSHiglights = higlightedMap(tileObject, gameMap);
-    
-    console.log(mapWithSHiglights)
-
+    const tempMap = { ...objextMap, "map": mapWithSHiglights}
+    //console.log(mapWithSHiglights)
+    dispatch(setCampaign({ ...campaign, "map":tempMap}))
     return 0
   }
 
@@ -74,6 +79,11 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     setIsClicked(!isClicked)
     console.log("tile:", tileElement?.id, tileElement?.childNodes)
   }
+
+  useEffect(() => {
+   console.log(status, filterImage);
+   
+  }, [status]);
 
   return (
     <div
@@ -109,29 +119,3 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
 }
 
 export default GameTile;
-
-/*
-let map = campaign.map;
-
-  const showSelectedTiles = () => {
-    const adjacents = listAdjacents(tileObject, map.map);
-    adjacents.forEach(tile => {
-      tile.status = 'selected';
-      map.map = changeTile(tile, map.map);
-    })
-    campaign.map.map = map.map;
-    dispatch(setCampaign(campaign.map.map))//ERROR TO DISPATCH A MAP AS A CAMPAIGN
-    setIsSelectedMoveTiles(true);
-  }
-
-  const deSelectedTiles = () => {
-    const adjacents = listAdjacents(tileObject, map.map);
-    adjacents.forEach(tile => {
-      tile.status = 'onSight';
-      map.map = changeTile(tile, map.map);
-    })
-    campaign.map.map = map.map;
-    dispatch(setCampaign(campaign.map.map))
-    setIsSelectedMoveTiles(false);
-  }
-*/

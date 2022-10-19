@@ -11,20 +11,21 @@ import { useDispatch, useSelector } from "react-redux";
 function App() {
   const dispatch = useDispatch();
 
-  let gameMap = useSelector(state => {
+  const gameMap = useSelector(state => {
     //console.log('state:', state.game.campaign.map);
     return state.game.campaign.map;
   });
+
+  const campaign = useSelector(state => {
+    //console.log('state:', state.game.campaign.map);
+    return state.game.campaign;
+  });
+  
+  
   
   useEffect(() => {
     dispatch(initializeGame());   
   }, [dispatch]);
-
-
-const handleClick = (e) => {
-  console.log(e)
-  return 0
-}
 
 
 
