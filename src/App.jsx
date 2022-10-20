@@ -1,6 +1,5 @@
 
 import React, { useEffect } from "react";
-
 import { initializeGame} from "./features/gameSlice";
 import { gameMapReader } from "./functions/gameMapReader";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,6 +14,8 @@ function App() {
   useEffect(() => {
     dispatch(initializeGame());   
   }, [dispatch]);
+
+ 
 
   return (
     <div className="App">

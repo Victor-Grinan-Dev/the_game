@@ -3,6 +3,8 @@ export class Campaign {
     isEnded = false
     rules = []
     players = []
+    turn = 0
+    phase = 'orders' //result( at initiative ) - reaction_orders - solve - consecuences
 
     constructor(campaignId, name, armySize, map, availableFactions, rounds=4, timeLapse="weeks") {
         this.campaignId = campaignId

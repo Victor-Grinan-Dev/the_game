@@ -1,6 +1,5 @@
 import axios from "axios";
-//game
-import { Game } from "../classes/game";
+
 //campaign
 import { theBattleForTheChorizo } from "./campaignData";
 //players
@@ -23,8 +22,9 @@ theBattleForTheChorizo.map.placeFormation(lionPlayer.army_lists.composition[1], 
 //theBattleForTheChorizo.map.placeFormation(lionPlayer.army_lists.composition[2], 'f03')
 
 //initialize game
-export const theGame = new Game(theBattleForTheChorizo);
+theBattleForTheChorizo.isStarted = true;
+theBattleForTheChorizo.turn += 1;
 
+export default theBattleForTheChorizo;
 
-
-//axios.post("http://localhost:8010/campaign", theGame)
+//axios.post("http://localhost:8010/campaign", theBattleForTheChorizo);//uncomment this and import it in app for re populate database, restart app: ctrl+c, npm start. 

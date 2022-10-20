@@ -8,6 +8,7 @@
           this.name = name
           this.composition = composition //an array of all formations-objects.
           this.setPointCost()
+          this.markFormations()
       }
   
       setPointCost(){
@@ -15,6 +16,12 @@
           this.composition.forEach(formation => {
             this.point_cost += formation.point_const
           })
+        }
+      }
+
+      markFormations(){
+        for(let formation of this.composition){
+          formation.owner = this.name;
         }
       }
   }

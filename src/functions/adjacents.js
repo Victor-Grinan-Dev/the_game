@@ -90,6 +90,10 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
         const newRow = [];
         for(let newTile of adjacents){
             if (newTile.posY === y){
+                //TODO:
+                //if there is an army in this tile already
+                // => if formation belongs to same army no mark
+                // => if formation belongs to other army mark red
                 newRow.push({ ...newTile, "status":status} );
             }
         }
