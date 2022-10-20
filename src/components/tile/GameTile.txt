@@ -14,6 +14,7 @@ import { setCenterTile, setFormation, setIsToken, setIsFilterUp } from '../../fe
 
 //functions
 import { higlightedMap, deselectAllTiles } from '../../functions/adjacents';
+import { moveFormation } from '../../functions/moveToken';
 
 //app data
 import { importedTileImages } from '../../dummyDatabse/tileImages';
@@ -55,36 +56,35 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     return state.temp.isToken;
   })
 
-
   const isFilterUp = useSelector((state) => {
     //console.log(state.temp.isFilterUp);
     return state.temp.isFilterUp;
   })
+
+  const updateMap = (newMapArray) => {
+    const tempMap = { ...objectMap, "map": newMapArray};
+    dispatch(setCampaign({ ...campaign, "map":tempMap}));
+  }
   
   const showSelectedTiles = () => {
     dispatch(setIsFilterUp(true));
     const mapWithHiglights = higlightedMap(tileObject, gameMap, "selected");
-    const tempMap = { ...objectMap, "map": mapWithHiglights}
-    dispatch(setCampaign({ ...campaign, "map":tempMap}))
-    
-    return 0
+    updateMap(mapWithHiglights)
   }
 
-  const deselectTiles = () => {//not working
+  const deselectTiles = () => {
+    dispatch(setIsFilterUp(false));
     const mapNoHiglights = deselectAllTiles( gameMap );
-    const tempMap = { ...objectMap, "map": mapNoHiglights}
-    //console.log(tempMap);
-    dispatch(setCampaign({ ...campaign, "map":tempMap}))
-    return 0
+    updateMap(mapNoHiglights)
   }
 
-  const moveToken = (toTile) => {
-    console.log('moving', currentFormation.name, 'from', centerTile.id, 'to', toTile.attributes.id.value);
+  const moveToken = (toTileId) => {
+    const movedMap = moveFormation(currentFormation, centerTile.id, toTileId, gameMap);
 
-    console.log(gameMap)
+    console.log('moving', currentFormation, 'from', centerTile.id, 'to', toTileId);
+    console.log(movedMap);
 
-    //let tempMap = objetMap.moveFormation(centerTile.id, toTile.attributes.id.value);
-
+    updateMap(movedMap);
   }
 
 
@@ -102,18 +102,18 @@ const detectClick = (e) => {
   //2 - detect if clicked an action.
   if ( e.target.attributes.name.value === 'move'){
 
-    showSelectedTiles()
-    console.log('moving options')
+    showSelectedTiles();
+    console.log('moving options');
   
   }else if(e.target.attributes.name.value === "filter_selected"){
 
     //console.log(currentFormation.name, 'from', centerTile.id, 'moving to', e.target.offsetParent.attributes.id.value)
-    moveToken(e.target.offsetParent);
-    dispatch(setIsToken(false))
+    moveToken(e.target.offsetParent.attributes.id.value);
+    dispatch(setIsToken(false));
     
   }else if(e.target.attributes.name.value === "tile"){//this element is a tile 
    //e.target;
-    dispatch(setIsToken(false))
+    dispatch(setIsToken(false));
 
   }else if(e.target.offsetParent.attributes.name.value === "tile"){//this element parent is a tile (clicked a token)  
     dispatch(setIsToken(true));
@@ -145,69 +145,8 @@ const detectClick = (e) => {
  
 }
 
-
 //3 - detect if confirm a action.
 
-
-
-
-  const tileclickedHandler = (e) => {
-    let tileElement;
-    if(e.target.attributes.name.value === "filter_selected"){
-      console.log("move token to", e.target.offsetParent.attributes.id.value)
-    }
-
-    
-    if(e.target.attributes.name.value === "move" && !isSelectedMoveTiles){
-      console.log("move!")
-      
-      showSelectedTiles();
-
-    //}else if(e.target.attributes.name.value !== "filter" && isSelectedMoveTiles){
-    //  deSelectedTiles();
-    
-    }else if (e.target.attributes.name.value === "tile"){
-      console.log(e.target.attributes.name.nodeValue, e.target.attributes.id.nodeValue);
-
-      
-      //console.log(e.target.childNodes[0].attributes.name.nodeValue === "token");
-      
-
-      if(e.target.attributes.name.nodeValue !== "filter_selected"){
-        //close filters
-        console.log("clicked out, close filters and actionMenu")
-      }
-
-    }else if(e.target.offsetParent.attributes.name.value === "tile"){
-      console.log("A token was clicked")
-      if(e.target.offsetParent.attributes.name.value === "tile" && e.target.attributes.name.nodeValue !== "filter_selected"){
-        //close filters
-        
-        console.log("clicked out, close filters and Keep actionMenu")
-      }else if(e.target.attributes.name.nodeValue === "filter_selected"){
-        console.log("move to:", e.target.offsetParent.attributes.id.value, 2)
-      }
-
-      
-      
-    }else if(e.target.offsetParent.offsetParent.attributes.name.value === "tile"){
-      
-      console.log("clicked actionMenu, close filters, KEEP actionMenu")
-
-
-      if(e.target.attributes.name.nodeValue !== "filter_selected" && e.target.attributes.name.nodeValue !== "move" ){
-        //close filters
-        
-      }
-    }
-    
-
-    //console.log("tile:", tileElement?.id, tileElement?.childNodes)
-  }
-
-  useEffect(() => {
-    //console.log("isclicked", isClicked)
-  }, []);
 
   return (
     <div
@@ -244,11 +183,3 @@ const detectClick = (e) => {
 }
 
 export default GameTile;
-
-/*
-  if(isToken){
-    console.log(tokenElement.attributes.name.value, "at", tileElement.attributes.id.value)
-  }else{
-    console.log("empty tile", tileElement.attributes.id.value)
-  }
-*/

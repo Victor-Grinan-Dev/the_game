@@ -90,11 +90,16 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
         const newRow = [];
         for(let newTile of adjacents){
             if (newTile.posY === y){
-                //TODO:
-                //if there is an army in this tile already
-                // => if formation belongs to same army no mark
-                // => if formation belongs to other army mark red
-                newRow.push({ ...newTile, "status":status} );
+                if(newTile.formation){//if there is an formation in this tile already
+                    if(newTile.formation.owner === fromTile.formation.owner){// => if formation belongs to same army => no mark
+
+                        newRow.push({ ...newTile, "status":"onSight"} );
+                    }else{// => if formation belongs to other army mark red
+                        newRow.push({ ...newTile, "status":"hostile"} );
+                    }
+                }else{
+                    newRow.push({ ...newTile, "status":status} );
+                } 
             }
         }
         for (let oldTile of oldMap[y]){
@@ -119,7 +124,7 @@ export const deselectAllTiles = (map) => {
     for (let row of map){
         const newRow = [];
         for (let tile of row){
-            if (tile.status === "selected"){
+            if (tile.status === "selected" || tile.status === "hostile"){
                 newRow.push({ ...tile, 'status':'onSight'});
             }else{
                 newRow.push(tile);

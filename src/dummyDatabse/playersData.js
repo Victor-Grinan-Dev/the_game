@@ -98,7 +98,7 @@ const deathwing = new Formation("Deathwing", [termies, dready]);
 deathwing.color="#ece9b0"
 
 //lion user
-const lion_army = new ArmyList('Wolf Raiders', [hq, hoverPatrol, ravenWing]);
+const lion_army = new ArmyList('lion kings', [hq, hoverPatrol, ravenWing]);
 
 const user2 = new User("Qwerty123", "Qwerty123");
 

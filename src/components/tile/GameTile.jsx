@@ -8,7 +8,7 @@ import Token from '../token/Token';
 
 //redux
 import { useDispatch, useSelector } from 'react-redux';
-import { setCampaign, setMap } from '../../features/gameSlice';
+import { setCampaign } from '../../features/gameSlice';
 
 import { setCenterTile, setFormation, setIsToken, setIsFilterUp } from '../../features/tempSlice';
 
@@ -25,8 +25,6 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   
   const tileImage = image ? importedTileImages[image] : null;
   const filterImage = status ? applyFilter[status] : null;
-
-  const [isSelectedMoveTiles, setIsSelectedMoveTiles] = useState(false) 
 
   const campaign = useSelector(state => {
     //console.log('state:', state.game.campaign.map);
@@ -81,8 +79,8 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   const moveToken = (toTileId) => {
     const movedMap = moveFormation(currentFormation, centerTile.id, toTileId, gameMap);
 
-    console.log('moving', currentFormation, 'from', centerTile.id, 'to', toTileId);
-    console.log(movedMap);
+    console.log('army', currentFormation.owner, 'moving', currentFormation.name, 'from', centerTile.id, 'to', toTileId);
+    //console.log(movedMap);
 
     updateMap(movedMap);
   }
@@ -103,8 +101,9 @@ const detectClick = (e) => {
   if ( e.target.attributes.name.value === 'move'){
 
     showSelectedTiles();
-    console.log('moving options');
+    //console.log('moving options');
   
+  //3 - detect if confirm a action.(move)
   }else if(e.target.attributes.name.value === "filter_selected"){
 
     //console.log(currentFormation.name, 'from', centerTile.id, 'moving to', e.target.offsetParent.attributes.id.value)
@@ -133,7 +132,7 @@ const detectClick = (e) => {
     tileElement = e.target.offsetParent.offsetParent;
 
     //1 - detect clicked a token for a command.
-    console.log("clicked", e.target.attributes.name.value, "at", e.target.offsetParent.offsetParent.attributes.id.value)
+    //console.log("clicked", e.target.attributes.name.value, "at", e.target.offsetParent.offsetParent.attributes.id.value)
     
     //2 - detect if clicked an action.
     if(e.target.offsetParent.attributes.name.value === 'token'){
@@ -144,9 +143,6 @@ const detectClick = (e) => {
   }
  
 }
-
-//3 - detect if confirm a action.
-
 
   return (
     <div
@@ -184,10 +180,3 @@ const detectClick = (e) => {
 
 export default GameTile;
 
-/*
-  if(isToken){
-    console.log(tokenElement.attributes.name.value, "at", tileElement.attributes.id.value)
-  }else{
-    console.log("empty tile", tileElement.attributes.id.value)
-  }
-*/
