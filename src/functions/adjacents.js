@@ -80,42 +80,97 @@ export const highLightAdjacents = (fromTile, map, status=null) => {
     return higlighted;
 }
 
+export const isHostileAdjacent = (fromTile, adjacentsList) => {
+
+    let isHostile = false;
+    let counter = 0;
+
+    while (counter < adjacentsList.length){
+
+        if(adjacentsList[counter].formation){//check if formation adjacent
+            if(adjacentsList[counter].formation.owner !== fromTile.formation.owner){//check if hostile
+                isHostile = true;
+                break;
+            }
+        }
+        counter++;
+    }
+  
+    return isHostile;
+}
 
 export function higlightedMap(fromTile, oldMap, status="selected"){
+
     const newMap = [];
     const adjacents = listAdjacents(fromTile, oldMap);
 
-    for (let y = 0; y < oldMap.length; y++){
+    if(!isHostileAdjacent(fromTile, adjacents)){
+        for (let y = 0; y < oldMap.length; y++){
 
-        const newRow = [];
-        for(let newTile of adjacents){
-            if (newTile.posY === y){
-                if(newTile.formation){//if there is an formation in this tile already
-                    if(newTile.formation.owner === fromTile.formation.owner){// => if formation belongs to same army => no mark
-
-                        newRow.push({ ...newTile, "status":"onSight"} );
-                    }else{// => if formation belongs to other army mark red
-                        newRow.push({ ...newTile, "status":"hostile"} );
-                    }
-                }else{
-                    newRow.push({ ...newTile, "status":status} );
-                } 
-            }
-        }
-        for (let oldTile of oldMap[y]){
-            let toPush = oldTile
-            let isUnique = true
-            for (let newTile of newRow){
-                if(oldTile.id == newTile.id){
-                    isUnique = false;
+            const newRow = [];
+            for(let newTile of adjacents){
+                if (newTile.posY === y){
+                    if(newTile.formation){//if there is an formation in this tile already
+                        if(newTile.formation.owner === fromTile.formation.owner){// => if formation belongs to same army => no mark
+    
+                            newRow.push({ ...newTile, "status":"onSight"} );
+                        }else{// => if formation belongs to other army mark red
+                            newRow.push({ ...newTile, "status":"hostile"} );
+                        }
+                    }else{
+                        newRow.push({ ...newTile, "status":status} );
+                    } 
                 }
             }
-            if(isUnique){
-                newRow.push(toPush)
+            for (let oldTile of oldMap[y]){
+                let toPush = oldTile
+                let isUnique = true
+                for (let newTile of newRow){
+                    if(oldTile.id == newTile.id){
+                        isUnique = false;
+                    }
+                }
+                if(isUnique){
+                    newRow.push(toPush)
+                }
             }
+            newMap.push(newRow.sort((a, b) => a.posX -b.posX));
         }
-        newMap.push(newRow.sort((a, b) => a.posX -b.posX));
+    }else{
+        for (let y = 0; y < oldMap.length; y++){
+
+            const newRow = [];
+            for(let newTile of adjacents){
+                if (newTile.posY === y){
+                    if(newTile.formation){//if there is an formation in this tile already
+                        if(newTile.formation.owner === fromTile.formation.owner){// => if formation belongs to same army => no mark
+    
+                            newRow.push({ ...newTile, "status":"onSight"} );
+                        }else{// => if formation belongs to other army mark red
+                            newRow.push({ ...newTile, "status":"hostile"} );
+                        }
+                    }else{
+                        newRow.push({ ...newTile, "status":"onSight"} );
+                    } 
+                }
+            }
+            for (let oldTile of oldMap[y]){
+                let toPush = oldTile
+                let isUnique = true
+                for (let newTile of newRow){
+                    if(oldTile.id == newTile.id){
+                        isUnique = false;
+                    }
+                }
+                if(isUnique){
+                    newRow.push(toPush)
+                }
+            }
+            newMap.push(newRow.sort((a, b) => a.posX -b.posX));
+        }
     }
+
+
     return newMap;
 }
 
@@ -124,7 +179,7 @@ export const deselectAllTiles = (map) => {
     for (let row of map){
         const newRow = [];
         for (let tile of row){
-            if (tile.status === "selected" || tile.status === "hostile"){
+            if (tile.status === "selected" || tile.status === "selected"){
                 newRow.push({ ...tile, 'status':'onSight'});
             }else{
                 newRow.push(tile);

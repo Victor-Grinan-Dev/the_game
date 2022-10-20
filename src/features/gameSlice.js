@@ -5,7 +5,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const gameSlice = createSlice({
     name:"game",
     initialState:{
-        campaign:{}
+        campaign:{},
+        user:"Qwerty123"
     },
     reducers:{
         setCampaign(state, action){
@@ -21,7 +22,12 @@ export const gameSlice = createSlice({
             //the nested array of map
             const newMapArr = action.payload
             state.campaign = {...state.campaign.map, "map":newMapArr};
-        }
+        },
+
+        setUser(state, action){
+            state.user = action.payload;
+        },
+        
     }
 })
 
@@ -29,9 +35,8 @@ export const initializeGame = () => {
    
    return async (dispatch) => {
      const game = await campaignService.getCampaign(); 
-
-     //console.log(game[0])
      dispatch(setCampaign(game[0]));
+
    };
  };
 

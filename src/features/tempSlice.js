@@ -4,10 +4,10 @@ export const tempSlice = createSlice({
     name:'temp',
     initialState:{
         centerTile:null,
-        formation:{},
+        formation:{},//the current formation on action
         isToken:false,
         isFilterUp:false,
-
+        formations:[], //all formations that belong to this user army
     },
 
     reducers:{
@@ -23,6 +23,9 @@ export const tempSlice = createSlice({
         setIsFilterUp(state, action){
             state.isFilterUp=action.payload;
         },
+        setFormations(state, action){
+            state.formations = action.payload;
+        }
     }
 });
 

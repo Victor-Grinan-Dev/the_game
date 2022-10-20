@@ -26,6 +26,8 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   const tileImage = image ? importedTileImages[image] : null;
   const filterImage = status ? applyFilter[status] : null;
 
+  const [moveCount, setMoveCount] = useState(formation?.movement);
+
   const campaign = useSelector(state => {
     //console.log('state:', state.game.campaign.map);
     return state.campaign;
@@ -85,6 +87,9 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     updateMap(movedMap);
   }
 
+  const countDown = (num, setter) => {
+     setter(num - 1);
+  }
 
 const detectClick = (e) => {
   
@@ -109,6 +114,7 @@ const detectClick = (e) => {
     //console.log(currentFormation.name, 'from', centerTile.id, 'moving to', e.target.offsetParent.attributes.id.value)
     moveToken(e.target.offsetParent.attributes.id.value);
     dispatch(setIsToken(false));
+    countDown(moveCount, setMoveCount);
     
   }else if(e.target.attributes.name.value === "tile"){//this element is a tile 
    //e.target;
@@ -171,7 +177,9 @@ const detectClick = (e) => {
     {
       //1 - detect clicked a token for a command.
       isToken && formation && id === centerTile?.id ? <div name="actionMenu" className={css.actionMenu}>
-        <button name="move">Move</button> 
+        
+        <button name="move" >Move-{moveCount}</button> 
+        
       </div> : null
     }
     </div>
@@ -180,3 +188,19 @@ const detectClick = (e) => {
 
 export default GameTile;
 
+
+//TODOS mvp:
+//player can only move his own tokens/formations
+//tokens can only move up to its maximun movement.
+//if token run out of movement become inactive (hasBeen= true).
+//if a token has been moved and another token gets activated that first token become inactive.
+//if token become adjacent with hostile token first token become inactive.
+//tokens movement is reduced by tile movement requirement. (terrain)
+//if token doesnt reach movement requirement for tile/( terrain) token cant acces that tile. no move option there.
+
+//TODO mvp lvl2: 
+//auto battle system.
+
+//TODO levl3:
+//other action than move.
+ 
