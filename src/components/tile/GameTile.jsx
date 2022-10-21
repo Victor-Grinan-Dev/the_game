@@ -26,7 +26,6 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   const tileImage = image ? importedTileImages[image] : null;
   const filterImage = status ? applyFilter[status] : null;
 
-  const [moveCount, setMoveCount] = useState(formation?.movement);
 
   const campaign = useSelector(state => {
     //console.log('state:', state.game.campaign.map);
@@ -110,9 +109,6 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     updateMap(movedMap);
   }
 
-  const countDown = (num, setter) => {
-     setter(num - 1);
-  }
 
  const checkIsOwner = () => {
  // console.log(playerUsername, armyName, playersFormations);
@@ -144,7 +140,7 @@ const detectClick = (e) => {
     //console.log(currentFormation.name, 'from', centerTile.id, 'moving to', e.target.offsetParent.attributes.id.value)
     moveToken(e.target.offsetParent.attributes.id.value);
     dispatch(setIsToken(false));
-    countDown(moveCount, setMoveCount);
+    console.log('count movement - 1')
     
   }else if(e.target.attributes.name.value === "tile"){//this element is a tile 
    //e.target;
@@ -225,7 +221,7 @@ const detectClick = (e) => {
       //1 - detect clicked a token for a command. TODO add condition isOwner
       isToken && formation && id === centerTile?.id && isOwner ? <div name="actionMenu" className={css.actionMenu}>
         
-        <button name="move" >Move-{moveCount}</button> 
+        <button name="move" >Move {3} </button> 
         
       </div> : null
     }

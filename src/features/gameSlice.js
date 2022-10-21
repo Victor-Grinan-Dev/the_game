@@ -1,6 +1,6 @@
 //import { getCampaign } from "../services/campaignService";
 import campaignService from "../services/campaignService"
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const gameSlice = createSlice({
     name:"game",
@@ -9,7 +9,7 @@ export const gameSlice = createSlice({
         user:"Qwerty123",
         userObj:{},
         armyName:'Wolf Raiders',
-        formations:[],
+        armyList:[],
     },
     reducers:{
         setCampaign(state, action){
@@ -41,18 +41,18 @@ export const gameSlice = createSlice({
         },
 
         setArmyList(state, action){
-            state.formations = action.payload;
+            state.armyList = action.payload;
         },
 
         deleteAFormationByName(state, action){
-            const newFormationArray = state.formations.filter(formation => {
+            const newFormationArray = state.armyList.filter(formation => {
                 return formation.name !== action.payload
             })
-            state.formations = newFormationArray;
+            state.armyList = newFormationArray;
         },
 
         addAFormationObj(state, action){
-            state.formations = [ ...state.formations, action.payload];
+            state.armyList = [ ...state.armyList, action.payload];
         }, 
 
         updateAFormation( _, action){
