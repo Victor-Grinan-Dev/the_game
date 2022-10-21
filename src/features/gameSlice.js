@@ -44,6 +44,10 @@ export const gameSlice = createSlice({
             state.armyList = action.payload;
         },
 
+        resetArmyList(state){
+            state.armyList = state.userObj.army_list.composition;
+        },
+
         deleteAFormationByName(state, action){
             const newFormationArray = state.armyList.filter(formation => {
                 return formation.name !== action.payload
@@ -58,15 +62,22 @@ export const gameSlice = createSlice({
         updateAFormation( _, action){
             //delete the one by name and add the object modified
             const updatedFormation = action.payload;
-            this.deleteAFormationByName(updatedFormation.name);
-            this.addAFormationObj(updatedFormation);
+            deleteAFormationByName(updatedFormation.name);
+            addAFormationObj(updatedFormation);
+             
+
+            //setCampaign
+            //setmap
+            //tile
+            
+            
         },
     }
 })
 
 export const initializeGame = () => {
    
-   return async (dispatch) => {
+   return async (dispatch, getData) => {
 
     //from localstorage authenticate username and game/campaign:
 
@@ -77,15 +88,27 @@ export const initializeGame = () => {
     
     dispatch(setCampaign(campaign[0]));
      const playerObject = campaign[0].players.filter(player => {
-        return player.username === 'Qwerty123';
+        return player.username === 'Victor123';
     });
     dispatch(setUserObj(playerObject[0]))
-    dispatch(setArmyList(playerObject[0].army_lists))
-    //console.log(playerObject[0].army_list)
+    dispatch(setArmyList(playerObject[0].army_list.composition))
+    //console.log(playerObject);
+    //console.log(playerObject[0].army_list.composition)
    };
  };
 
-export const { setCampaign, setUser, setUserObj,setMapObj, setMap,  setArmyName, setArmyList, deleteAFormationByName, addAFormationObj, updateAFormation } = gameSlice.actions;
+export const { 
+    setCampaign, 
+    setUser, 
+    setUserObj,
+    setMapObj, 
+    setMap,  
+    setArmyName, 
+    setArmyList, 
+    deleteAFormationByName, 
+    addAFormationObj, 
+    updateAFormation 
+    } = gameSlice.actions;
 
 export const gameMapSDelector = (state) => state.game.gameMap;
 

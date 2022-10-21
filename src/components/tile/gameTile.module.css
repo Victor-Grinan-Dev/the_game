@@ -26,9 +26,7 @@
     width: 30px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
     grid-auto-rows: minmax(15px, 15px);  
-    font-size: 10px;
 }
 
  p {
@@ -84,4 +82,5 @@
 
 button{
     font-size: 6px;
+    padding: 1px;
 }

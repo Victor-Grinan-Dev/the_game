@@ -42,6 +42,6 @@ export const placeFormation = (formation, toTileId, nestedArray)=> {
 
   export const moveFormation = (formation, fromTileId, toTileId, oldMap)=> {
     const nestedArray = deselectAllTiles(oldMap);
-    const duplicatedMap = placeFormation(formation, toTileId, nestedArray);
+    const duplicatedMap = placeFormation({...formation, "movement": formation.movement - 1}, toTileId, nestedArray);
     return deleteFormation(fromTileId, duplicatedMap);
   }  

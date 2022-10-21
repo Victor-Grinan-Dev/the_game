@@ -8,7 +8,7 @@ import Token from '../token/Token';
 
 //redux
 import { useDispatch, useSelector } from 'react-redux';
-import { setCampaign } from '../../features/gameSlice';
+import { setArmyList, setCampaign, updateAFormation } from '../../features/gameSlice';
 
 import { setCenterTile, setFormation, setIsToken, setIsFilterUp, setIsOwner } from '../../features/tempSlice';
 
@@ -19,13 +19,13 @@ import { moveFormation } from '../../functions/moveToken';
 //app data
 import { importedTileImages } from '../../dummyDatabse/tileImages';
 import { applyFilter } from '../../dummyDatabse/tilesFilters';
+import { gameMapReader } from '../../functions/gameMapReader';
 
 const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formation=null, status=null}) => {
   const dispatch = useDispatch();
   
   const tileImage = image ? importedTileImages[image] : null;
   const filterImage = status ? applyFilter[status] : null;
-
 
   const campaign = useSelector(state => {
     //console.log('state:', state.game.campaign.map);
@@ -78,9 +78,9 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     return state.game.armyName;
   })
 
-  const playersFormations = useSelector((state) => {
-    //console.log(state.temp.isFilterUp);
-    return state.game.formations;
+  const armyList = useSelector((state) => {
+    //console.log(state.game.armyList);
+    return state.game.armyList;
   })
 
   const updateMap = (newMapArray) => {
@@ -110,6 +110,7 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   }
 
 
+
  const checkIsOwner = () => {
  // console.log(playerUsername, armyName, playersFormations);
   console.log(formation.owner, "==" ,armyName, formation.owner === armyName)
@@ -136,11 +137,34 @@ const detectClick = (e) => {
   
   //3 - detect if confirm a action.(move)
   }else if(e.target.attributes.name.value === "filter_selected"){
-
+    console.log(currentFormation.movement)
     //console.log(currentFormation.name, 'from', centerTile.id, 'moving to', e.target.offsetParent.attributes.id.value)
     moveToken(e.target.offsetParent.attributes.id.value);
     dispatch(setIsToken(false));
-    console.log('count movement - 1')
+
+
+    let newMap = [];
+    for ( let row of gameMap){
+      let newRow = []
+      for (let tile of row){
+        if (tile.formation){
+          if(tile.formation === currentFormation){
+            console.log(tile.formation) 
+            const tempForm  = {...tile.formation, "movement": tile.formation.movement -1}
+            newRow.push({...tile, "formation":tempForm})
+          }else{
+            newRow.push(tile); 
+          }
+        }else{
+          newRow.push(tile);
+        }
+      }
+      newMap.push(newRow)
+    }
+    return newMap;
+
+  //dispatch(updateAFormation({... movedToken, 'movement':movedToken.movement - 1}))
+    
     
   }else if(e.target.attributes.name.value === "tile"){//this element is a tile 
    //e.target;
@@ -181,15 +205,8 @@ const detectClick = (e) => {
     //4 - check ownership of token.
     checkIsOwner(e.target.attributes.name.value)
 
-  
     console.log("clicked", e.target.attributes.name.value, "at", e.target.offsetParent.offsetParent.attributes.id.value)
     
-/*
-    //2 - detect if clicked an action.
-    if(e.target.offsetParent.attributes.name.value === 'token'){
-
-    } 
-*/ 
   }
 }
 
@@ -211,17 +228,22 @@ const detectClick = (e) => {
       </div>
 
     {
-      filterImage && <div name={`filter_${status}`} className={css.tileFilter}
+      status === 'hostile' ? <div name={`filter_${status}`} className={css.tileFilter}
         style={{
           backgroundImage:`url(${filterImage})`,
-        }} />
+        }} /> : null
     }
-
+    {
+      status === 'selected' && currentFormation.movement > 0 ? <div name={`filter_${status}`} className={css.tileFilter}
+        style={{
+          backgroundImage:`url(${filterImage})`,
+        }} /> : null
+    }
     {
       //1 - detect clicked a token for a command. TODO add condition isOwner
       isToken && formation && id === centerTile?.id && isOwner ? <div name="actionMenu" className={css.actionMenu}>
         
-        <button name="move" >Move {3} </button> 
+        <button name="move" >{currentFormation.movement}x Move  </button> 
         
       </div> : null
     }
