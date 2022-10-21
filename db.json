@@ -82,7 +82,7 @@
               "subfaction": ""
             }
           ],
-          "army_lists": {
+          "army_list": {
             "point_cost": 1100,
             "color": null,
             "faction": null,
@@ -602,7 +602,7 @@
               "subfaction": ""
             }
           ],
-          "army_lists": {
+          "army_list": {
             "point_cost": 1000,
             "color": "#23525b",
             "faction": null,
@@ -3580,8 +3580,8 @@
       ],
       "turn": 1,
       "phase": "orders",
-      "campaignId": "test_campaign",
-      "name": "The Batlle for the chorizo",
+      "campaignId": "MN134BV134MKHV715L13",
+      "name": "The king of the hill",
       "armySize": 1000,
       "map": {
         "maxPlayers": 2,

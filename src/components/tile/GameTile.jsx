@@ -70,6 +70,10 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     return state.game.user;
   })
 
+  const userObject = useSelector((state) => {
+    //console.log(state.game.userObj)
+    return state.game.userObject;
+  })
   const armyName = useSelector((state) => {
     //console.log(state.temp.isFilterUp);
     return state.game.armyName;

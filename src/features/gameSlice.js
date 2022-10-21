@@ -1,18 +1,28 @@
 //import { getCampaign } from "../services/campaignService";
 import campaignService from "../services/campaignService"
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 export const gameSlice = createSlice({
     name:"game",
     initialState:{
         campaign:{},
         user:"Qwerty123",
+        userObj:{},
         armyName:'Wolf Raiders',
         formations:[],
     },
     reducers:{
         setCampaign(state, action){
             state.campaign = action.payload;
+        },
+
+        setUser(state, action){
+            //from localstorage/cookies
+            state.campaign = action.payload;
+        },
+
+        setUserObj(state, action){
+            state.userObj = action.payload;
         },
 
         setMapObj(state, action){
@@ -26,15 +36,11 @@ export const gameSlice = createSlice({
             state.campaign = {...state.campaign.map, "map":newMapArr};
         },
 
-        setUser(state, action){
-            state.user = action.payload;
-        },
-
         setArmyName(state, action){
             state.armyName = action.payload;
         },
 
-        setFormations(state, action){
+        setArmyList(state, action){
             state.formations = action.payload;
         },
 
@@ -55,22 +61,32 @@ export const gameSlice = createSlice({
             this.deleteAFormationByName(updatedFormation.name);
             this.addAFormationObj(updatedFormation);
         },
-        
     }
 })
 
 export const initializeGame = () => {
    
    return async (dispatch) => {
-     const game = await campaignService.getCampaign(); 
-     dispatch(setCampaign(game[0]));
 
+    //from localstorage authenticate username and game/campaign:
+
+    const games = await campaignService.getCampaign(); 
+    const campaign = games.filter(camp => {
+        return camp.campaignId === "test_campaign";
+    })
+    
+    dispatch(setCampaign(campaign[0]));
+     const playerObject = campaign[0].players.filter(player => {
+        return player.username === 'Qwerty123';
+    });
+    dispatch(setUserObj(playerObject[0]))
+    dispatch(setArmyList(playerObject[0].army_lists))
+    //console.log(playerObject[0].army_list)
    };
  };
 
-export const { setCampaign, setMapObj, setMap, setUser, setArmyName, setFormations, deleteAFormationByName, addAFormationObj, updateAFormation } = gameSlice.actions;
+export const { setCampaign, setUser, setUserObj,setMapObj, setMap,  setArmyName, setArmyList, deleteAFormationByName, addAFormationObj, updateAFormation } = gameSlice.actions;
 
 export const gameMapSDelector = (state) => state.game.gameMap;
-
 
 export default gameSlice.reducer;
