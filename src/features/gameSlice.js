@@ -6,7 +6,9 @@ export const gameSlice = createSlice({
     name:"game",
     initialState:{
         campaign:{},
-        user:"Qwerty123"
+        user:"Qwerty123",
+        armyName:'Wolf Raiders',
+        formations:[],
     },
     reducers:{
         setCampaign(state, action){
@@ -27,6 +29,32 @@ export const gameSlice = createSlice({
         setUser(state, action){
             state.user = action.payload;
         },
+
+        setArmyName(state, action){
+            state.armyName = action.payload;
+        },
+
+        setFormations(state, action){
+            state.formations = action.payload;
+        },
+
+        deleteAFormationByName(state, action){
+            const newFormationArray = state.formations.filter(formation => {
+                return formation.name !== action.payload
+            })
+            state.formations = newFormationArray;
+        },
+
+        addAFormationObj(state, action){
+            state.formations = [ ...state.formations, action.payload];
+        }, 
+
+        updateAFormation( _, action){
+            //delete the one by name and add the object modified
+            const updatedFormation = action.payload;
+            this.deleteAFormationByName(updatedFormation.name);
+            this.addAFormationObj(updatedFormation);
+        },
         
     }
 })
@@ -40,7 +68,7 @@ export const initializeGame = () => {
    };
  };
 
-export const { setCampaign, setMapObj, setMap } = gameSlice.actions;
+export const { setCampaign, setMapObj, setMap, setUser, setArmyName, setFormations, deleteAFormationByName, addAFormationObj, updateAFormation } = gameSlice.actions;
 
 export const gameMapSDelector = (state) => state.game.gameMap;
 
