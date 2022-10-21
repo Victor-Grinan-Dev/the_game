@@ -7,7 +7,7 @@ export const tempSlice = createSlice({
         formation:{},//the current formation on action
         isToken:false,
         isFilterUp:false,
-        formations:[], //all formations that belong to this user army
+        isOwner:false,
     },
 
     reducers:{
@@ -23,12 +23,12 @@ export const tempSlice = createSlice({
         setIsFilterUp(state, action){
             state.isFilterUp=action.payload;
         },
-        setFormations(state, action){
-            state.formations = action.payload;
+        setIsOwner(state, action){
+            state.isOwner = action.payload;
         }
     }
 });
 
-export const { setCenterTile, setFormation, setIsToken, setIsFilterUp } = tempSlice.actions;
+export const { setCenterTile, setFormation, setIsToken, setIsFilterUp, setIsOwner } = tempSlice.actions;
 
 export default tempSlice.reducer;

@@ -10,7 +10,7 @@ import Token from '../token/Token';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCampaign } from '../../features/gameSlice';
 
-import { setCenterTile, setFormation, setIsToken, setIsFilterUp } from '../../features/tempSlice';
+import { setCenterTile, setFormation, setIsToken, setIsFilterUp, setIsOwner } from '../../features/tempSlice';
 
 //functions
 import { higlightedMap, deselectAllTiles } from '../../functions/adjacents';
@@ -61,6 +61,25 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     return state.temp.isFilterUp;
   })
 
+  const isOwner = useSelector((state) => {
+    return state.temp.isOwner;
+  })
+
+  const playerUsername = useSelector((state) => {
+    //console.log(state.temp.isFilterUp);
+    return state.player.user;
+  })
+
+  const armyName = useSelector((state) => {
+    //console.log(state.temp.isFilterUp);
+    return state.player.armyName;
+  })
+
+  const playersFormations = useSelector((state) => {
+    //console.log(state.temp.isFilterUp);
+    return state.player.formations;
+  })
+
   const updateMap = (newMapArray) => {
     const tempMap = { ...objectMap, "map": newMapArray};
     dispatch(setCampaign({ ...campaign, "map":tempMap}));
@@ -81,7 +100,7 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   const moveToken = (toTileId) => {
     const movedMap = moveFormation(currentFormation, centerTile.id, toTileId, gameMap);
 
-    console.log('army', currentFormation.owner, 'moving', currentFormation.name, 'from', centerTile.id, 'to', toTileId);
+    //console.log('army', currentFormation.owner, 'moving', currentFormation.name, 'from', centerTile.id, 'to', toTileId);
     //console.log(movedMap);
 
     updateMap(movedMap);
@@ -90,6 +109,13 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   const countDown = (num, setter) => {
      setter(num - 1);
   }
+
+ const checkIsOwner = () => {
+ // console.log(playerUsername, armyName, playersFormations);
+  console.log(formation.owner, "==" ,armyName, formation.owner === armyName)
+  dispatch(setIsOwner(formation.owner === armyName)) ;
+ }
+
 
 const detectClick = (e) => {
   
@@ -120,34 +146,59 @@ const detectClick = (e) => {
    //e.target;
     dispatch(setIsToken(false));
 
+
+  //1 - detect clicked a token for a command:
   }else if(e.target.offsetParent.attributes.name.value === "tile"){//this element parent is a tile (clicked a token)  
-    dispatch(setIsToken(true));
+
+    //set the center tile
     tileElement = e.target.offsetParent;
-    //1 - detect clicked a token for a command.
-    console.log("clicked", e.target.attributes.name?.value, "at", e.target.offsetParent.offsetParent.attributes.id?.value)
-    if(e.target.attributes.name.value === 'token'){
-      tokenElement = e.target;
-      dispatch(setCenterTile(tileObject));
-      dispatch(setFormation(formation));
-    }
+    dispatch(setCenterTile(tileObject));
     
 
-  }else if(e.target.offsetParent.offsetParent.attributes.name.value === "tile"){// this element grand parent is a tile (clicked an unit icon)
+
     dispatch(setIsToken(true));
+    dispatch(setFormation(formation));
+    tokenElement = e.target;
+
+    //4 - check ownership of token.
+    checkIsOwner()
+
+    console.log("clicked", e.target.attributes.name?.value, "at", e.target.offsetParent.attributes.id?.value)
+
+/*
+    //2 - detect if clicked an action.
+    if(e.target.attributes.name.value === 'token'){
+      
+
+
+    }
+*/
+
+  //1 - detect clicked a token for a command:
+  }else if(e.target.offsetParent.offsetParent.attributes.name.value === "tile"){// this element grand parent is a tile (clicked an unit icon)
+    
+    //set the center tile
     dispatch(setCenterTile(tileObject));
     tileElement = e.target.offsetParent.offsetParent;
 
-    //1 - detect clicked a token for a command.
-    //console.log("clicked", e.target.attributes.name.value, "at", e.target.offsetParent.offsetParent.attributes.id.value)
     
+    dispatch(setIsToken(true));
+    dispatch(setFormation(tileObject.formation));
+    tokenElement = e.target.offsetParent;
+    
+    //4 - check ownership of token.
+    checkIsOwner(e.target.attributes.name.value)
+
+  
+    console.log("clicked", e.target.attributes.name.value, "at", e.target.offsetParent.offsetParent.attributes.id.value)
+    
+/*
     //2 - detect if clicked an action.
     if(e.target.offsetParent.attributes.name.value === 'token'){
-      tokenElement = e.target.offsetParent;
-      dispatch(setFormation(tileObject.formation));
 
-    }  
+    } 
+*/ 
   }
- 
 }
 
   return (
@@ -175,8 +226,8 @@ const detectClick = (e) => {
     }
 
     {
-      //1 - detect clicked a token for a command.
-      isToken && formation && id === centerTile?.id ? <div name="actionMenu" className={css.actionMenu}>
+      //1 - detect clicked a token for a command. TODO add condition isOwner
+      isToken && formation && id === centerTile?.id && isOwner ? <div name="actionMenu" className={css.actionMenu}>
         
         <button name="move" >Move-{moveCount}</button> 
         
@@ -190,7 +241,8 @@ export default GameTile;
 
 
 //TODOS mvp:
-//player can only move his own tokens/formations
+//player can only move his own tokens/formations => ok.
+
 //tokens can only move up to its maximun movement.
 //if token run out of movement become inactive (hasBeen= true).
 //if a token has been moved and another token gets activated that first token become inactive.
