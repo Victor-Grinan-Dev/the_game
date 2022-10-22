@@ -57,6 +57,32 @@ export const reduceMovement = (token, amount = 1) => {
     return { ...token, 'movement':token.movement -= amount};
 }
 
+export const predictIfWillMove = (formation, fromTile, toTile, nestedArray) => {
+    
+    let willMove = false;
+
+    const totalMovement = formation.movement;
+    const fromTileMove = fromTile.terrain.get_out_action;
+    const toTileMove = toTile.terrain.move_in_action;
+    const fromFutureTile = toTile.terrain.get_out_action; 
+    const futureAdjacents = listAdjacents(toTile, nestedArray)
+
+    const predictedMove = totalMovement - (fromTileMove + toTileMove + fromFutureTile)
+    console.log(predictedMove)
+
+    if (totalMovement - predictedMove > fromFutureTile){
+
+        for (let futAdj of futureAdjacents){
+            //console.log("move left", formation.movement - toTileMove, futAdj.id, futAdj.terrain.move_in_action, (formation.movement - toTileMove) - (futAdj.terrain.move_in_action + fromFutureTile) >= 0)
+            if ((formation.movement - toTileMove) - (futAdj.terrain.move_in_action + fromFutureTile) >= 0){
+                willMove = true
+            }
+        }
+    }
+
+    return willMove;
+}
+
 export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
     let isEnough = true;
 
@@ -74,25 +100,22 @@ export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
     let nestedArray = deselectAllTiles(oldMap);
     
     //check hostile adjacent tile of destination tile before placing formation:
-    let toTileObj = findTileObjById(toTileId, nestedArray);
-    let fromTileOj = findTileObjById(fromTileId, nestedArray);
+    const toTileObj = findTileObjById(toTileId, nestedArray);
+    const fromTileOj = findTileObjById(fromTileId, nestedArray);
 
     const destTile_moveIn = toTileObj.terrain.move_in_action;
     const origTile_moveOut = fromTileOj.terrain.get_out_action;
 
-    //logic:
+   
     //console.log(fromTileOj);
     console.log("getting out of", fromTileOj.terrain.name ,"takes:", origTile_moveOut)
     console.log("getting in", toTileObj.terrain.name,"takes:",destTile_moveIn, );
     console.log(formation.name, "M:",formation.movement,formation.movement - (origTile_moveOut + destTile_moveIn) >= 0) 
 
-
-    //console.log('found by id', toTileObj)
     const allAdjacents = listAdjacents(toTileObj, nestedArray);
-    //console.log(formation.owner)
-    //console.log(allAdjacents)
     const isHostile = isDestinationTileAdjToHostile(allAdjacents, formation.owner);
-    //console.log("destination:",toTileId,"hostile:", isHostile);
+    const willMove = predictIfWillMove(formation,fromTileOj,toTileObj, nestedArray);
+    
     if(isHostile){
 
         toTileObj = {...toTileObj, 'status':"hostile"};
@@ -103,7 +126,7 @@ export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
         };
         nestedArray = changeTile(toTileObj, nestedArray);
        
-    }else if(formation.movement - (origTile_moveOut + destTile_moveIn) == 0){
+    }else if(formation.movement - (origTile_moveOut + destTile_moveIn) == 0 || !willMove){
         
         newFormation = {
             ...formation, 

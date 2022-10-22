@@ -21,6 +21,7 @@ export class Formation {
     carry_capacity = 0 //from the units
     infantry_count = 0
     isBeen = false
+    isMoved = false
     owner = undefined //army that owns it
 
     constructor(name, composition, s_description="", l_description="", image="", faction="", subfaction=""){
