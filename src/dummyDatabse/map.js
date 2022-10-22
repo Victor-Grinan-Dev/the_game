@@ -60,9 +60,9 @@ export const shitty = [
         [
             new Tile(200, 1,0),
             new Tile("a01", 1, 1, terrainTypes["plains"]),
-            new Tile("b01", 1, 2, terrainTypes["plains"]),
-            new Tile("c01", 1, 3, terrainTypes["plains"]),
-            new Tile("d01", 1, 4, terrainTypes["plains"]),
+            new Tile("b01", 1, 2, terrainTypes["swamp"]),
+            new Tile("c01", 1, 3, terrainTypes["swamp"]),
+            new Tile("d01", 1, 4, terrainTypes["swamp"]),
             new Tile("e01", 1, 5, terrainTypes["plains"])
         ], 
         [ 
@@ -94,9 +94,9 @@ export const shitty = [
         [ 
             new Tile(600, 5, 0),
             new Tile("c05", 5, 1, terrainTypes["plains"]), 
-            new Tile("d05", 5, 2, terrainTypes["plains"]), 
-            new Tile("e05", 5, 3, terrainTypes["plains"]), 
-            new Tile("f05", 5, 4, terrainTypes["plains"]), 
+            new Tile("d05", 5, 2, terrainTypes["swamp"]), 
+            new Tile("e05", 5, 3, terrainTypes["swamp"]), 
+            new Tile("f05", 5, 4, terrainTypes["swamp"]), 
             new Tile("g05", 5, 5, terrainTypes["plains"]), 
         ],
         [

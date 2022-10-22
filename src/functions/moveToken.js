@@ -81,6 +81,7 @@ export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
     const origTile_moveOut = fromTileOj.terrain.get_out_action;
 
     //logic:
+    //console.log(fromTileOj);
     console.log("getting out of", fromTileOj.terrain.name ,"takes:", origTile_moveOut)
     console.log("getting in", toTileObj.terrain.name,"takes:",destTile_moveIn, );
     console.log(formation.name, "M:",formation.movement,formation.movement - (origTile_moveOut + destTile_moveIn) >= 0) 
