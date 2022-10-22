@@ -103,13 +103,8 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   const moveToken = (toTileId) => {
     const movedMap = moveFormation(currentFormation, centerTile.id, toTileId, gameMap);
 
-    //console.log('army', currentFormation.owner, 'moving', currentFormation.name, 'from', centerTile.id, 'to', toTileId);
-    //console.log(movedMap);
-
     updateMap(movedMap);
   }
-
-
 
  const checkIsOwner = () => {
  // console.log(playerUsername, armyName, playersFormations);
@@ -119,7 +114,7 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
 
 
 const detectClick = (e) => {
-  
+
   //0 - detect what tile is clicked:
   let tileElement;
   let tokenElement;
@@ -137,39 +132,14 @@ const detectClick = (e) => {
   
   //3 - detect if confirm a action.(move)
   }else if(e.target.attributes.name.value === "filter_selected"){
-    console.log(currentFormation.movement)
+    //console.log(currentFormation.movement)
     //console.log(currentFormation.name, 'from', centerTile.id, 'moving to', e.target.offsetParent.attributes.id.value)
     moveToken(e.target.offsetParent.attributes.id.value);
     dispatch(setIsToken(false));
-
-
-    let newMap = [];
-    for ( let row of gameMap){
-      let newRow = []
-      for (let tile of row){
-        if (tile.formation){
-          if(tile.formation === currentFormation){
-            console.log(tile.formation) 
-            const tempForm  = {...tile.formation, "movement": tile.formation.movement -1}
-            newRow.push({...tile, "formation":tempForm})
-          }else{
-            newRow.push(tile); 
-          }
-        }else{
-          newRow.push(tile);
-        }
-      }
-      newMap.push(newRow)
-    }
-    return newMap;
-
-  //dispatch(updateAFormation({... movedToken, 'movement':movedToken.movement - 1}))
-    
     
   }else if(e.target.attributes.name.value === "tile"){//this element is a tile 
    //e.target;
     dispatch(setIsToken(false));
-
 
   //1 - detect clicked a token for a command:
   }else if(e.target.offsetParent.attributes.name.value === "tile"){//this element parent is a tile (clicked a token)  
@@ -177,9 +147,6 @@ const detectClick = (e) => {
     //set the center tile
     tileElement = e.target.offsetParent;
     dispatch(setCenterTile(tileObject));
-    
-
-
     dispatch(setIsToken(true));
     dispatch(setFormation(formation));
     tokenElement = e.target;
@@ -241,7 +208,7 @@ const detectClick = (e) => {
     }
     {
       //1 - detect clicked a token for a command. TODO add condition isOwner
-      isToken && formation && id === centerTile?.id && isOwner ? <div name="actionMenu" className={css.actionMenu}>
+      isToken && formation && id === centerTile?.id && isOwner && !formation.isBeen ? <div name="actionMenu" className={css.actionMenu}>
         
         <button name="move" >{currentFormation.movement}x Move  </button> 
         
@@ -258,8 +225,7 @@ export default GameTile;
 /**** move ****/
 
 /**** exasusted token ****/
-//if token run out of movement become inactive (hasBeen= true).
-//- logic (if formation.movLeft == 0 => grey filter tokens)
+
 //if a token has been moved and another token gets activated that first token become inactive.
 //if token become adjacent with hostile token first token become inactive.
 
@@ -278,10 +244,8 @@ export default GameTile;
 //if player clicks his token can see formation info and/or tile info.
 //if player clicks hostile token can see formation info and/or tile info.
 
-/**** sight & tilestatus ****/
+/**** sight & tile status ****/
 //tiles status is outOfSight if no own token has line of sight with it.
-
-//hills give plus 1 sight.?!?!?!?!?!
 
 /**** commands ****/
 //create command panel (bottom)
@@ -309,4 +273,11 @@ export default GameTile;
 //sabotage
 //booby-Trap
 //hide & ambush
+
+/**** each terrain different effect to formation ****/
+//hill give visibility +1
+//forest allows to hide
+//swamp + search luck
+
+/**** cities & buildings ****/
  

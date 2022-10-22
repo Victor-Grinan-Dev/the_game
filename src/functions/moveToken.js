@@ -40,8 +40,29 @@ export const placeFormation = (formation, toTileId, nestedArray)=> {
     return newMap;
   }
 
+
+  
   export const moveFormation = (formation, fromTileId, toTileId, oldMap)=> {
+
+    let newFormation;
     const nestedArray = deselectAllTiles(oldMap);
-    const duplicatedMap = placeFormation({...formation, "movement": formation.movement - 1}, toTileId, nestedArray);
-    return deleteFormation(fromTileId, duplicatedMap);
+    
+    if(formation.movement - 1 === 0){
+        
+        newFormation = {
+            ...formation, 
+                "isBeen": true,
+                "movement": 0
+        };
+        console.log(newFormation.movement, newFormation.isBeen)
+    }else{
+        newFormation = {...formation, "movement": formation.movement - 1};
+        console.log(newFormation.movement, newFormation.isBeen)
+    }
+
+    const duplicatedMap = placeFormation(newFormation, toTileId, nestedArray);
+    
+    const newMap = deleteFormation(fromTileId, duplicatedMap);
+
+    return newMap;
   }  

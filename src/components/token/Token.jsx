@@ -27,7 +27,9 @@ function Token({formation}) {
     setUnitCount(formation.composition?.length);
     
   }, []);
-
+  
+  const isBeen = formation.isBeen ? "grayscale(1)" : "grayscale(0)";
+  
   return (
     <div 
     className={css.token}
@@ -44,10 +46,11 @@ function Token({formation}) {
             backgroundSize: unitCount===1 ? "50px 50px" : unitCount===2 ? "30px 40px" : "30px 30px",
             width:unitCount===1 ? "50px" : unitCount===2 ? "30px" : "30px",
             height: unitCount===1 ? "50px" : unitCount===2 ? "40px" : "30px",
+            filter: `${isBeen}`,
         }} /> 
         })
       }
-      {formation.isBeen && <div className="filter" ></div>} 
+      
       {showStats && <p>{points}</p>}
     </div>
   )
