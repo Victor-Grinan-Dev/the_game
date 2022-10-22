@@ -11,13 +11,16 @@
 //- logic (if formation.movLeft > 0 => move)
 
 //if token run out of movement become inactive (hasBeen= true).
-//- logic (if formation.movLeft == 0 => grey filter tokens)
 
-//if a token has been moved and another token gets activated that first token become inactive.
 //if token become adjacent with hostile token first token become inactive.
+
 //tokens movement is reduced by tile movement requirement. (terrain)
+
 //if token doesnt reach movement requirement for tile/( terrain) token cant acces that tile. no move option there.
 
+//if token has no move option token is exhasted. isBeen=true
+
+/\***\* turn managment \*\***/
 //create button nextTurn => all tokens freezes and commands are saved to compara with other players commands.
 //create button reset to cancel all actions commanded and start again.
 //create action cancel to reset only one token action.

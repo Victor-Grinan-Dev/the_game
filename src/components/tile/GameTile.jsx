@@ -223,7 +223,7 @@ export default GameTile;
 
 //TODOS mvp:
 /**** move ****/
-//if token has no move option token is exhasted. isBeen=true
+
 
 /**** end my turn and reset my turn ****/
 
