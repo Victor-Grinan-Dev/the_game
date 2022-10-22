@@ -5,9 +5,9 @@ import ActionPanel from "./components/actionPanel/ActionPanel";
 
 /******* populate database *********/
 //import axios from "axios";
-//import theCampaign from './dummyDatabse/gameDatabase';
+import theCampaign from './dummyDatabse/gameDatabase';
 
-import { initializeGame} from "./features/gameSlice";
+import { initializeGame, setCampaign} from "./features/gameSlice";
 import { gameMapReader } from "./functions/gameMapReader";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -22,11 +22,15 @@ function App() {
     return state.game.campaign.map;
   });
 
+/*
   useEffect(() => {
     dispatch(initializeGame());   
   }, [dispatch]);
+*/
 
-
+useEffect(() => {
+  dispatch(setCampaign(theCampaign));   
+}, [dispatch]);
 
 /******* populate database *********/
 //axios.post("http://localhost:8010/campaign", theCampaign);// empty database manually, uncomment this and restart app: ctrl+c, npm start. inmediatelly comment this line again.

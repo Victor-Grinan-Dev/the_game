@@ -1,0 +1,36 @@
+.actionPanel{
+    height: 110px;
+    width: 90vw;
+    max-width: 600px;
+    margin-bottom: 5vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.groupPhaseButtons{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 30%;
+    margin-right: 5px;
+}
+.groupActionButtons{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 90vw;
+}
+
+.reset{
+    height: 25%;
+}
+.nextButton{
+    height: 75%;
+}
+/*
+.actionButton{
+    width: 90px;
+    height: 25px;
+}
+*/

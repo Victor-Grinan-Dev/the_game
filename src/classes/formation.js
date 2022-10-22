@@ -6,6 +6,7 @@ export class Formation {
     model_count = 0
     vision = 1
     Xp = 0
+    actions=[]
     intelligence = 1
     level = 0
     benefits=[]//this benefits come from the formation type if there is one 
@@ -37,7 +38,7 @@ export class Formation {
       this.setModelCount()
       this.setMaxVision()
       this.setFaction()
-
+      this.setActions()
       //action points?
       }
 
@@ -136,6 +137,17 @@ export class Formation {
           this.vision += bonusVision;
         });
       };
+      setActions(){
+        for(let unit of this.composition){
+          if (unit.skills.active){
+            for (let action of unit.skills.active){
+              if(!this.actions.includes(action)){
+                this.actions.push(action);
+              }
+            }
+          }         
+        }
+      }
       setFaction(){
         switch (this.faction.name) {
           case "The Justice Aliance":

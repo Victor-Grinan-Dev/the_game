@@ -32,7 +32,7 @@ export const skills_by_unit_type = {//TODO?: smarter change all this to separate
   beast_rider:{
     type:"beast_rider",
     movement:3,
-    active:["hit&run", "turbo_boost"],
+    active:["hit&run", "turbo_boost", "charge"],
     negative:["No_water"],
     passive:["vision+1"]
   },
@@ -40,7 +40,7 @@ export const skills_by_unit_type = {//TODO?: smarter change all this to separate
   beast:{ 
     type:"beast",
     movement:3,
-    active:[],
+    active:["charge"],
     negative:[],
     passive:["vision+1"]
   },
@@ -49,7 +49,7 @@ export const skills_by_unit_type = {//TODO?: smarter change all this to separate
       type:"infantry",
 
       movement:2,
-      active:["build", "set_defence", "get_ready"],
+      active:["build", "set_defence", "claim_tile"],
       negative:[],
       passive:["claim_tile", "all_terrain", "work_force%+20"]
     },
@@ -57,7 +57,7 @@ export const skills_by_unit_type = {//TODO?: smarter change all this to separate
       type:"light_infantry",
 
       movement:2,
-      active:["conceal", "get_ready", "claim_tile"],
+      active:["conceal", "claim_tile"],
       negative:["defense-10", "damage-10"],
       passive:["hold_position", "all_terrain", "movement+1" ]
     },
@@ -65,7 +65,7 @@ export const skills_by_unit_type = {//TODO?: smarter change all this to separate
       type:"heavy_armoured_infantry",
 
       movement:1,
-      active:[ "set_defence", "get_ready", "claim_tile"],
+      active:[ "set_defence", "claim_tile"],
       negative:[],
       passive:["hold_position", "all_terrain", "defense+5"]
     },
@@ -73,7 +73,7 @@ export const skills_by_unit_type = {//TODO?: smarter change all this to separate
       type:"heavy_weapons_infantry",
 
       movement:1,
-      active:[ "set_defence", "get_ready", "claim_tile"],
+      active:[ "set_defence", "claim_tile"],
       negative:[],
       passive:["hold_position", "all_terrain", "damage+5"]
     },
