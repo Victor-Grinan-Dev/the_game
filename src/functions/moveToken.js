@@ -40,8 +40,14 @@ export const placeFormation = (formation, toTileId, nestedArray)=> {
     return newMap;
   }
 
+  export const tokenIsBeen = (token, status) => {   
+    return {...token, "isBeen": status};
+  }
 
-  
+  export const reduceMovement = (token, amount = 1) => {
+    return 
+  }
+
   export const moveFormation = (formation, fromTileId, toTileId, oldMap)=> {
 
     let newFormation;
@@ -54,10 +60,9 @@ export const placeFormation = (formation, toTileId, nestedArray)=> {
                 "isBeen": true,
                 "movement": 0
         };
-        console.log(newFormation.movement, newFormation.isBeen)
+        
     }else{
         newFormation = {...formation, "movement": formation.movement - 1};
-        console.log(newFormation.movement, newFormation.isBeen)
     }
 
     const duplicatedMap = placeFormation(newFormation, toTileId, nestedArray);
