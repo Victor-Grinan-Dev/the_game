@@ -224,15 +224,12 @@ export default GameTile;
 //TODOS mvp:
 /**** move ****/
 
-
-/**** terrain mov req ****/
-//tokens movement is reduced by tile movement requirement. (terrain).
-//if token doesnt reach movement requirement for tile/( terrain) token cant access that tile. no move option there.
-
 /**** end my turn and reset my turn ****/
-//create button nextTurn => all tokens freezes and commands are saved to compare with other players commands.
+
 //create button reset to cancel all actions commanded and start again.
 //create action cancel to reset only one token action.
+
+//create button nextTurn => all tokens freezes and commands are saved to compare with other players commands.
 //once a player units hasBeen save commands to commandsDatabase(in time order)
 
 /**** info ****/
