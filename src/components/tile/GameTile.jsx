@@ -224,10 +224,6 @@ export default GameTile;
 //TODOS mvp:
 /**** move ****/
 
-/**** exasusted token ****/
-
-
-//if token become adjacent with hostile token first token become inactive ////and hostile filter needs check before placing in tile  
 
 /**** terrain mov req ****/
 //tokens movement is reduced by tile movement requirement. (terrain).

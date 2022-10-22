@@ -47,40 +47,62 @@ export const placeFormation = (formation, toTileId, nestedArray)=> {
         newMap.push(newRow);
     }
     return newMap;
-  }
+}
 
-  export const tokenIsBeen = (token, status) => {   
+export const tokenIsBeen = (token, status) => {   
     return {...token, "isBeen": status};
-  }
+}
 
-  export const reduceMovement = (token, amount = 1) => {
+export const reduceMovement = (token, amount = 1) => {
     return { ...token, 'movement':token.movement -= amount};
-  }
+}
+
+export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
+    let isEnough = true;
+
+    if(formation.movement - (originTerrain + destinationTerrain) < 0){
+        isEnough = false;
+    }
+
+    return isEnough;
+}
 
   export const moveFormation = (formation, fromTileId, toTileId, oldMap)=> {
+
 
     let newFormation;
     let nestedArray = deselectAllTiles(oldMap);
     
     //check hostile adjacent tile of destination tile before placing formation:
-    let tileObj = findTileObjById(toTileId, nestedArray);
-    //console.log('found by id', tileObj)
-    const allAdjacents = listAdjacents(tileObj, nestedArray)
+    let toTileObj = findTileObjById(toTileId, nestedArray);
+    let fromTileOj = findTileObjById(fromTileId, nestedArray);
+
+    const destTile_moveIn = toTileObj.terrain.move_in_action;
+    const origTile_moveOut = fromTileOj.terrain.get_out_action;
+
+    //logic:
+    console.log("getting out of", fromTileOj.terrain.name ,"takes:", origTile_moveOut)
+    console.log("getting in", toTileObj.terrain.name,"takes:",destTile_moveIn, );
+    console.log(formation.name, "M:",formation.movement,formation.movement - (origTile_moveOut + destTile_moveIn) >= 0) 
+
+
+    //console.log('found by id', toTileObj)
+    const allAdjacents = listAdjacents(toTileObj, nestedArray);
     //console.log(formation.owner)
     //console.log(allAdjacents)
     const isHostile = isDestinationTileAdjToHostile(allAdjacents, formation.owner);
-    console.log("destination:",toTileId,"hostile:", isHostile)
+    //console.log("destination:",toTileId,"hostile:", isHostile);
     if(isHostile){
 
-        tileObj = {...tileObj, 'status':"hostile"};
+        toTileObj = {...toTileObj, 'status':"hostile"};
         newFormation = {
             ...formation, 
                 "isBeen": true,
                 "movement": 0
         };
-        nestedArray = changeTile(tileObj, nestedArray);
+        nestedArray = changeTile(toTileObj, nestedArray);
        
-    }else if(formation.movement - 1 <= 0){
+    }else if(formation.movement - (origTile_moveOut + destTile_moveIn) == 0){
         
         newFormation = {
             ...formation, 
@@ -89,10 +111,10 @@ export const placeFormation = (formation, toTileId, nestedArray)=> {
         };
         
     }else{
-        newFormation = {...formation, "movement": formation.movement - 1};
+        newFormation = {...formation, "movement": formation.movement - ( origTile_moveOut + destTile_moveIn )};
     }
 
-    const duplicatedMap = placeFormation(newFormation, tileObj.id, nestedArray);
+    const duplicatedMap = placeFormation(newFormation, toTileObj.id, nestedArray);
     
     const newMap = deleteFormation(fromTileId, duplicatedMap);
 

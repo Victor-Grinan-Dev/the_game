@@ -1,4 +1,4 @@
-import { tokenIsBeen } from "./moveToken";
+import { isMoveEnough, tokenIsBeen } from "./moveToken";
 
 export const changeTile = (newTile, map) => {
     //console.log("just got:", newTile.id, newTile.status)
@@ -69,14 +69,23 @@ export const changeTileStatus = (tile, status) => {
     return { ...tile, "status":status }
 }
 
+/*
 export const highLightAdjacents = (fromTile, map, status=null) => {
 
     const higlighted = [];
     const adjacents = listAdjacents(fromTile, map);
+    const formation = fromTile.formation;
+    let finalStatus = status;
 
     adjacents.forEach( tile => {
+        const moveEnough = isMoveEnough(fromTile, tile, formation);
+        
+        //console.log(moveEnough)
         if( !tile.formacion ){
-            higlighted.push(changeTileStatus(tile, status));
+
+            //if movement isnt enough status = null.
+
+            higlighted.push(changeTileStatus(tile, finalStatus));
         };
         //if tile belongs to player set onsight (null no filter)
         //if player belong to enemy set hodtile (red filter)
@@ -84,6 +93,7 @@ export const highLightAdjacents = (fromTile, map, status=null) => {
 
     return higlighted;
 }
+*/
 
 export const isHostileAdjacent = (fromTile, adjacentsList) => {
 
@@ -140,8 +150,15 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
                         }else{// => if formation belongs to other army mark red
                             newRow.push({ ...newTile, "status":"hostile"} );
                         }
-                    }else{
-                        newRow.push({ ...newTile, "status":status} );
+                    }else{//there is no formation
+                        const canMove = fromTile.formation.movement - (fromTile.terrain.get_out_action + newTile.terrain.move_in_action) >= 0;
+
+                        if(!canMove){ //if can't move then dont give it as option to move.
+                            newRow.push({ ...newTile, "status":"onSight"} );
+                        }else{
+                            newRow.push({ ...newTile, "status":status} );
+                        }
+                        
                     } 
                 }
             }
@@ -199,8 +216,6 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
         console.log(newFromtile)
         newMap = changeTile(newFromtile, newMap);
     }
-
-
 
     return newMap;
 }
