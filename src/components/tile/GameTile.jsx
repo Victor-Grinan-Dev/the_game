@@ -226,8 +226,8 @@ export default GameTile;
 
 /**** exasusted token ****/
 
-//if a token has been moved and another token gets activated that first token become inactive.
-//if token become adjacent with hostile token first token become inactive.
+
+//if token become adjacent with hostile token first token become inactive and hostile filter
 
 /**** terrain mov req ****/
 //tokens movement is reduced by tile movement requirement. (terrain).

@@ -1,3 +1,5 @@
+import { tokenIsBeen } from "./moveToken";
+
 export const changeTile = (newTile, map) => {
     //console.log("just got:", newTile.id, newTile.status)
     let newMap = [];
@@ -63,15 +65,19 @@ export const listAdjacents = (fromTile, map) => {
     return adjacents;
 }
 
+export const changeStatus = (tile, status) => {
+    return { ...tile, "status":status }
+}
+
 export const highLightAdjacents = (fromTile, map, status=null) => {
 
-    let newMap;
     const higlighted = [];
     const adjacents = listAdjacents(fromTile, map);
 
     adjacents.forEach( tile => {
         if( !tile.formacion ){
-            higlighted.push({ ...tile, "status":status })
+            //higlighted.push({ ...tile, "status":status })
+            higlighted.push(changeStatus(tile, status));
         };
         //if tile belongs to player set onsight (null no filter)
         //if player belong to enemy set hodtile (red filter)
@@ -101,7 +107,7 @@ export const isHostileAdjacent = (fromTile, adjacentsList) => {
 
 export function higlightedMap(fromTile, oldMap, status="selected"){
 
-    const newMap = [];
+    let newMap = [];
     const adjacents = listAdjacents(fromTile, oldMap);
 
     if(!isHostileAdjacent(fromTile, adjacents)){
@@ -143,7 +149,7 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
             for(let newTile of adjacents){
                 if (newTile.posY === y){
                     if(newTile.formation){//if there is an formation in this tile already
-                        if(newTile.formation.owner === fromTile.formation.owner){// => if formation belongs to same army => no mark
+                        if(newTile.formation.owner === fromTile.formation.owner){// => if formation belongs to same army
     
                             newRow.push({ ...newTile, "status":"onSight"} );
                         }else{// => if formation belongs to other army mark red
@@ -166,9 +172,15 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
                     newRow.push(toPush)
                 }
             }
-            newMap.push(newRow.sort((a, b) => a.posX -b.posX));
+            newMap.push(newRow.sort((a, b) => a.posX - b.posX));
         }
+        let fromTileFormation = tokenIsBeen(fromTile.formation, true);
+        //turn filter hostile //let fromTileFormation = ();
+        let newFromtile = {...fromTile, 'formation': fromTileFormation}
+        console.log(newFromtile)
+        newMap = changeTile(newFromtile, newMap);
     }
+
 
 
     return newMap;
