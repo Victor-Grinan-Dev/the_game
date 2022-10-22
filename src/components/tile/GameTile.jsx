@@ -108,7 +108,7 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
 
  const checkIsOwner = () => {
  // console.log(playerUsername, armyName, playersFormations);
-  console.log(formation.owner, "==" ,armyName, formation.owner === armyName)
+  //console.log(formation.owner, "==" ,armyName, formation.owner === armyName)
   dispatch(setIsOwner(formation.owner === armyName)) ;
  }
 
@@ -210,7 +210,7 @@ const detectClick = (e) => {
       //1 - detect clicked a token for a command. TODO add condition isOwner
       isToken && formation && id === centerTile?.id && isOwner && !formation.isBeen ? <div name="actionMenu" className={css.actionMenu}>
         
-        <button name="move" >{currentFormation.movement}x Move  </button> 
+        <button name="move" >{currentFormation.movement}x Move  </button>
         
       </div> : null
     }
@@ -227,7 +227,7 @@ export default GameTile;
 /**** exasusted token ****/
 
 
-//if token become adjacent with hostile token first token become inactive and hostile filter
+//if token become adjacent with hostile token first token become inactive ////and hostile filter needs check before placing in tile  
 
 /**** terrain mov req ****/
 //tokens movement is reduced by tile movement requirement. (terrain).

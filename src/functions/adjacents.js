@@ -14,7 +14,7 @@ export const changeTile = (newTile, map) => {
                 newRow.push(tile);
             }
         }
-        console.log("added row", newRow)
+        //console.log("added row", newRow)
         newMap.push(newRow);
         //console.log(newRow)
     }
@@ -65,7 +65,7 @@ export const listAdjacents = (fromTile, map) => {
     return adjacents;
 }
 
-export const changeStatus = (tile, status) => {
+export const changeTileStatus = (tile, status) => {
     return { ...tile, "status":status }
 }
 
@@ -76,8 +76,7 @@ export const highLightAdjacents = (fromTile, map, status=null) => {
 
     adjacents.forEach( tile => {
         if( !tile.formacion ){
-            //higlighted.push({ ...tile, "status":status })
-            higlighted.push(changeStatus(tile, status));
+            higlighted.push(changeTileStatus(tile, status));
         };
         //if tile belongs to player set onsight (null no filter)
         //if player belong to enemy set hodtile (red filter)
@@ -102,6 +101,24 @@ export const isHostileAdjacent = (fromTile, adjacentsList) => {
         counter++;
     }
   
+    return isHostile;
+}
+
+export const isDestinationTileAdjToHostile = (adjacentsList, owner) => {
+    let isHostile = false;
+    let counter = 0;
+    while (counter < adjacentsList.length){
+
+        if(adjacentsList[counter].formation){
+            if(adjacentsList[counter].formation.owner !== owner){
+                isHostile = true;
+                break;
+            }
+        }
+
+        counter++;
+        }
+
     return isHostile;
 }
 
@@ -149,11 +166,13 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
             for(let newTile of adjacents){
                 if (newTile.posY === y){
                     if(newTile.formation){//if there is an formation in this tile already
-                        if(newTile.formation.owner === fromTile.formation.owner){// => if formation belongs to same army
+                        if(newTile.formation === fromTile.formation){//check current tile
+                            newRow.push(changeTileStatus(fromTile, 'hostile'));
+                        }else if(newTile.formation.owner === fromTile.formation.owner){// => if formation belongs to same army
     
-                            newRow.push({ ...newTile, "status":"onSight"} );
+                            newRow.push(changeTileStatus(newTile, "onSight") );
                         }else{// => if formation belongs to other army mark red
-                            newRow.push({ ...newTile, "status":"hostile"} );
+                            newRow.push(changeTileStatus(newTile, "hostile") );
                         }
                     }else{
                         newRow.push({ ...newTile, "status":"onSight"} );
