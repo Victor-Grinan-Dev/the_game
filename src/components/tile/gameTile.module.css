@@ -80,7 +80,7 @@
     align-items: center;
 }
 
-button{
+.tileButton{
     font-size: 6px;
     padding: 1px;
 }

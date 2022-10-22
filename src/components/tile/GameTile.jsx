@@ -210,7 +210,7 @@ const detectClick = (e) => {
       //1 - detect clicked a token for a command. TODO add condition isOwner
       isToken && formation && id === centerTile?.id && isOwner && !formation.isBeen ? <div name="actionMenu" className={css.actionMenu}>
         
-        <button name="move" >{currentFormation.movement}x Move  </button>
+        <button className={css.tileButton} name="move" >{currentFormation.movement}x Move  </button>
         
       </div> : null
     }
@@ -225,8 +225,6 @@ export default GameTile;
 /**** move ****/
 
 /**** end my turn and reset my turn ****/
-
-//fix swamp move in and out values.
 
 //create button reset to cancel all actions commanded and start again.
 //create action cancel to reset only one token action.
