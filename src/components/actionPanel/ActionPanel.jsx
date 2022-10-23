@@ -1,9 +1,10 @@
 import React from 'react';
+
+import DoneBtn from './panelComponents/DoneBtn';
 import css from './actionPanel.module.css';
+import { generalActions } from '../../dummyDatabse/generalActions';
 
 const ActionPanel = ({formation}) => {
-
-const generalActions = ['Search', 'Rest', 'Ready', 'split', 'join to']
 
     const showSkills = () =>{
         //console.log(formation.actions)
@@ -11,7 +12,6 @@ const generalActions = ['Search', 'Rest', 'Ready', 'split', 'join to']
             return (
                 formation.actions.map((action, i )=>(
                     <button key={i} className={css.actionButton}>{action}</button>)
-                      
                 )
             )
         }
@@ -23,9 +23,7 @@ const generalActions = ['Search', 'Rest', 'Ready', 'split', 'join to']
     <div className={css.actionPanel}>
 
          <div className={css.groupPhaseButtons}>
-            <button className={css.reset} >Reset</button>
-            <button className={css.nextButton} >Next</button>
-
+            <DoneBtn />
          </div>
 
         <div className={css.groupActionButtons}>
@@ -37,7 +35,6 @@ const generalActions = ['Search', 'Rest', 'Ready', 'split', 'join to']
             {showSkills()}
             
         </div>
-
     </div>
   )
 }

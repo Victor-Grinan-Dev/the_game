@@ -1,6 +1,6 @@
 //import { getCampaign } from "../services/campaignService";
 import campaignService from "../services/campaignService"
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 export const gameSlice = createSlice({
     name:"game",
@@ -10,6 +10,7 @@ export const gameSlice = createSlice({
         userObj:{},
         armyName:'Wolf Raiders',
         armyList:[],
+        
     },
     reducers:{
         setCampaign(state, action){
@@ -44,9 +45,10 @@ export const gameSlice = createSlice({
             state.armyList = action.payload;
         },
 
-        resetArmyList(state){
-            state.armyList = state.userObj.army_list.composition;
+        saveMap(state, action){
+           state.campaign = {...state.campaign, "saveMap":action.payload};
         },
+
 
         deleteAFormationByName(state, action){
             const newFormationArray = state.armyList.filter(formation => {
@@ -91,6 +93,7 @@ export const initializeGame = () => {
     });
     dispatch(setUserObj(playerObject[0]))
     dispatch(setArmyList(playerObject[0].army_list.composition))
+    //dispatch(saveMap())
     //console.log(playerObject);
     //console.log(playerObject[0].army_list.composition)
    };
@@ -106,7 +109,8 @@ export const {
     setArmyList, 
     deleteAFormationByName, 
     addAFormationObj, 
-    updateAFormation 
+    updateAFormation,
+    saveMap,
     } = gameSlice.actions;
 
 export const gameMapSDelector = (state) => state.game.gameMap;

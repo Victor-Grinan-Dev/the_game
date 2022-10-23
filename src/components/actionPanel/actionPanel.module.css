@@ -1,5 +1,5 @@
 .actionPanel{
-    height: 110px;
+    height: 115px;
     width: 90vw;
     max-width: 600px;
     margin-bottom: 5vw;
@@ -26,7 +26,11 @@
     height: 25%;
 }
 .nextButton{
-    height: 75%;
+    border-radius: 10px;
+    height: 100%;
+    font-size: large;
+    color:bisque;
+    background-color: rgb(56, 94, 0);
 }
 /*
 .actionButton{

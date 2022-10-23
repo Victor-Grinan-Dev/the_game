@@ -7,7 +7,7 @@ import ActionPanel from "./components/actionPanel/ActionPanel";
 //import axios from "axios";
 import theCampaign from './dummyDatabse/gameDatabase';
 
-import { initializeGame, setCampaign} from "./features/gameSlice";
+import { initializeGame, saveMap, setCampaign} from "./features/gameSlice";
 import { gameMapReader } from "./functions/gameMapReader";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -22,6 +22,10 @@ function App() {
     return state.game.campaign.map;
   });
 
+
+  const savedMap = useSelector((state)=>{
+    return state.game.campaign.savedMap;
+  })
 /*
   useEffect(() => {
     dispatch(initializeGame());   
@@ -29,7 +33,8 @@ function App() {
 */
 
 useEffect(() => {
-  dispatch(setCampaign(theCampaign));   
+  dispatch(setCampaign(theCampaign));
+  console.log(savedMap)
 }, [dispatch]);
 
 /******* populate database *********/

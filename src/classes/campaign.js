@@ -5,6 +5,7 @@ export class Campaign {
     players = []
     turn = 0
     phase = 'orders' //result( at initiative ) - reaction_orders - solve - consecuences
+    savedMap = []
 
     constructor(campaignId, name, armySize, map, availableFactions, rounds=4, timeLapse="weeks") {
         this.campaignId = campaignId
@@ -17,7 +18,11 @@ export class Campaign {
         }else{
             this.rounds = rounds
         }
-
         this.timeLapse=timeLapse
+        this.setInitialSavedMap()
+    }
+
+    setInitialSavedMap(){
+        this.savedMap = this.map.map;
     }
 }
