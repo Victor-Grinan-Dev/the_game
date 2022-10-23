@@ -226,7 +226,7 @@ export default GameTile;
 
 /**** end my turn and reset my turn ****/
 
-//create button reset to cancel all actions commanded and start again.
+
 //create action cancel to reset only one token action.
 
 //create button nextTurn => all tokens freezes and commands are saved to compare with other players commands.

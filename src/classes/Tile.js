@@ -1,5 +1,5 @@
 export class Tile {
-    status = "onSight";//disabled outSight     selected unexplored  onSight
+    status = "unexplored";//disabled outSight     selected unexplored  onSight
     isExplored = false;
     constructor(
         id,
@@ -28,10 +28,6 @@ export class Tile {
         this.resources = resources
         this.building = building
         this.objective = objective
-        this.actions = actions
-        if (this.formation){
-            this.tile.status = "onSight"
-            this.IsExplored = true
-        }
+        this.actions = actions    
     }
 }

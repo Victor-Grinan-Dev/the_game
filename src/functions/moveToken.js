@@ -100,7 +100,7 @@ export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
     let nestedArray = deselectAllTiles(oldMap);
     
     //check hostile adjacent tile of destination tile before placing formation:
-    const toTileObj = findTileObjById(toTileId, nestedArray);
+    let toTileObj = findTileObjById(toTileId, nestedArray);
     const fromTileOj = findTileObjById(fromTileId, nestedArray);
 
     const destTile_moveIn = toTileObj.terrain.move_in_action;

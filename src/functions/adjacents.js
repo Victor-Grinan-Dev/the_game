@@ -222,10 +222,12 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
 
 export const deselectAllTiles = (map) => {
     const newMap = [];
+    
     for (let row of map){
         const newRow = [];
         for (let tile of row){
-            if (tile.status === "selected" || tile.status === "selected"){
+            if (tile.status === "selected" ){
+                console.log("i got till here")
                 newRow.push({ ...tile, 'status':'onSight'});
             }else{
                 newRow.push(tile);

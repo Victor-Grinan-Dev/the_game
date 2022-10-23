@@ -16,6 +16,11 @@ const DoneBtn = () => {
         return state.game.campaign.map;
     })
 
+    const gameMap = useSelector((state) => {
+        //console.log(state.game.campaign.map?.map);
+        return state.game.campaign.map?.map;
+    })
+
     const updateMap = (newMapArray) => {
         const tempMap = { ...objectMap, "map": newMapArray};
         dispatch(setCampaign({ ...campaign, "map":tempMap}));
@@ -28,8 +33,10 @@ const DoneBtn = () => {
 
     const doneHandler = () => {
         console.log("done");
-        reActivateTokens();
-        saveOrders();
+        const reactivatedTokensMap = reActivateTokens(gameMap);
+
+        saveOrders();//gather all players orders in an array and solve them one at the time.
+        updateMap(reactivatedTokensMap);
         
     } 
 
