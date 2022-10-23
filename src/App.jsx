@@ -22,7 +22,6 @@ function App() {
     return state.game.campaign.map;
   });
 
-
   const savedMap = useSelector((state)=>{
     return state.game.campaign.savedMap;
   })
@@ -34,7 +33,6 @@ function App() {
 
 useEffect(() => {
   dispatch(setCampaign(theCampaign));
-  console.log(savedMap)
 }, [dispatch]);
 
 /******* populate database *********/

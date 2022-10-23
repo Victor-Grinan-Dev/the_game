@@ -171,7 +171,6 @@ const detectClick = (e) => {
     
     //4 - check ownership of token.
     checkIsOwner(e.target.attributes.name.value)
-
     console.log("clicked", e.target.attributes.name.value, "at", e.target.offsetParent.offsetParent.attributes.id.value)
     
   }

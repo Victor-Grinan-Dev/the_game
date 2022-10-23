@@ -106,7 +106,6 @@ export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
     const destTile_moveIn = toTileObj.terrain.move_in_action;
     const origTile_moveOut = fromTileOj.terrain.get_out_action;
 
-   
     //console.log(fromTileOj);
     console.log("getting out of", fromTileOj.terrain.name ,"takes:", origTile_moveOut)
     console.log("getting in", toTileObj.terrain.name,"takes:",destTile_moveIn, );
@@ -122,7 +121,8 @@ export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
         newFormation = {
             ...formation, 
                 "isBeen": true,
-                "movement": 0
+                "movement": 0,
+                "isMoved":true
         };
         nestedArray = changeTile(toTileObj, nestedArray);
        
@@ -131,11 +131,18 @@ export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
         newFormation = {
             ...formation, 
                 "isBeen": true,
-                "movement": 0
+                "movement": 0,
+                "isMoved":true
         };
         
     }else{
-        newFormation = {...formation, "movement": formation.movement - ( origTile_moveOut + destTile_moveIn )};
+        //just move
+        const newMoveValue = formation.movement - ( origTile_moveOut + destTile_moveIn )
+        newFormation = {
+            ...formation,
+                "movement": newMoveValue,
+                "isMoved":true
+            };
     }
 
     const duplicatedMap = placeFormation(newFormation, toTileObj.id, nestedArray);
@@ -144,3 +151,25 @@ export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
 
     return newMap;
   }  
+
+export const reActivateTokens = (nestedArray) => {
+    const newMap = [];
+    for (let row of nestedArray){
+        const newRow = [];
+        for (let tile of row){
+            if(tile.formation){
+                const tempformation = { 
+                    ...tile.formation, 
+                        "isBeen": false, 
+                        "isMoved":false,
+                        "movement":tile.formation.maxMovement
+                };
+                newRow.push({...tile, "formation":tempformation})
+            }else{
+                newRow.push(tile);
+            }
+        }
+        newMap.push(newRow);
+    }
+    return newMap;
+}

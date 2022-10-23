@@ -11,7 +11,8 @@ export class Formation {
     level = 0
     benefits=[]//this benefits come from the formation type if there is one 
     badges=[]//this are archievements as formation
-    movement = 4
+    movement = 0
+    maxMovement = 0
     type = undefined //this comes from the composition of the formation (old 40k formations rules)
     dedication=[] //this are enancements assigned to the formation by user
     color='white' //faction related
@@ -116,7 +117,9 @@ export class Formation {
           this.movement = nonInfantryModelsMinMovement;
         }else{
           this.movement = slowestMovement;
-          }  
+          } 
+        
+          this.maxMovement = this.movement;
       }
       setModelCount(){ //checked
           this.composition.forEach(unit=>{
@@ -188,4 +191,5 @@ export class Formation {
       increaseXP(increase){
         this.Xp += increase * this.intelligence;
       }
+
   };
