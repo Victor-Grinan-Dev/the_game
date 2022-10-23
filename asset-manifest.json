@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/the_game/static/css/main.ff9a70e5.css",
-    "main.js": "/the_game/static/js/main.14c77a62.js",
+    "main.css": "/the_game/static/css/main.27371c91.css",
+    "main.js": "/the_game/static/js/main.7a448c29.js",
     "static/media/artillery_battery.gif": "/the_game/static/media/artillery_battery.3dbc2c577f61aaa87a40.gif",
     "static/media/war_suit.gif": "/the_game/static/media/war_suit.903b5ef99cfd0807a604.gif",
     "static/media/sea_sprite.jpg": "/the_game/static/media/sea_sprite.034a9df3d7cd349e7af3.jpg",
@@ -16,11 +16,11 @@
     "static/media/jet_infantry.webp": "/the_game/static/media/jet_infantry.34afd3e499f47a8a4123.webp",
     "static/media/light_infantry.webp": "/the_game/static/media/light_infantry.1d83d78906de44c56f98.webp",
     "index.html": "/the_game/index.html",
-    "main.ff9a70e5.css.map": "/the_game/static/css/main.ff9a70e5.css.map",
-    "main.14c77a62.js.map": "/the_game/static/js/main.14c77a62.js.map"
+    "main.27371c91.css.map": "/the_game/static/css/main.27371c91.css.map",
+    "main.7a448c29.js.map": "/the_game/static/js/main.7a448c29.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff9a70e5.css",
-    "static/js/main.14c77a62.js"
+    "static/css/main.27371c91.css",
+    "static/js/main.7a448c29.js"
   ]
 }
