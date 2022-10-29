@@ -261,9 +261,14 @@ export const deployHighlights = (map, armyName) => {
     for (let row of map){
         const newRow = []
         for (let tile of row){
-
+            if (tile.isStartingPosition === armyName && !tile.formation ){
+                newRow.push({...tile, "status":"selected"})
+            }else{
+                newRow.push(tile);
+            }
         }
+        newMap.push(newRow);
     }
 
-    return 
+    return newMap;
 }

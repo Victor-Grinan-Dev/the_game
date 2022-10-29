@@ -1,3 +1,4 @@
+
 import { User } from "../classes/user";
 import { Unit } from "../classes/unit";
 import { skills_by_unit_type } from "./skillsByUnitType";
@@ -62,8 +63,8 @@ const wolf_army = new ArmyList('Wolf Raiders', [defenders, patrol, howlers, ride
 
 const user1 = new User("Victor", "Victor123");
 
-user1.army_lists = wolf_army;
-user1.army_lists.color = '#818aa2';
+user1.armyList = wolf_army;
+user1.armyList.color = '#818aa2';
 user1.formations.push(lf_fire_support);
 user1.formations.push(fire_rain);
 
@@ -102,8 +103,8 @@ const lion_army = new ArmyList('lion kings', [hq, hoverPatrol, ravenWing]);
 
 const user2 = new User("Qwerty123", "Qwerty123");
 
-user2.army_lists = lion_army;
-user1.army_lists.color = '#23525b';
+user2.armyList = lion_army;
+user1.armyList.color = "#ece9b0";
 user2.formations.push(deathwing);
 
 export const wolfPlayer = user1;

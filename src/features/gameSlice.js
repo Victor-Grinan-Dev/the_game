@@ -5,12 +5,11 @@ import { createSlice, current } from "@reduxjs/toolkit";
 export const gameSlice = createSlice({
     name:"game",
     initialState:{
-        campaign:{},
-        user:"Qwerty123",
-        userObj:{},
+        campaign:null,
+        user:"Victor", //Qwerty123, lion kings //Victor, Wolf Raiders
+        userObj:null,
         armyName:'Wolf Raiders',
-        armyList:[],
-        
+        armyList:null,
     },
     reducers:{
         setCampaign(state, action){
@@ -98,6 +97,8 @@ export const initializeGame = () => {
     //console.log(playerObject[0].army_list.composition)
    };
  };
+
+
 
 export const { 
     setCampaign, 

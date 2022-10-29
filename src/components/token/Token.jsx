@@ -9,14 +9,13 @@ import { unitsImages } from '../../dummyDatabse/unitsImages';
 //function and objects:
 
 
-function Token({formation}) {
+function Token({formation, fn}) {
 
   const [color, setColor] = useState(formation.color);
   const [name, setName]= useState(formation.name);
   const [points, setPoints]= useState(formation.points);
   const [units, setUnits] = useState(formation.composition);
   const [unitCount, setUnitCount] = useState(formation.composition?.length);
-
 
   const showStats = false;
   useEffect(() => {
@@ -47,7 +46,8 @@ function Token({formation}) {
             width:unitCount===1 ? "50px" : unitCount===2 ? "30px" : "30px",
             height: unitCount===1 ? "50px" : unitCount===2 ? "40px" : "30px",
             filter: `${isBeen}`,
-        }} /> 
+        }} 
+        onClick={fn}/> 
         })
       }
       

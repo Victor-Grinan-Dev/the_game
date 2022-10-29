@@ -411,7 +411,7 @@
               }
             ]
           },
-          "email": "",
+          "email": "Qwerty123@gmail.com",
           "image": "conscript_red.png",
           "images": [
             "conscript_red.png",
@@ -955,8 +955,8 @@
           "password": "Victor123"
         }
       ],
-      "turn": 1,
-      "phase": "orders",
+      "turn": 0,
+      "phase": "action",
       "campaignId": "test_campaign",
       "name": "The Batlle for the chorizo",
       "armySize": 1000,
@@ -3579,7 +3579,7 @@
         }
       ],
       "turn": 1,
-      "phase": "orders",
+      "phase": "deploy",
       "campaignId": "MN134BV134MKHV715L13",
       "name": "The king of the hill",
       "armySize": 1000,

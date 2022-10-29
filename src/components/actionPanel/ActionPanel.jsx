@@ -1,30 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import DoneBtn from './panelComponents/DoneBtn';
 import css from './actionPanel.module.css';
-import { generalActions } from '../../dummyDatabse/generalActions';
-import { useSelector } from 'react-redux';
+
+import { useDispatch, useSelector } from 'react-redux';
+import Token from '../token/Token';
+import ActionButons from './panelComponents/ActionButons';
+import { deployHighlights } from '../../functions/adjacents';
+import { setCampaign } from '../../features/gameSlice';
 
 const ActionPanel = ({formation}) => {
-
+    const dispatch = useDispatch();
     const currentFormation = useSelector(state => state.temp.formation);
+    const phase = useSelector(state => state.temp.phase);
+    const campaign = useSelector(state => state.game.campaign);
+    const objectMap = useSelector(state => state.game.campaign.map);
+    const gameMap = useSelector(state => state.game.campaign.map.map);
+    const player = useSelector(state => state.game.armyName);
+    const formations = useSelector(state => state.game.armyList.composition);
 
-    const clickedAction = (e) => {
-        console.log("clicked action", e.target.name)
-   }
+    const [leftForDeploy, setLeftfordeploy] = useState(formations);
 
-    const showSkills = () =>{
+    const updateMap = (newMapArray) => {
+        const tempMap = { ...objectMap, "map": newMapArray};
+        dispatch(setCampaign({ ...campaign, "map":tempMap}));
+      }
 
-        if(formation && formation.actions){
-            return (
-                formation.actions.map((action, i )=>(
-                    <button key={i} className={css.actionButton}>{action}</button>)
-                )
-            )
-        }
-        return null;
+    const selectToDeploy = (e) => {
+        const clicked = e.target.classList[0].split("_")[0];
+        console.log(clicked, e.target.attributes.name.nodeValue)
+        const newMap = deployHighlights(gameMap, player);
+        updateMap(newMap);
     }
-
   return (
     <div className={css.actionPanel}>
 
@@ -32,21 +39,16 @@ const ActionPanel = ({formation}) => {
             <DoneBtn />
          </div>
 
-        {formation && !formation.isBeen && currentFormation ? <div className={css.groupActionButtons}>
+        {phase === "action" && formation && !formation.isBeen && currentFormation ? <ActionButons formation={formation} />:null}
+        
+        {phase === "deploy" ? <div className={css.groupActionButtons}>
             {
-                generalActions.map((action, i) => (
-                    <button 
-                    name={action} 
-                    className={css.actionButton} 
-                    key={i}
-                    onClick={clickedAction}
-                    >
-                        {action}
-                    </button>
+                //
+                leftForDeploy.map(form => (
+                    <Token formation={form} key={form.name} fn={selectToDeploy}/>
                 ))
             }
-            {showSkills()}
-            
+                        
         </div> : null
         }
     </div>

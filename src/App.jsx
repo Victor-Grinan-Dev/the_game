@@ -1,49 +1,47 @@
 
 import React, { useEffect } from "react";
 
+//redux
+import { initializeDummyGame, setArmyList, setCampaign, setUser, setUserObj} from "./features/gameSlice";
+import { useDispatch, useSelector } from "react-redux";
+
+//components
 import DeployPhase from "./components/phaseDeploy/DeployPhase";
 import ActionPhase from "./components/phaseAction/ActionPhase";
 
 /******* populate database *********/
 //import axios from "axios";
 import theCampaign from './dummyDatabse/gameDatabase';
-
-import { setCampaign} from "./features/gameSlice";
-import { useDispatch, useSelector } from "react-redux";
-
+import theBattleForTheChorizo from "./dummyDatabse/gameDatabase";
 
 function App() {
   const dispatch = useDispatch();
+  const user = useSelector(state => state.game.user)
   const phase = useSelector(state => state.temp.phase)
-  const formation = useSelector((state) => {
-    return state.temp.formation;
-  })
+  const campaign = useSelector(state => state.game.campaign)
+  const armyList = useSelector(state => state.game.armyList)
+/******* populate database *********/
+//axios.post("http://localhost:8010/campaign", theCampaign);// empty database manually, uncomment this and restart app: ctrl+c, npm start. inmediatelly comment this line again.
 
-  const gameMap = useSelector(state => {
-    return state.game.campaign.map;
-  });
+useEffect(() => {
 
-  const savedMap = useSelector((state)=>{
-    return state.game.campaign.savedMap;
-  })
-/*
-  useEffect(() => {
-    dispatch(initializeGame());   
-  }, [dispatch]);
-  useEffect(() => {
-  dispatch(setCampaign(theCampaign));
-  console.log("hello");
-}, [dispatch]);
-*/
-
-
-
+}, []);
 
 const vews = () => {
-  dispatch(setCampaign(theCampaign));
+
+  /**** initialize data ****/
+  /* this should go to the use effect but is not working */
+  const currentCampaign = theBattleForTheChorizo; 
+  const userObj = currentCampaign.players.filter(p => p.username === user)
+  dispatch(setCampaign(currentCampaign));
+  dispatch(setUserObj(userObj[0]));
+  dispatch(setArmyList(userObj[0].armyList))
+
   switch (phase) {
+
     case "deploy":
       return <DeployPhase />
+
       
     case "action":
       return <ActionPhase />
@@ -64,11 +62,6 @@ const vews = () => {
       break;
   } 
 }
-  
-
-
-/******* populate database *********/
-//axios.post("http://localhost:8010/campaign", theCampaign);// empty database manually, uncomment this and restart app: ctrl+c, npm start. inmediatelly comment this line again.
 
   return (
     <div className="App">

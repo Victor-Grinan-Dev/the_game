@@ -9,7 +9,7 @@ export class User {
   battles = 0
   winRate = 0
   formations = []
-  army_list = new ArmyList()//players can have only one army list
+  armyList = new ArmyList()//players can have only one army list
   email = ""
   image = "conscript_red.png"
   images = ["conscript_red.png", "conscript_blue.png", "conscript_green.png", "conscript_yellow.png"]
