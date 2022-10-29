@@ -8,7 +8,9 @@ export const tempSlice = createSlice({
         isToken:false,
         isFilterUp:false,
         isOwner:false,
-        phase:"action", //deploy, action, reaction, fight, result, gameover
+        phase:"deploy", //deploy, action, reaction, fight, result, gameover
+        info:undefined,
+        turn:0,
     },
 
     reducers:{
@@ -29,10 +31,16 @@ export const tempSlice = createSlice({
         },
         setPhase(state, action){
             state.phase = action.payload;
-        }
+        },
+        setInfo(state, action){
+            state.info = action.payload;
+        },
+        setTurn(state){
+            state.turn = state.turn + 1;
+        },
     }
 });
 
-export const { setCenterTile, setFormation, setIsToken, setIsFilterUp, setIsOwner, setPhase } = tempSlice.actions;
+export const { setCenterTile, setFormation, setIsToken, setIsFilterUp, setIsOwner, setPhase, setInfo } = tempSlice.actions;
 
 export default tempSlice.reducer;

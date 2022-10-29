@@ -74,6 +74,8 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     return state.game.armyList;
   })
 
+  const phase = useSelector(state => state.temp.phase);
+
   const updateMap = (newMapArray) => {
     const tempMap = { ...objectMap, "map": newMapArray};
     dispatch(setCampaign({ ...campaign, "map":tempMap}));
@@ -108,6 +110,8 @@ const detectClick = (e) => {
     
     console.log(clicked)
 
+    if (phase === "action"){
+      
     //4 - detect if canceled the last action/deselect tiles.
     if(isFilterUp){
       deselectTiles()
@@ -125,6 +129,7 @@ const detectClick = (e) => {
     }else if (clicked === "gameTile"){
       dispatch(setCenterTile(tileObject));
       dispatch(setFormation(null))
+    }
     }
 }
 

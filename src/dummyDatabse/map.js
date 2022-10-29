@@ -65,30 +65,30 @@ export const shitty = [
             new Tile("e01", 1, 5, terrainTypes["plains"])
         ], 
         [ 
-            new Tile("a02", 2, 0, terrainTypes["plains"], true),
+            new Tile("a02", 2, 0, terrainTypes["plains"], "Wolf Raiders"),
             new Tile("b02", 2, 1, terrainTypes["plains"]),
             new Tile("c02", 2, 2, terrainTypes["forest"]),
             new Tile("d02", 2, 3, terrainTypes["forest"]),
             new Tile("e02", 2, 4, terrainTypes["plains"]),
-            new Tile("f02", 2, 5, terrainTypes["plains"], true),
+            new Tile("f02", 2, 5, terrainTypes["plains"], "lion kings"),
         ],
 
         [
-            new Tile("a03", 3, 0, terrainTypes["hills"], true), 
-            new Tile("b03", 3, 1, terrainTypes["plains"], true), 
+            new Tile("a03", 3, 0, terrainTypes["hills"], "Wolf Raiders"), 
+            new Tile("b03", 3, 1, terrainTypes["plains"], "Wolf Raiders"), 
             new Tile("c03", 3, 2, terrainTypes["forest"]), 
             new Tile("d03", 3, 3, terrainTypes["mountains"]), 
             new Tile("e03", 3, 4, terrainTypes["forest"]), 
-            new Tile("f03", 3, 5, terrainTypes["plains"], true), 
-            new Tile("g03", 3, 6, terrainTypes["hills"], true)
+            new Tile("f03", 3, 5, terrainTypes["plains"], "lion kings"), 
+            new Tile("g03", 3, 6, terrainTypes["hills"], "lion kings")
         ],
         [  
-            new Tile("b04", 4, 0, terrainTypes["plains"], true), 
+            new Tile("b04", 4, 0, terrainTypes["plains"], "Wolf Raiders"), 
             new Tile("c04", 4, 1, terrainTypes["plains"]), 
             new Tile("d04", 4, 2, terrainTypes["forest"]), 
             new Tile("e04", 4, 3, terrainTypes["forest"]), 
             new Tile("f04", 4, 4, terrainTypes["plains"]), 
-            new Tile("g04", 4, 5, terrainTypes["plains"], true), 
+            new Tile("g04", 4, 5, terrainTypes["plains"], "lion kings"), 
         ], 
         [ 
             new Tile(600, 5, 0),

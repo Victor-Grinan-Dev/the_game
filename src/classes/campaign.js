@@ -25,4 +25,5 @@ export class Campaign {
     setInitialSavedMap(){
         this.savedMap = this.map.map;
     }
+    
 }

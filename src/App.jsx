@@ -1,20 +1,20 @@
 
 import React, { useEffect } from "react";
-import InfoPanel from "./components/infoPanel/InfoPanel";
-import ActionPanel from "./components/actionPanel/ActionPanel";
+
+import DeployPhase from "./components/phaseDeploy/DeployPhase";
+import ActionPhase from "./components/phaseAction/ActionPhase";
 
 /******* populate database *********/
 //import axios from "axios";
 import theCampaign from './dummyDatabse/gameDatabase';
 
-import { initializeGame, saveMap, setCampaign} from "./features/gameSlice";
-import { gameMapReader } from "./functions/gameMapReader";
+import { setCampaign} from "./features/gameSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { setVision } from "./functions/adjacents";
+
 
 function App() {
   const dispatch = useDispatch();
-
+  const phase = useSelector(state => state.temp.phase)
   const formation = useSelector((state) => {
     return state.temp.formation;
   })
@@ -30,24 +30,49 @@ function App() {
   useEffect(() => {
     dispatch(initializeGame());   
   }, [dispatch]);
+  useEffect(() => {
+  dispatch(setCampaign(theCampaign));
+  console.log("hello");
+}, [dispatch]);
 */
 
-useEffect(() => {
+
+
+
+const vews = () => {
   dispatch(setCampaign(theCampaign));
-}, [dispatch]);
+  switch (phase) {
+    case "deploy":
+      return <DeployPhase />
+      
+    case "action":
+      return <ActionPhase />
+      
+    case "reaction":
+      return 
+     
+    case "fight":
+      return 
+     
+    case "result":
+      return 
+      
+    case "gameover":
+      return 
+      
+    default:
+      break;
+  } 
+}
+  
+
 
 /******* populate database *********/
 //axios.post("http://localhost:8010/campaign", theCampaign);// empty database manually, uncomment this and restart app: ctrl+c, npm start. inmediatelly comment this line again.
 
   return (
     <div className="App">
-      <InfoPanel  />
-      {/* <div className="topPanel">Info bar</div> */}
-        <div className="gameScreen"> 
-            { gameMap && gameMapReader(gameMap.map) }
-        </div>
-      <ActionPanel formation={formation} />
-      {/* <div className="bottomPanel">Action menu bar</div> */}
+      {vews()}
     </div>
   );
 }

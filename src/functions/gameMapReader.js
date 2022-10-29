@@ -15,6 +15,7 @@ const handleLeft = (y, x) => {
 
 export const gameMapReader = (nestedArray, action=null, showTilesId=false) => {
     //const terrainMap = mapObject.map;
+    //console.log(nestedArray)
     return (
         <div className="mapArea" style={{mapAreaStyle}}>  
             {
