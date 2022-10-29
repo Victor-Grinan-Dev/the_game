@@ -254,3 +254,16 @@ export const setVision = (armyName, map) => {
     }
     return newMap;
 }
+
+export const deployHighlights = (map, armyName) => {
+    const newMap = [];
+
+    for (let row of map){
+        const newRow = []
+        for (let tile of row){
+
+        }
+    }
+
+    return 
+}
