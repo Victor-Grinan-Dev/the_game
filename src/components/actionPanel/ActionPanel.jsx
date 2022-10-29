@@ -3,11 +3,18 @@ import React from 'react';
 import DoneBtn from './panelComponents/DoneBtn';
 import css from './actionPanel.module.css';
 import { generalActions } from '../../dummyDatabse/generalActions';
+import { useSelector } from 'react-redux';
 
 const ActionPanel = ({formation}) => {
 
+    const currentFormation = useSelector(state => state.temp.formation);
+
+    const clickedAction = (e) => {
+        console.log("clicked action", e.target.name)
+   }
+
     const showSkills = () =>{
-        //console.log(formation.actions)
+
         if(formation && formation.actions){
             return (
                 formation.actions.map((action, i )=>(
@@ -15,7 +22,6 @@ const ActionPanel = ({formation}) => {
                 )
             )
         }
-
         return null;
     }
 
@@ -26,15 +32,23 @@ const ActionPanel = ({formation}) => {
             <DoneBtn />
          </div>
 
-        <div className={css.groupActionButtons}>
+        {formation && !formation.isBeen && currentFormation ? <div className={css.groupActionButtons}>
             {
-                generalActions.map((action,i) => (
-                    <button className={css.actionButton} key={i}>{action}</button>
+                generalActions.map((action, i) => (
+                    <button 
+                    name={action} 
+                    className={css.actionButton} 
+                    key={i}
+                    onClick={clickedAction}
+                    >
+                        {action}
+                    </button>
                 ))
             }
             {showSkills()}
             
-        </div>
+        </div> : null
+        }
     </div>
   )
 }

@@ -4,7 +4,7 @@ export const tempSlice = createSlice({
     name:'temp',
     initialState:{
         centerTile:null,
-        formation:{},//the current formation on action
+        formation:null,//the current formation on action
         isToken:false,
         isFilterUp:false,
         isOwner:false,
