@@ -1,1 +1,1 @@
-export const generalActions = ['Search', 'Rest', 'Ready', 'split', 'join to']
+export const generalActions = ['Rest', 'Search', 'Ready', 'split', 'join to']

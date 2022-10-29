@@ -13,12 +13,12 @@ const handleLeft = (y, x) => {
     }
 }
 
-export const gameMapReader = (mapbject, action=null, showTilesId=false) => {
-    const terrainMap = mapbject.map;
+export const gameMapReader = (nestedArray, action=null, showTilesId=false) => {
+    //const terrainMap = mapObject.map;
     return (
         <div className="mapArea" style={{mapAreaStyle}}>  
             {
-                 terrainMap.map((row, y) => (
+                 nestedArray.map((row, y) => (
                      row.map((tile, x) => (       
                          tile.terrain && <GameTile 
                             key={tile.id} 

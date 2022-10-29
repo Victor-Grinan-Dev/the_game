@@ -10,6 +10,7 @@ import theCampaign from './dummyDatabse/gameDatabase';
 import { initializeGame, saveMap, setCampaign} from "./features/gameSlice";
 import { gameMapReader } from "./functions/gameMapReader";
 import { useDispatch, useSelector } from "react-redux";
+import { setVision } from "./functions/adjacents";
 
 function App() {
   const dispatch = useDispatch();
@@ -43,7 +44,7 @@ useEffect(() => {
       <InfoPanel  />
       {/* <div className="topPanel">Info bar</div> */}
         <div className="gameScreen"> 
-            { gameMap && gameMapReader(gameMap) }
+            { gameMap && gameMapReader(gameMap.map) }
         </div>
       <ActionPanel formation={formation} />
       {/* <div className="bottomPanel">Action menu bar</div> */}

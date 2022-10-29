@@ -1,20 +1,23 @@
 export class Tile {
     status = "unexplored";//disabled outSight     selected unexplored  onSight
     isExplored = false;
+
     constructor(
         id,
 
         posY,
         posX,
         
-        terrain=null,
-        formation = null,
-        is_starting_position = false,
-        objective = false,
-        resources = [],
-        building = [],
+        terrain=null, //terrain obj
+        isStartingPosition = false,
+
+        formation = null, //formation obj
+        objective = null, //objective obj
+        building = null, //building obj
+        
         actions = [],
-        owned_by = undefined,
+        resources = [],
+        claimedBy = undefined, //or neutral?, an army name str.
         ){
         this.id = id 
 
@@ -22,12 +25,16 @@ export class Tile {
         this.posX = posX
 
         this.terrain = terrain
+        this.isStartingPosition = isStartingPosition
+
+        if (this.isStartingPosition){
+            this.status = "onSight"
+        }
         this.formation = formation
-        this.is_starting_position = is_starting_position
-        this.owned_by = owned_by
-        this.resources = resources
-        this.building = building
         this.objective = objective
-        this.actions = actions    
+        this.building = building
+        this.actions = actions
+        this.resources = resources
+        this.claimedBy = claimedBy    
     }
 }

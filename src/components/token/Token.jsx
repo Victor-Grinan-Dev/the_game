@@ -41,7 +41,7 @@ function Token({formation}) {
     >
       {
         units?.map((unit) => {
-          return <div name={name} className={css.tokenIcon} key={unit.id} style={{
+          return <div name={name} className={css.tokenIcon} key={unit.id} type={"tokenIcon"} style={{
             backgroundImage:`url(${unitsImages[unit.skills.type]})`,
             backgroundSize: unitCount===1 ? "50px 50px" : unitCount===2 ? "30px 40px" : "30px 30px",
             width:unitCount===1 ? "50px" : unitCount===2 ? "30px" : "30px",

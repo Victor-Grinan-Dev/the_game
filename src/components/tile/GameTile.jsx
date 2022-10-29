@@ -114,6 +114,21 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
 
 
 const detectClick = (e) => {
+    const clicked = e.target.classList[0].split("_")[0];
+   
+    //4 - detect if canceled the last action/deselect tiles.
+    if(isFilterUp){
+      deselectTiles();
+    }
+
+    if (clicked === "token"){
+     console.log('moving options');
+     showSelectedTiles();
+    }
+}
+
+/*
+const detectClick = (e) => {
 
   //0 - detect what tile is clicked:
   let tileElement;
@@ -127,8 +142,8 @@ const detectClick = (e) => {
   //2 - detect if clicked an action.
   if ( e.target.attributes.name.value === 'move'){
 
-    showSelectedTiles();
-    //console.log('moving options');
+    
+    
   
   //3 - detect if confirm a action.(move)
   }else if(e.target.attributes.name.value === "filter_selected"){
@@ -175,6 +190,7 @@ const detectClick = (e) => {
     
   }
 }
+*/
 
   return (
     <div
@@ -190,7 +206,7 @@ const detectClick = (e) => {
     >
       <div className="tileContent" name="token">
         {showId && <p>{id}</p>}
-        {formation && <Token formation={formation} />}
+        {formation && formation.owner === armyName || status === "onSight" && <Token formation={formation} />}
       </div>
 
     {
@@ -200,19 +216,25 @@ const detectClick = (e) => {
         }} /> : null
     }
     {
-      status === 'selected' && currentFormation.movement > 0 ? <div name={`filter_${status}`} className={css.tileFilter}
+      status === 'unexplored' ? <div name={`filter_${status}`} className={css.tileFilter}
         style={{
           backgroundImage:`url(${filterImage})`,
         }} /> : null
     }
-    {
+    {/* status === 'selected' && currentFormation.movement > 0 */
+       isFilterUp && status === 'selected' ? <div name={`filter_${status}`} className={css.tileFilter}
+        style={{
+          backgroundImage:`url(${filterImage})`,
+        }} /> : null
+    }
+    {/*
       //1 - detect clicked a token for a command. TODO add condition isOwner
       isToken && formation && id === centerTile?.id && isOwner && !formation.isBeen ? <div name="actionMenu" className={css.actionMenu}>
         
         <button className={css.tileButton} name="move" >{currentFormation.movement}x Move  </button>
         
       </div> : null
-    }
+  */}
     </div>
   )
 }

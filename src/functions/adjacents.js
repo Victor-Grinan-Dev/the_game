@@ -227,10 +227,28 @@ export const deselectAllTiles = (map) => {
         const newRow = [];
         for (let tile of row){
             if (tile.status === "selected" ){
-                console.log("i got till here")
                 newRow.push({ ...tile, 'status':'onSight'});
             }else{
                 newRow.push(tile);
+            }
+        }
+        newMap.push(newRow);
+    }
+    return newMap;
+}
+
+export const setVision = (armyName, map) => {
+     const newMap = [];
+
+    for (let row of map){
+        const newRow = [];
+        for (let tile of row){
+            if (tile.formation){
+                if(tile.formation?.owner === armyName){
+                    newRow.push({...tile, "status":"onSight", "isExplored":true})
+                }else{
+                    newRow.push(tile);
+                }
             }
         }
         newMap.push(newRow);
