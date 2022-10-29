@@ -8,6 +8,7 @@ export const tempSlice = createSlice({
         isToken:false,
         isFilterUp:false,
         isOwner:false,
+        phase:"action", //deploy, action, reaction, fight, result, gameover
     },
 
     reducers:{
@@ -25,10 +26,13 @@ export const tempSlice = createSlice({
         },
         setIsOwner(state, action){
             state.isOwner = action.payload;
+        },
+        setPhase(state, action){
+            state.phase = action.payload;
         }
     }
 });
 
-export const { setCenterTile, setFormation, setIsToken, setIsFilterUp, setIsOwner } = tempSlice.actions;
+export const { setCenterTile, setFormation, setIsToken, setIsFilterUp, setIsOwner, setPhase } = tempSlice.actions;
 
 export default tempSlice.reducer;

@@ -89,20 +89,23 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
   }
   
   const showSelectedTiles = () => {
+    const resetedFiltersMap = deselectTiles()
+    //console.log(resetedFiltersMap)
+    const mapWithHiglights = higlightedMap(tileObject, resetedFiltersMap, "selected");
     dispatch(setIsFilterUp(true));
-    const mapWithHiglights = higlightedMap(tileObject, gameMap, "selected");
+    console.log(mapWithHiglights)
     updateMap(mapWithHiglights)
   }
 
   const deselectTiles = () => {
     dispatch(setIsFilterUp(false));
     const mapNoHiglights = deselectAllTiles( gameMap );
-    updateMap(mapNoHiglights)
+    updateMap(mapNoHiglights);
+    return mapNoHiglights;
   }
 
   const moveToken = (toTileId) => {
     const movedMap = moveFormation(currentFormation, centerTile.id, toTileId, gameMap);
-
     updateMap(movedMap);
   }
 
@@ -115,15 +118,22 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
 
 const detectClick = (e) => {
     const clicked = e.target.classList[0].split("_")[0];
-   
+    
+
     //4 - detect if canceled the last action/deselect tiles.
     if(isFilterUp){
-      deselectTiles();
+      deselectTiles()
     }
 
-    if (clicked === "token"){
+    if (clicked === "token" && formation.owner === armyName){
      console.log('moving options');
+     dispatch(setCenterTile(tileObject));
+     dispatch(setFormation(formation))
      showSelectedTiles();
+    }else if(e.target.attributes.name.value === "filter_selected"){
+      console.log("moving to", id)
+      moveToken(id)
+      console.log(centerTile.id, id)
     }
 }
 
@@ -206,7 +216,9 @@ const detectClick = (e) => {
     >
       <div className="tileContent" name="token">
         {showId && <p>{id}</p>}
-        {formation && formation.owner === armyName || status === "onSight" && <Token formation={formation} />}
+        {formation && <Token formation={formation} /> }
+        {/* NEXT LINE SHOWS JUST YOUR ARMY */}
+        {/* formation && (formation.owner === armyName) ? <Token formation={formation} /> : null  */}
       </div>
 
     {
@@ -221,8 +233,8 @@ const detectClick = (e) => {
           backgroundImage:`url(${filterImage})`,
         }} /> : null
     }
-    {/* status === 'selected' && currentFormation.movement > 0 */
-       isFilterUp && status === 'selected' ? <div name={`filter_${status}`} className={css.tileFilter}
+    {/* status === 'selected' && currentFormation.movement > 0 && isFilterUp &&  */
+       status === 'selected' ? <div name={`filter_${status}`} className={css.tileFilter}
         style={{
           backgroundImage:`url(${filterImage})`,
         }} /> : null

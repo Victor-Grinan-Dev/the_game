@@ -222,7 +222,6 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
 
 export const deselectAllTiles = (map) => {
     const newMap = [];
-    
     for (let row of map){
         const newRow = [];
         for (let tile of row){

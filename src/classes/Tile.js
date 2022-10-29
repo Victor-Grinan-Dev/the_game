@@ -1,5 +1,6 @@
 export class Tile {
-    status = "unexplored";//disabled outSight     selected unexplored  onSight
+    status = "onSight";//disabled outSight   selected unexplored  onSight
+    isHostileSight = false
     isExplored = false;
 
     constructor(
@@ -27,9 +28,6 @@ export class Tile {
         this.terrain = terrain
         this.isStartingPosition = isStartingPosition
 
-        if (this.isStartingPosition){
-            this.status = "onSight"
-        }
         this.formation = formation
         this.objective = objective
         this.building = building

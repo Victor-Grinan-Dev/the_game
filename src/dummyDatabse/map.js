@@ -79,7 +79,7 @@ export const shitty = [
             new Tile("c03", 3, 2, terrainTypes["forest"]), 
             new Tile("d03", 3, 3, terrainTypes["mountains"]), 
             new Tile("e03", 3, 4, terrainTypes["forest"]), 
-            new Tile("f03", 3, 5, terrainTypes["plains"]), true , 
+            new Tile("f03", 3, 5, terrainTypes["plains"], true), 
             new Tile("g03", 3, 6, terrainTypes["hills"], true)
         ],
         [  

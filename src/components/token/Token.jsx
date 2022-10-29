@@ -9,8 +9,8 @@ import { unitsImages } from '../../dummyDatabse/unitsImages';
 //function and objects:
 
 
-
 function Token({formation}) {
+
   const [color, setColor] = useState(formation.color);
   const [name, setName]= useState(formation.name);
   const [points, setPoints]= useState(formation.points);
