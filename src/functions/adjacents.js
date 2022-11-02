@@ -1,3 +1,4 @@
+import { Tile } from "../classes/Tile";
 import { isMoveEnough, tokenIsBeen } from "./moveToken";
 
 export const changeTile = (newTile, map) => {
@@ -262,7 +263,16 @@ export const deployHighlights = (map, armyName) => {
         const newRow = []
         for (let tile of row){
             if (tile.isStartingPosition === armyName && !tile.formation ){
-                newRow.push({...tile, "status":"selected"})
+                const newTile = new Tile(
+                    tile.id,
+                    tile.posX, 
+                    tile.posy,
+                    tile.terrain,
+                    tile.isStartingPosition
+                    )
+                    newTile.status = "selected";
+                newRow.push(newTile)    
+                //newRow.push({...tile, "status":"selected"})
             }else{
                 newRow.push(tile);
             }

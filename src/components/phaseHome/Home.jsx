@@ -1,6 +1,7 @@
+
+import { setPhase } from '../../features/tempSlice';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { gameMapReader } from '../../functions/gameMapReader';
 import ActionPanel from '../actionPanel/ActionPanel';
 import InfoPanel from '../infoPanel/InfoPanel';
 import { deployHighlights } from '../../functions/adjacents';
@@ -8,7 +9,7 @@ import { deployHighlights } from '../../functions/adjacents';
 import { setArmyList, setCampaign, setUserObj } from '../../features/gameSlice';
 import { theBattleForTheChorizo } from '../../dummyDatabse/campaignData';
 
-const DeployPhase = () => {
+const Home = () => {   
     const dispatch = useDispatch()
     const player = useSelector(state => state.game.armyName);
     useEffect(() => {
@@ -43,18 +44,21 @@ const DeployPhase = () => {
       updateMap(newMap);
       console.log(clicked, newMap)
   }
-  
+
+    const start = () => {
+        dispatch(setPhase("deploy")) 
+    }
   return (
     <div className="App">
 
-     <InfoPanel />
+        <InfoPanel />
         <div className="gameScreen"> 
-            { gameMapReader(gameMap) }
+            
         </div>
-     <ActionPanel fn={selectToDeploy}/>
-      
-    </div>
+        <ActionPanel fn={start}/>
+     
+   </div>
   )
 }
 
-export default DeployPhase;
+export default Home;

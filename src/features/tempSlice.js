@@ -8,9 +8,9 @@ export const tempSlice = createSlice({
         isToken:false,
         isFilterUp:false,
         isOwner:false,
-        phase:"deploy", //deploy, action, reaction, fight, result, gameover
+        phase:"home", //home, deploy, action, reaction, fight, result, gameover
         info:undefined,
-        turn:0,
+        turn: 0,
     },
 
     reducers:{

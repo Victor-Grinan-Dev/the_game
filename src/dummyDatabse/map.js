@@ -51,10 +51,10 @@ export const shitty = [
     const map = [
         [
             new Tile(100, 0, 0,),
-            new Tile("a00", 0, 1,  terrainTypes["hills"]),
+            new Tile("a00", 0, 1,  terrainTypes["city"]),
             new Tile("b00", 0, 2,  terrainTypes["plains"]),
             new Tile("c00", 0, 3,  terrainTypes["plains"]),
-            new Tile("d00", 0, 4, terrainTypes["hills"])
+            new Tile("d00", 0, 4, terrainTypes["city"])
         ],
         [
             new Tile(200, 1,0),
@@ -100,10 +100,10 @@ export const shitty = [
         ],
         [
             new Tile(700, 6, 0),
-            new Tile("d06", 6, 1, terrainTypes["hills"]),
+            new Tile("d06", 6, 1, terrainTypes["city"]),
             new Tile("e06", 6, 2, terrainTypes["plains"]), 
             new Tile("f06", 6, 3, terrainTypes["plains"]), 
-            new Tile("g06", 6, 4, terrainTypes["hills"])
+            new Tile("g06", 6, 4, terrainTypes["city"])
         ] 
     ]
     export const hexTestMap = new Map("Devil's Arena", "hx", "4x4x4", map)

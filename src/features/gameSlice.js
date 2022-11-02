@@ -5,7 +5,7 @@ import { createSlice, current } from "@reduxjs/toolkit";
 export const gameSlice = createSlice({
     name:"game",
     initialState:{
-        campaign:null,
+        campaign:undefined,
         user:"Victor", //Qwerty123, lion kings //Victor, Wolf Raiders
         userObj:null,
         armyName:'Wolf Raiders',
@@ -31,9 +31,11 @@ export const gameSlice = createSlice({
         },
 
         setMap(state, action){
-            //the nested array of map
-            const newMapArr = action.payload
-            state.campaign = {...state.campaign.map, "map":newMapArr};
+            
+            const nestArr = action.payload;
+            const mapObj = {...state.campaign.map, "map":nestArr};
+            state.campaign ={...state.campaign, "map":mapObj};
+
         },
 
         setArmyName(state, action){
