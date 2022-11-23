@@ -9,7 +9,7 @@ export class Map {
     }
     getFormation(fromTileId){       
 
-      for (let row of this.map.map){
+      for (let row of this.map){
         for (let tile of row){
             if(tile.id === fromTileId){
                 return tile.formation;
@@ -19,7 +19,7 @@ export class Map {
     }
     placeFormation(formation, tileId){
 
-        for (let row of this.map.map){
+        for (let row of this.map){
             for (let tile of row){
                 if(tile.id === tileId){
                     tile.formation = formation;
@@ -29,7 +29,7 @@ export class Map {
     }
     deleteFormation(tileId){
 
-        for (let row of this.map.map){
+        for (let row of this.map){
             for (let tile of row){
                 if(tile.id === tileId){
                     tile.formation = null;
