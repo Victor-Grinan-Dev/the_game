@@ -22,12 +22,11 @@ function App() {
     return state.game.campaign.map;
   });
 
+
 /*
   const savedMap = useSelector((state)=>{
     return state.game.campaign.savedMap;
   })
-*/
-/*
   useEffect(() => {
     dispatch(initializeGame());   
   }, [dispatch]);
@@ -45,7 +44,7 @@ useEffect(() => {
       <InfoPanel  />
       {/* <div className="topPanel">Info bar</div> */}
         <div className="gameScreen"> 
-            {gameMapReader(gameMap.map)}
+            { gameMap && gameMapReader(gameMap.map) }
         </div>
       <ActionPanel formation={formation} />
       {/* <div className="bottomPanel">Action menu bar</div> */}
