@@ -25,7 +25,7 @@ function Token({formation}) {
     setPoints(formation.points);
     setUnits(formation.composition);
     setUnitCount(formation.composition?.length);
-    
+    // eslint-disable-next-line
   }, []);
   
   const isBeen = formation.isBeen ? "grayscale(1)" : "grayscale(0)";

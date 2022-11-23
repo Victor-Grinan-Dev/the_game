@@ -1,4 +1,4 @@
-import { isMoveEnough, tokenIsBeen } from "./moveToken";
+import { tokenIsBeen } from "./moveToken";
 
 export const changeTile = (newTile, map) => {
     //console.log("just got:", newTile.id, newTile.status)
@@ -166,7 +166,7 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
                 let toPush = oldTile
                 let isUnique = true
                 for (let newTile of newRow){
-                    if(oldTile.id == newTile.id){
+                    if(oldTile.id === newTile.id){
                         isUnique = false;
                     }
                 }
@@ -200,7 +200,7 @@ export function higlightedMap(fromTile, oldMap, status="selected"){
                 let toPush = oldTile
                 let isUnique = true
                 for (let newTile of newRow){
-                    if(oldTile.id == newTile.id){
+                    if(oldTile.id === newTile.id){
                         isUnique = false;
                     }
                 }

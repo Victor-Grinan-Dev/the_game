@@ -36,7 +36,7 @@ export class Formation {
       this.setPointCost() 
       this.setDamage()
       this.setMovement()
-      this.setWorkForce()
+      //this.setWorkForce()
       this.setModelCount()
       this.setMaxVision()
       this.setFaction()
@@ -64,6 +64,7 @@ export class Formation {
       setDamage(){ //checked
           this.damage = Math.floor(this.point_const / 10)
       }
+      /*
       setWorkForce(){ //checked
         let apply_bonus = false;
         let bonus = 0;
@@ -82,8 +83,9 @@ export class Formation {
           this.work_force += this.work_force * bonus;
         }
       }
+      */
       setMovement(){ //checked
-        let isTransport = false;
+        //let isTransport = false;
         let transportCapacity = 0;
         let nonInfantryModelsMinMovement = 100;
         let slowestMovement = 100;
@@ -107,7 +109,6 @@ export class Formation {
           //check if there is transport(s) and if true, whats the transport combine capacity.
           unit?.skills?.passive.forEach(skill => {
             if(skill.includes('transport')){
-              isTransport = true;
               transportCapacity += parseInt(skill.split('+')[1], 10);  
             }
           })       

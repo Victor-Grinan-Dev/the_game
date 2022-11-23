@@ -1,6 +1,6 @@
 //import { getCampaign } from "../services/campaignService";
 import campaignService from "../services/campaignService"
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const gameSlice = createSlice({
     name:"game",

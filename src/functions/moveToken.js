@@ -1,4 +1,4 @@
-import { changeTile, deselectAllTiles, isDestinationTileAdjToHostile, isHostileAdjacent, listAdjacents } from "./adjacents";
+import { changeTile, deselectAllTiles, isDestinationTileAdjToHostile, listAdjacents } from "./adjacents";
 
 export const deleteFormation = (tileId, nestedArray)=> {
 
@@ -126,7 +126,7 @@ export const isMoveEnough = (originTerrain, destinationTerrain, formation) => {
         };
         nestedArray = changeTile(toTileObj, nestedArray);
        
-    }else if(formation.movement - (origTile_moveOut + destTile_moveIn) == 0 || !willMove){
+    }else if(formation.movement - (origTile_moveOut + destTile_moveIn) === 0 || !willMove){
         
         newFormation = {
             ...formation, 
