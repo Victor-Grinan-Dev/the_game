@@ -1,5 +1,5 @@
 
-import { theBattleForTheChorizo } from "./campaignData";
+import  {theBattleForTheChorizo} from "./campaignData";
 //players
 import { lionPlayer } from "./playersData";
 import { wolfPlayer } from "./playersData";
