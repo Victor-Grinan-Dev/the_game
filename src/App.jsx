@@ -45,7 +45,7 @@ useEffect(() => {
       <InfoPanel  />
       {/* <div className="topPanel">Info bar</div> */}
         <div className="gameScreen"> 
-            { gameMap && gameMapReader(gameMap.map) }
+            {gameMapReader(gameMap.map)}
         </div>
       <ActionPanel formation={formation} />
       {/* <div className="bottomPanel">Action menu bar</div> */}
