@@ -7,7 +7,9 @@ import store from './app/store';
 import { HashRouter } from 'react-router-dom';
 
 const root = createRoot(document.getElementById('root'));
+
 root.render(
+  
   <HashRouter>
     <Provider store={store}>
       <App />
