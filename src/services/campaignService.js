@@ -8,4 +8,4 @@ const getCampaign = async () => {
   return response.data;
 };
 
-export default { getCampaign };
+export default getCampaign;

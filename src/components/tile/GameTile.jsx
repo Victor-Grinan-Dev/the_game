@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 //style
 import css from './gameTile.module.css';
@@ -8,9 +8,9 @@ import Token from '../token/Token';
 
 //redux
 import { useDispatch, useSelector } from 'react-redux';
-import { setArmyList, setCampaign, updateAFormation } from '../../features/gameSlice';
+import { setCampaign } from '../../features/gameSlice';
 
-import { setCenterTile, setFormation, setIsToken, setIsFilterUp, setIsOwner } from '../../features/tempSlice';
+import { setCenterTile, setFormation, setIsFilterUp } from '../../features/tempSlice';
 
 //functions
 import { higlightedMap, deselectAllTiles } from '../../functions/adjacents';
@@ -19,7 +19,6 @@ import { moveFormation } from '../../functions/moveToken';
 //app data
 import { importedTileImages } from '../../dummyDatabse/tileImages';
 import { applyFilter } from '../../dummyDatabse/tilesFilters';
-import { gameMapReader } from '../../functions/gameMapReader';
 
 const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formation=null, status=null}) => {
   const dispatch = useDispatch();
@@ -47,32 +46,42 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     return state.temp.formation;
   })
 
+/*
   const isToken = useSelector((state) => {
     return state.temp.isToken;
   })
-
-  const isFilterUp = useSelector((state) => {
-    return state.temp.isFilterUp;
-  })
-
+  
   const isOwner = useSelector((state) => {
     return state.temp.isOwner;
   })
-
-  const playerUsername = useSelector((state) => {
+    const playerUsername = useSelector((state) => {
     return state.game.user;
   })
 
   const userObject = useSelector((state) => {
     return state.game.userObject;
   })
+
+    const armyList = useSelector((state) => {
+    return state.game.armyList;
+  })
+
+   const checkIsOwner = () => {
+  dispatch(setIsOwner(formation.owner === armyName)) ;
+ }
+*/
+
+  const isFilterUp = useSelector((state) => {
+    return state.temp.isFilterUp;
+  })
+
+
+
   const armyName = useSelector((state) => {
     return state.game.armyName;
   })
 
-  const armyList = useSelector((state) => {
-    return state.game.armyList;
-  })
+
 
   const updateMap = (newMapArray) => {
     const tempMap = { ...objectMap, "map": newMapArray};
@@ -98,9 +107,7 @@ const GameTile = ({id, posLeft, posTop, image, tileObject, showId=false, formati
     updateMap(movedMap);
   }
 
- const checkIsOwner = () => {
-  dispatch(setIsOwner(formation.owner === armyName)) ;
- }
+
 
 
 const detectClick = (e) => {

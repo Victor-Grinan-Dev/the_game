@@ -8,33 +8,34 @@ export class Map {
     this.map = map// array of MapLines/bidimentional array
     }
     getFormation(fromTileId){       
-      this.map.map((row)=>{
-          row.map((tile)=>{
-              if (tile.id === fromTileId){
-                  return tile.formation
-              }
-          })
-      })
+
+      for (let row of this.map){
+        for (let tile of row){
+            if(tile.id === fromTileId){
+                return tile.formation;
+            }
+        }
+    }
     }
     placeFormation(formation, tileId){
-        this.map.map((row)=>{
-            row.map((tile)=>{
-                if (tile.id === tileId){
-                    tile.formation = formation
-                } 
-            })
-        })
-        return 0;
+
+        for (let row of this.map){
+            for (let tile of row){
+                if(tile.id === tileId){
+                    tile.formation = formation;
+                }
+            }
+        }
     }
     deleteFormation(tileId){
-        this.map.map((row)=>{
-            row.map((tile)=>{
-                if (tile.id === tileId){
-                    tile.formation = null
+
+        for (let row of this.map){
+            for (let tile of row){
+                if(tile.id === tileId){
+                    tile.formation = null;
                 }
-            })
-        })
-        return 0;
+            }
+        }
     }
     moveFormation(fromTileId, toTileId){
         const formation = this.getFormation(fromTileId);
