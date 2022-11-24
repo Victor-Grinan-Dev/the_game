@@ -1,9 +1,9 @@
 
 .Tile{
-    background-size: 75px 75px;   
+    background-size: 75px 81px;   
     background-repeat: no-repeat;
     background-position: "center";
-    height:75px;
+    height:81px;
     width:75px;
     display:flex;
     justify-content:center;
