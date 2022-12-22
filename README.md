@@ -1,4 +1,4 @@
-# The Game (I have an error that does'nt let me deploy the app... i haven't found what is it)
+# The Game (I have an error that doesn't let me deploy the app, it works locally)
 - https://victor-grinan-dev.github.io/the_game/ (not working)
 - https://spontaneous-pixie-45d085.netlify.app (not working)
 
@@ -9,3 +9,6 @@ This App is just a demo of how the game will look.
 
 ## Tecnologies:
 - React.js
+
+## Instalation:
+- clone the app, and npm i
