@@ -1,5 +1,5 @@
 //import { getCampaign } from "../services/campaignService";
-import campaignService from "../services/campaignService"
+// import campaignService from "../services/campaignService"
 import { createSlice } from "@reduxjs/toolkit";
 
 export const gameSlice = createSlice({
@@ -76,28 +76,28 @@ export const gameSlice = createSlice({
     }
 })
 
-export const initializeGame = () => {
+// export const initializeGame = () => {
    
-   return async (dispatch, getData) => {
+//    return async (dispatch, getData) => {
 
-    //from localstorage authenticate username and game/campaign:
+//     //from localstorage authenticate username and game/campaign:
 
-    const games = await campaignService.getCampaign(); 
-    const campaign = games.filter(camp => {
-        return camp.campaignId === "test_campaign";
-    })
+//     const games = await campaignService.getCampaign(); 
+//     const campaign = games.filter(camp => {
+//         return camp.campaignId === "test_campaign";
+//     })
     
-    dispatch(setCampaign(campaign[0]));
-     const playerObject = campaign[0].players.filter(player => {
-        return player.username === 'Victor123';
-    });
-    dispatch(setUserObj(playerObject[0]))
-    dispatch(setArmyList(playerObject[0].army_list.composition))
-    //dispatch(saveMap())
-    //console.log(playerObject);
-    //console.log(playerObject[0].army_list.composition)
-   };
- };
+//     dispatch(setCampaign(campaign[0]));
+//      const playerObject = campaign[0].players.filter(player => {
+//         return player.username === 'Victor123';
+//     });
+//     dispatch(setUserObj(playerObject[0]))
+//     dispatch(setArmyList(playerObject[0].army_list.composition))
+//     //dispatch(saveMap())
+//     //console.log(playerObject);
+//     //console.log(playerObject[0].army_list.composition)
+//    };
+//  };
 
 export const { 
     setCampaign, 
