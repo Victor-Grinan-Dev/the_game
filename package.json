@@ -2,7 +2,7 @@
   "name": "the_game",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://victor-grinan-dev.github.io/the_game/",
+  "homepage": ".",
   "dependencies": {
     "-": "^0.0.1",
     "@reduxjs/toolkit": "^1.8.6",
